@@ -1,0 +1,52 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ggplot2: Unleash Your Inner Artist",
+    "section": "",
+    "text": "😊 Before We Start\nIn December 2017, after completing my first year of statistics, I delved into learning R. Having a background in Java, C, and C++ coding since high school, I enjoyed R but found its plots not so appealing and the code a bit tricky. On a quest for something beautiful and user-friendly, I stumbled upon a blog titled Beautiful plotting in R: A ggplot2 cheatsheet by Zev Ross, last updated in January 2016. Intrigued, I decided to follow the tutorial step by step, learning a great deal. As time passed, I tweaked and expanded the codes, adding new chart types and resources.\nRealizing that Zev Ross’s blog hadn’t been updated for years, I took the initiative to create my own version, incorporating updates like the amazing {patchwork}, {ggtext}, and {ggforce} packages. I also shared insights on custom fonts, colors, and introduced a variety of R packages for interactive charts. The journey led to a unique tutorial, and now, I’ve decided to make it public, adding even more updates, such as Maps! because who doesn’t love maps!!\nI incorporated the following enhancements into my tutorial:",
+    "crumbs": [
+      "😊 Before We Start"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "index.html#toc",
+    "href": "index.html#toc",
+    "title": "ggplot2: Unleash Your Inner Artist",
+    "section": "What you’ll discover",
+    "text": "What you’ll discover\n\nTie Your Seatbelt: Setting the stage for your journey into advanced plotting techniques.\nThe Dataset: Understanding the importance of data in crafting compelling visualizations.\nThe {ggplot2} Package: Unleashing the power of {ggplot2} for elegant and customizable plots.\nA Default ggplot: Exploring the basics with a default {ggplot} and understanding its components.\nWorking with Axes: Mastering the art of manipulating axes to convey meaningful insights.\nWorking with Titles: Crafting informative and visually appealing titles to captivate your audience.\nWorking with Legends: Enhancing clarity and interpretation by effectively managing legends.\nWorking with Backgrounds & Grid Lines: Elevating aesthetics with stylish backgrounds and grid lines.\nWorking with Margins: Fine-tuning margins to optimize plot presentation.\nWorking with Multi-Panel Plots: Diving into the world of multi-panel plots for comprehensive data representation.\nWorking with Colors: Harnessing the power of color to convey information and evoke emotions.\nWorking with Themes: Creating cohesive visual narratives with carefully curated themes.\nWorking with Lines: Adding emphasis and clarity through strategic use of lines.\nWorking with Text: Utilizing text annotations to provide context and highlight key findings.\nWorking with Coordinates: Manipulating coordinates to achieve desired plot layouts and perspectives.\nWorking with Chart Types: Expanding your repertoire with diverse and impactful chart types.\nWorking with Ribbons (AUC, CI, etc.): Enhancing visualizations with ribbons for confidence intervals and more.\nWorking with Smoothings: Incorporating smoothings to reveal underlying trends and patterns.\nWorking with Interactive Plots: Engaging your audience with interactive visualizations for dynamic exploration.\nRemarks, Tipps & Resources: Leveraging insights, tips, and resources to further refine your plotting skills.",
+    "crumbs": [
+      "😊 Before We Start"
+    ]
+  }
+]

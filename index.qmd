@@ -1,0 +1,37 @@
+# 😊 Before We Start {.unnumbered}
+
+In December 2017, after completing my first year of statistics, I delved into learning R. Having a background in `Java`, `C`, and `C++` coding since high school, I enjoyed R but found its plots not so appealing and the code a bit tricky. On a quest for something beautiful and user-friendly, I stumbled upon a blog titled [**Beautiful plotting in R: A ggplot2 cheatsheet**](http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/) by [Zev Ross](https://twitter.com/zevross), last updated in January 2016. Intrigued, I decided to follow the tutorial step by step, learning a great deal. As time passed, I tweaked and expanded the codes, adding new chart types and resources.
+
+Realizing that Zev Ross's blog hadn't been updated for years, I took the initiative to create my own version, incorporating updates like the amazing `{patchwork}`, `{ggtext}`, and `{ggforce}` packages. I also shared insights on custom fonts, colors, and introduced a variety of R packages for interactive charts. The journey led to a unique tutorial, and now, I've decided to make it public, adding even more updates, such as Maps! because who doesn't love maps!!
+
+I incorporated the following enhancements into my tutorial:
+
+*   Following the R style guide (e.g., by [Hadley Wickham](https://style.tidyverse.org), [Google](https://google.github.io/styleguide/Rguide.xml), or the [Coding Club](https://ourcodingclub.github.io/2017/04/25/etiquette.html#syntax) style guides).
+*   Implementing changes to the style and aesthetics of plots, including axis titles, legends, and color schemes for all plots.
+*   Ensuring that the tutorial remains up-to-date with changes in `{ggplot2}` (current version: 3.4.0).
+*   Modifying data import methods to utilize GitHub as a data source.
+*   Offering additional tips on various topics such as chart selection, color palettes, title modifications, adding lines, adjusting legends, annotations with labels, arrows and boxes, multi-panel plots, and interactive visualizations. ...
+
+What you'll discover {#toc}
+---------------------------
+
+*   [Tie Your Seatbelt](#prep): Setting the stage for your journey into advanced plotting techniques.
+*   [The Dataset](#data): Understanding the importance of data in crafting compelling visualizations.
+*   [The {ggplot2} Package](#ggplot): Unleashing the power of {ggplot2} for elegant and customizable plots.
+*   [A Default ggplot](#default): Exploring the basics with a default {ggplot} and understanding its components.
+*   [Working with Axes](#axes): Mastering the art of manipulating axes to convey meaningful insights.
+*   [Working with Titles](#titles): Crafting informative and visually appealing titles to captivate your audience.
+*   [Working with Legends](#legends): Enhancing clarity and interpretation by effectively managing legends.
+*   [Working with Backgrounds & Grid Lines](#style): Elevating aesthetics with stylish backgrounds and grid lines.
+*   [Working with Margins](#margins): Fine-tuning margins to optimize plot presentation.
+*   [Working with Multi-Panel Plots](#panels): Diving into the world of multi-panel plots for comprehensive data representation.
+*   [Working with Colors](#colors): Harnessing the power of color to convey information and evoke emotions.
+*   [Working with Themes](#themes): Creating cohesive visual narratives with carefully curated themes.
+*   [Working with Lines](#lines): Adding emphasis and clarity through strategic use of lines.
+*   [Working with Text](#text): Utilizing text annotations to provide context and highlight key findings.
+*   [Working with Coordinates](#coords): Manipulating coordinates to achieve desired plot layouts and perspectives.
+*   [Working with Chart Types](#charts): Expanding your repertoire with diverse and impactful chart types.
+*   [Working with Ribbons (AUC, CI, etc.)](#ribbons): Enhancing visualizations with ribbons for confidence intervals and more.
+*   [Working with Smoothings](#smooths): Incorporating smoothings to reveal underlying trends and patterns.
+*   [Working with Interactive Plots](#interactive): Engaging your audience with interactive visualizations for dynamic exploration.
+*   [Remarks, Tipps & Resources](#tipps): Leveraging insights, tips, and resources to further refine your plotting skills.
