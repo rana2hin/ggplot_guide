@@ -4,7 +4,7 @@
 library(ggplot2)
 library(tidyverse)
 library(extrafont)
-chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+chic <- readr::read_csv("https://raw.githubusercontent.com/rana2hin/ggplot_guide/master/chicago_data.csv")
 ```
 
 ## Alternatives to a Box Plot
