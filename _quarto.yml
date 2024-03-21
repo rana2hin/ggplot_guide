@@ -5,6 +5,10 @@ book:
   title: "ggplot2: Unleash Your Inner Artist"
   author: "Tuhin rana"
   date: "3/17/2024"
+  cover-image: cover.png
+  repo-url: https://github.com/rana2hin/ggplot_guide/
+  downloads: [pdf, epub]
+  sharing: [facebook, twitter]
   chapters:
     - index.qmd
     - intro.qmd
