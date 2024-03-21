@@ -1,0 +1,29 @@
+# Working with Margins {#margins}
+
+```{r data-import, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+```
+
+Sometimes it is useful to add a little space to the plot margin. Similar to the previous examples, we can use an argument to the `theme()` function. In this case, the argument is `plot.margin`. As illustrated in the previous example where we changed the background color using `plot.background`, we can now add extra space to both the left and right.
+
+The `plot.margin` argument can handle a variety of different units (cm, inches, etc.), but it requires the use of the `unit` function from the package `grid` to specify the units. You can either provide the same value for all sides (easiest via `rep(x, 4)`) or particular distances for each. Here, I am using a 1cm margin on the top and bottom, 3 cm margin on the right, and an 8 cm margin on the left.
+
+```{r margin}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(plot.background = element_rect(fill = "gray60"),
+        plot.margin = margin(t = 1, r = 3, b = 1, l = 8, unit = "cm"))
+```
+
+💁 <i>You can also use `unit()` instead of `margin()`. Expand to see example.</i>
+
+```{r margin-2}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(plot.background = element_rect(fill = "gray60"),
+        plot.margin = unit(c(1, 3, 1, 8), "cm"))
+```

@@ -1,9 +1,48 @@
-# Introduction
+# Tie Your Seatbelt {#prep}
 
-This is a book created from markdown and executable code.
+To fully execute the tutorial, you'll need to install the following packages:
 
-See @knuth84 for additional discussion of literate programming.
+* `{ggplot2}`, a part of the `{tidyverse}` package collection
+* `{tidyverse}` package collection, including:
+    * `{dplyr}` for data wrangling
+    * `{tibble}` for modern data frames
+    * `{tidyr}` for data cleaning
+    * `{forcats}` for handling factors
+* `{corrr}` for calculating correlation matrices
+* `{cowplot}` for composing ggplots
+* `{ggforce}` for creating sina plots and other advanced visualizations
+* `{ggrepel}` for enhancing text labeling in plots
+* `{ggridges}` for creating ridge plots
+* `{ggsci}` for accessing nice color palettes
+* `{ggtext}` for advanced text rendering in plots
+* `{ggthemes}` for additional plot themes
+* `{grid}` for creating graphical objects
+* `{gridExtra}` for additional functions for "grid" graphics
+* `{patchwork}` for generating multi-panel plots
+* `{prismatic}` for manipulating colors
+* `{rcartocolor}` for accessing great color palettes
+* `{scico}` for perceptional uniform color palettes
+* `{showtext}` for utilizing custom fonts
+* `{shiny}` for developing interactive apps
+* Several packages for interactive visualizations, including:
+    * `{charter}`
+    * `{echarts4r}`
+    * `{ggiraph}`
+    * `{highcharter}`
+    * `{plotly}`
 
-```{r}
-1 + 1
+```{r install-packages, eval=FALSE}
+# install CRAN packages
+install.packages(
+  c("ggplot2", "tibble", "tidyr", "forcats", "purrr", "prismatic", "corrr", 
+    "cowplot", "ggforce", "ggrepel", "ggridges", "ggsci", "ggtext", "ggthemes", 
+    "grid", "gridExtra", "patchwork", "rcartocolor", "scico", "showtext", 
+    "shiny", "plotly", "highcharter", "echarts4r")
+)
+
+# install from GitHub since not on CRAN
+install.packages(devtools)
+devtools::install_github("JohnCoene/charter")
 ```
+
+For instructional purposes, and to ensure smooth transitions for learners navigating directly to specific plots, I'll load the necessary package beside `{ggplot2}` in the corresponding section.

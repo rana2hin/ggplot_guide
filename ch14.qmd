@@ -1,0 +1,144 @@
+# Working with Coordinates {#coords}
+
+```{r data-import, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(extrafont)
+chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+```
+
+## Flip a Plot
+
+It is incredibly easy to flip a plot on its side. Here I have added the `coord_flip()` which is all you need to flip the plot. This makes most sense when using geom's to represent categorical data, for example bar charts or, as in the following example, box and whiskers plots:
+
+```{r flip-coords}
+ggplot(chic, aes(x = season, y = o3)) +
+  geom_boxplot(fill = "indianred") +
+  labs(x = "Season", y = "Ozone") +
+  coord_flip()
+```
+
+<details>
+
+<summary>💁 <i>Since `{ggplot2}` version 3.0.0 it is also possible to draw geom's horizontally via the argument `orientation = "y"`. Expand to see example.</i></summary>
+
+```{r flip-coords-orientation}
+ggplot(chic, aes(x = o3, y = season)) +
+  geom_boxplot(fill = "indianred", orientation = "y") +
+  labs(x = "Ozone", y = "Season")
+```
+
+</details>
+
+## Fix an Axis
+
+One can fix the aspect ratio of the Cartesian coordinate system and literally force a physical representation of the units along the x and y axes:
+
+```{r fixed-axis-equal, fig.height=5}
+ggplot(chic, aes(x = temp, y = o3)) +
+  geom_point() +
+  labs(x = "Temperature (°F)", y = "Ozone Level") +
+  scale_x_continuous(breaks = seq(0, 80, by = 20)) +
+  coord_fixed(ratio = 1)
+```
+
+This way one can ensure not only a fixed step length on the axes but also that the exported plot looks as expected. However, your saved plot likely contains a lot of white space in case you do not use a suitable aspect ratio:
+
+```{r fixed-axis-scaled, fig.height=4.5, fig.width=9}
+ggplot(chic, aes(x = temp, y = o3)) +
+  geom_point() +
+  labs(x = "Temperature (°F)", y = "Ozone Level") +
+  scale_x_continuous(breaks = seq(0, 80, by = 20)) +
+  coord_fixed(ratio = 1/3) +
+  theme(plot.background = element_rect(fill = "grey80"))
+```
+
+## Reverse an Axis
+
+You can also easily reverse an axis using `scale_x_reverse()` or `scale_y_reverse()`, respectively:
+
+```{r reversed-axis}
+ggplot(chic, aes(x = date, y = temp, color = o3)) +
+  geom_point() +
+  labs(x = "Year", y = "Temperature (°F)") +
+  scale_y_reverse()
+```
+
+<details>
+
+<summary>💁 <i>Note that this will only work for continuous data. If you want to reverse discrete data, use the `fct_rev()` function from the [`{forcats}` package](https://forcats.tidyverse.org/). Expand to see example.</i></summary>
+
+```{r disc-axes}
+## the default
+ggplot(chic, aes(x = temp, y = season)) +
+  geom_jitter(aes(color = season), show.legend = FALSE) +
+  labs(x = "Temperature (°F)", y = NULL)
+```
+
+```{r rev-disc-axes}
+library(forcats)
+set.seed(10)
+ggplot(chic, aes(x = temp, y = fct_rev(season))) +
+  geom_jitter(aes(color = season), show.legend = FALSE) +
+  labs(x = "Temperature (°F)", y = NULL)
+```
+
+</details>
+
+## Transform an Axis
+
+... or transform the default linear mapping by using `scale_y_log10()` or `scale_y_sqrt()`. As an example, here is a log<sub>10</sub>-transformed axis (which introduces NA's in this case so be careful):
+
+```{r log-axis}
+ggplot(chic, aes(x = date, y = temp, color = o3)) +
+  geom_point() +
+  labs(x = "Year", y = "Temperature (°F)") +
+  scale_y_log10(lim = c(0.1, 100))
+```
+
+## Circularize a Plot
+
+It is also possible to circularize (polarize?) the coordinate system by calling `coord_polar()`.
+
+```{r polar-coords}
+chic |>
+  dplyr::group_by(season) |>
+  dplyr::summarize(o3 = median(o3)) |>
+  ggplot(aes(x = season, y = o3)) +
+    geom_col(aes(fill = season), color = NA) +
+    labs(x = "", y = "Median Ozone Level") +
+    coord_polar() +
+    guides(fill = "none")
+```
+
+This coordinate system allows to draw pie charts as well:
+
+```{r pie-chart}
+chic_sum <-
+  chic |>
+  dplyr::mutate(o3_avg = median(o3)) |>
+  dplyr::filter(o3 > o3_avg) |>
+  dplyr::mutate(n_all = n()) |>
+  dplyr::group_by(season) |>
+  dplyr::summarize(rel = n() / unique(n_all))
+
+ggplot(chic_sum, aes(x = "", y = rel)) +
+  geom_col(aes(fill = season), width = 1, color = NA) +
+  labs(x = "", y = "Proportion of Days Exceeding\nthe Median Ozone Level") +
+  coord_polar(theta = "y") +
+  scale_fill_brewer(palette = "Set1", name = "Season:") +
+  theme(axis.ticks = element_blank(),
+        panel.grid = element_blank())
+```
+
+I suggest to always look also at the outcome of the same code in a Cartesian coordinate system, which is the default, to understand the logic behind `coord_polar()` and `theta`:
+
+```{r pie-chart-cartesian}
+ggplot(chic_sum, aes(x = "", y = rel)) +
+  geom_col(aes(fill = season), width = 1, color = NA) +
+  labs(x = "", y = "Proportion of Days Exceeding\nthe Median Ozone Level") +
+  #coord_polar(theta = "y") +
+  scale_fill_brewer(palette = "Set1", name = "Season:") +
+  theme(axis.ticks = element_blank(),
+        panel.grid = element_blank())
+```

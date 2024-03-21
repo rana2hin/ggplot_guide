@@ -1,7 +1,18 @@
-# Summary
+# Remarks, Tipps & Resources {.unnumbered}
 
-In summary, this book has no content whatsoever.
+## Using ggplot2 in Loops and Functions
 
-```{r}
-1 + 1
-```
+The grid-based graphics functions in `lattice` and `ggplot2` create a graph object. When you use these functions interactively at the command line, the result is automatically printed. However, when using `source()` or inside your own functions, you will need an explicit `print()` statement, i.e., `print(g)` in most of our examples. For more information, see also the [R FAQ page](https://cran.r-project.org/doc/FAQ/R-FAQ.html#Why-do-lattice_002ftrellis-graphics-not-work_003f).
+
+
+## Additional Resources
+
+-   ["ggplot2: Elegant Graphics for Data Analysis"](https://ggplot2-book.org/) by Hadley Wickham, available via open-access!
+-   ["Fundamentals of Data Visualization"](http://serialmentor.com/dataviz/) by Claus O. Wilke about data visualization in general but using `{ggplot2}`. (You can find the codes on [his GitHub profile](https://github.com/clauswilke/dataviz).)
+-   ["Cookbook for R"](http://www.cookbook-r.com/Graphs/) by Winston Chang with recipes to produce R plots
+-   Gallery of the [Top 50 ggplot2 visualizations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
+-   Gallery of [`{ggplot2}` extension packages](https://exts.ggplot2.tidyverse.org/gallery/)
+-   [How to extend `{ggplot2}`](https://cran.r-project.org/web/packages/ggplot2/vignettes/extending-ggplot2.html) by Hadley Wickham
+-   The fantastic [R4DS Online Learning Community](https://www.rfordatasci.com/) that offers help and mentoring for all things related to the content of the ["R for Data Science" book](r4ds.had.co.nz/) by Hadley Wickham
+-   [#TidyTuesday](https://github.com/rfordatascience/tidytuesday), a weekly social data project focusing on ggplots---check also [#TidyTuesday on Twitter](https://twitter.com/hashtag/TidyTuesday?lang=en) and [this collection of contributions by Neil Grantham](https://nsgrantham.com/tidytuesdayrocks/)
+-   A two-part, 4.5-hours tutorial series by Thomas Linn Pedersen ([Part 1](https://www.youtube.com/watch?v=h29g21z0a68) \| [Part 2](https://www.youtube.com/watch?v=0m4yywqNPVY))

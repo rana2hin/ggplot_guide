@@ -1,0 +1,212 @@
+# Working with Multi-Panel Plots {#panels}
+
+```{r data-import, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(extrafont)
+chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+```
+
+The `{ggplot2}` package offers two handy functions for creating multi-panel plots, called _facets_. They are related but have slight differences: `facet_wrap` creates a ribbon of plots based on a single variable, while `facet_grid` spans a grid of plots based on two variables.
+
+## Create a Grid of Small Multiples Based on Two Variables
+
+When dealing with two variables, `facet_grid` is the appropriate choice. In this function, the order of the variables determines the number of rows and columns in the grid:
+
+```{r grid-plots}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "orangered", alpha = .3) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) +
+  labs(x = "Year", y = "Temperature (°F)") +
+  facet_grid(year ~ season)
+```
+
+To switch from a row-based arrangement to a column-based one, you can modify `facet_grid(year ~ season)` to `facet_grid(season ~ year)`.
+
+## Create Small Multiples Based on One Variable
+
+`facet_wrap` creates a facet of a single variable, specified with a tilde in front: `facet_wrap(~ variable)`. The appearance of these subplots is determined by the arguments `ncol` and `nrow`:
+
+```{r wrap-plots-1-row}
+g <-
+  ggplot(chic, aes(x = date, y = temp)) +
+    geom_point(color = "chartreuse4", alpha = .3) +
+    labs(x = "Year", y = "Temperature (°F)") +
+    theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
+
+g + facet_wrap(~ year)
+```
+
+Accordingly, you can arrange the plots as you like, instead as a matrix in one row...
+
+```{r wrap-plots-2-rows}
+g + facet_wrap(~ year, nrow = 1)
+```
+
+... or even as a asymmetric grid of plots:
+
+```{r wrap-plots-2-rows-3-col}
+g + facet_wrap(~ year, ncol = 3) + theme(axis.title.x = element_text(hjust = .15))
+```
+
+## Allow Axes to Roam Free
+
+The default for multi-panel plots in `{ggplot2}` is to use equivalent scales in each panel. But sometimes you want to allow a panels own data to determine the scale. This is often not a good idea since it may give your user the wrong impression about the data. But sometimes it is indeed useful and to do this you can set `scales = "free"`:
+
+```{r wrap-plots-scales-free}
+g + facet_wrap(~ year, nrow = 2, scales = "free")
+```
+
+Note that both, x and y axes differ in their range!
+
+#### Use `facet_wrap` with Two Variables
+
+The function `facet_wrap` can also take two variables:
+
+```{r wrap-plots-two-vars, fig.height=7}
+g + facet_wrap(year ~ season, nrow = 4, scales = "free_x")
+```
+
+When using `facet_wrap` you are still able to control the grid design: you can rearrange the number of plots per row and column and you can also let all axes roam free. In contrast, `facet_grid` will also take a `free` argument but will only let it roam free per column or row:
+
+```{r grid-plots-two-vars, fig.height=7}
+g + facet_grid(year ~ season, scales = "free_x")
+```
+
+## Modify Style of Strip Texts
+
+By using `theme`, you can modify the appearance of the strip text (i.e. the title for each facet) and the strip text boxes:
+
+```{r facet-modify-striptext, fig.height=3.5}
+g + facet_wrap(~ year, nrow = 1, scales = "free_x") +
+  theme(strip.text = element_text(face = "bold", color = "chartreuse4",
+                                  hjust = 0, size = 20),
+        strip.background = element_rect(fill = "chartreuse3", linetype = "dotted"))
+```
+
+The following [two functions adapted from this answer by Claus Wilke](https://stackoverflow.com/questions/60332202/conditionally-fill-ggtext-text-boxes-in-facet-wrap), the author of the [`{ggtext}` package](https://wilkelab.org/ggtext/), allow to highlight specific labels in combination with `element_textbox()` that is provided by `{ggtext}`.
+
+```{r facet-color-striptext-function}
+library(ggtext)
+library(purrr) ## for %||%
+
+element_textbox_highlight <- function(..., hi.labels = NULL, hi.fill = NULL,
+                                      hi.col = NULL, hi.box.col = NULL, hi.family = NULL) {
+  structure(
+    c(element_textbox(...),
+      list(hi.labels = hi.labels, hi.fill = hi.fill, hi.col = hi.col, hi.box.col = hi.box.col, hi.family = hi.family)
+    ),
+    class = c("element_textbox_highlight", "element_textbox", "element_text", "element")
+  )
+}
+
+element_grob.element_textbox_highlight <- function(element, label = "", ...) {
+  if (label %in% element$hi.labels) {
+    element$fill <- element$hi.fill %||% element$fill
+    element$colour <- element$hi.col %||% element$colour
+    element$box.colour <- element$hi.box.col %||% element$box.colour
+    element$family <- element$hi.family %||% element$family
+  }
+  NextMethod()
+}
+```
+
+Now you can use it and specify for example all striptexts:
+
+```{r facet-color-striptext-A, fig.height=8}
+g + facet_wrap(year ~ season, nrow = 4, scales = "free_x") +
+  theme(
+    strip.background = element_blank(),
+    strip.text = element_textbox_highlight(
+      family = "Playfair Display", size = 12, face = "bold",
+      fill = "white", box.color = "chartreuse4", color = "chartreuse4",
+      halign = .5, linetype = 1, r = unit(5, "pt"), width = unit(1, "npc"),
+      padding = margin(5, 0, 3, 0), margin = margin(0, 1, 3, 1),
+      hi.labels = c("1997", "1998", "1999", "2000"),
+      hi.fill = "chartreuse4", hi.box.col = "black", hi.col = "white"
+    )
+  )
+```
+
+```{r r-facet-color-striptext-B, fig.height=3.5}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(aes(color = season == "Summer"), alpha = .3) +
+  labs(x = "Year", y = "Temperature (°F)") +
+  facet_wrap(~ season, nrow = 1) +
+  scale_color_manual(values = c("gray40", "firebrick"), guide = "none") +
+  theme(
+    axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1),
+    strip.background = element_blank(),
+    strip.text = element_textbox_highlight(
+      size = 12, face = "bold",
+      fill = "white", box.color = "white", color = "gray40",
+      halign = .5, linetype = 1, r = unit(0, "pt"), width = unit(1, "npc"),
+      padding = margin(2, 0, 1, 0), margin = margin(0, 1, 3, 1),
+      hi.labels = "Summer", hi.family = "Bangers",
+      hi.fill = "firebrick", hi.box.col = "firebrick", hi.col = "white"
+    )
+  )
+```
+
+## Create a Panel of Different Plots
+
+There are several ways how plots can be combined. The easiest approach in my opinion is the [`{patchwork}` package](https://github.com/thomasp85/patchwork) by Thomas Lin Pedersen:
+
+```{r combine-plots-patchwork}
+p1 <- ggplot(chic, aes(x = date, y = temp,
+                       color = season)) +
+        geom_point() +
+        geom_rug() +
+        labs(x = "Year", y = "Temperature (°F)")
+
+p2 <- ggplot(chic, aes(x = date, y = o3)) +
+        geom_line(color = "gray") +
+        geom_point(color = "darkorange2") +
+        labs(x = "Year", y = "Ozone")
+
+library(patchwork)
+p1 + p2
+```
+
+We can change the order by "dividing" both plots (and note the alignment even though one has a legend and one doesn't!):
+
+```{r combine-plots-patchwork-2, fig.height=8}
+p1 / p2
+```
+
+And also nested plots are possible!
+
+```{r combine-plots-patchwork-3, fig.height=6}
+(g + p2) / p1
+```
+
+(Note the alignment of the plots even though only one plot includes a legend.)
+
+Alternatively, the [`{cowplot}` package](https://wilkelab.org/cowplot/articles/introduction.html) by Claus Wilke provides the functionality to combine multiple plots (and lots of other good utilities):
+
+```{r combine-plots-cowplot}
+library(cowplot)
+plot_grid(plot_grid(g, p1), p2, ncol = 1)
+```
+
+... and so does the [`{gridExtra}` package](https://cran.r-project.org/web/packages/gridExtra/vignettes/arrangeGrob.html) as well:
+
+```{r combine-plots-grid}
+library(gridExtra)
+grid.arrange(g, p1, p2,
+             layout_matrix = rbind(c(1, 2), c(3, 3)))
+```
+
+The same idea of defining a layout can be used with `{patchwork}` which allows creating complex compositions:
+
+```{r combine-plots-patchwork-layout, fig.width=12, fig.height=8}
+layout <- "
+AABBBB#
+AACCDDE
+##CCDD#
+##CC###
+"
+
+p2 + p1 + p1 + g + p2 +
+  plot_layout(design = layout)
+```

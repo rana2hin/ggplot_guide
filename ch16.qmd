@@ -1,0 +1,58 @@
+# Working with Ribbons (AUC, CI, etc.) {#ribbons}
+
+```{r data-import, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(extrafont)
+chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+```
+
+This is not a perfect dataset for demonstrating this, but using ribbon can be useful. In this example we will create a 30-day running average using the filter() function so that our ribbon is not too noisy.
+
+```{r ribbon-default}
+chic$o3run <- as.numeric(stats::filter(chic$o3, rep(1/30, 30), sides = 2))
+
+ggplot(chic, aes(x = date, y = o3run)) +
+   geom_line(color = "chocolate", lwd = .8) +
+   labs(x = "Year", y = "Ozone")
+```
+
+How does it look if we fill in the area below the curve using the `geom_ribbon()` function?
+
+```{r geom-ribbon-AUC}
+ggplot(chic, aes(x = date, y = o3run)) +
+   geom_ribbon(aes(ymin = 0, ymax = o3run),
+               fill = "orange", alpha = .4) +
+   geom_line(color = "chocolate", lwd = .8) +
+   labs(x = "Year", y = "Ozone")
+```
+
+Nice to indicate the [area under the curve (AUC)](https://en.wikipedia.org/wiki/Area_under_the_curve_(pharmacokinetics)) but this is not the conventional way to use `geom_ribbon()`.
+
+💁 *And actually a nicer way to achieve the same is `geom_area()`.*
+
+<details>
+
+<summary>Expand to see example.</summary>
+
+```{r geom-area-AUC}
+ggplot(chic, aes(x = date, y = o3run)) +
+   geom_area(color = "chocolate", lwd = .8,
+             fill = "orange", alpha = .4) +
+   labs(x = "Year", y = "Ozone")
+```
+
+</details>
+
+Instead, we draw a ribbon that gives us one standard deviation above and below our data:
+
+```{r geom-ribbon-range}
+chic$mino3 <- chic$o3run - sd(chic$o3run, na.rm = TRUE)
+chic$maxo3 <- chic$o3run + sd(chic$o3run, na.rm = TRUE)
+
+ggplot(chic, aes(x = date, y = o3run)) +
+   geom_ribbon(aes(ymin = mino3, ymax = maxo3), alpha = .5,
+               fill = "darkseagreen3", color = "transparent") +
+   geom_line(color = "aquamarine4", lwd = .7) +
+   labs(x = "Year", y = "Ozone")
+```

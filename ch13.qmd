@@ -1,0 +1,233 @@
+# Working with Text {#text}
+
+```{r data-import, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(extrafont)
+chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+```
+
+## Add Labels to Your Data
+
+Sometimes, we want to label our data points. To avoid overlaying and crowding by text labels, we use a 1% sample of the original data, equally representing the four seasons. We are using `geom_label()` which comes with a new aesthetic called `label`:
+
+```{r data-text}
+set.seed(2020)
+
+sample <- chic |>
+  dplyr::group_by(season) |>
+  dplyr::sample_frac(0.01)
+
+## code without pipes:
+## sample <- sample_frac(group_by(chic, season), .01)
+
+ggplot(sample, aes(x = date, y = temp, color = season)) +
+  geom_point() +
+  geom_label(aes(label = season), hjust = .5, vjust = -.5) +
+  labs(x = "Year", y = "Temperature (°F)") +
+  xlim(as.Date(c('1997-01-01', '2000-12-31'))) +
+  ylim(c(0, 90)) +
+  theme(legend.position = "none")
+```
+
+Okay, avoiding overlap of labels did not work out. But don't worry, we are going to fix it in a minute!
+
+<details>
+
+<summary>💁 <i>You can also use `geom_text()` if you don't like boxes around your labels. Expand to see example.</i></summary>
+
+```{r data-label}
+ggplot(sample, aes(x = date, y = temp, color = season)) +
+  geom_point() +
+  geom_text(aes(label = season), fontface = "bold",
+            hjust = .5, vjust = -.25) +
+  labs(x = "Year", y = "Temperature (°F)") +
+  xlim(as.Date(c('1997-01-01', '2000-12-31'))) +
+  ylim(c(0, 90)) +
+  theme(legend.position = "none")
+```
+
+</details>
+
+The `{ggrepel}` package offers some great utilities by providing geoms for `{ggplot2}` to repel overlapping text as in our examples above. We simply replace `geom_text()` by `geom_text_repel()` and `geom_label()` by `geom_label_repel()`:
+
+```{r ggrepel}
+library(ggrepel)
+
+ggplot(sample, aes(x = date, y = temp, color = season)) +
+  geom_point() +
+  geom_label_repel(aes(label = season), fontface = "bold") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(legend.position = "none")
+```
+
+It may look nicer with filled boxes so we map `season` to `fill` instead to `color` and set a white color for the text:
+
+```{r ggrepel-filled}
+ggplot(sample, aes(x = date, y = temp)) +
+  geom_point(data = chic, size = .5) +
+  geom_point(aes(color = season), size = 1.5) +
+  geom_label_repel(aes(label = season, fill = season),
+                   color = "white", fontface = "bold",
+                   segment.color = "grey30") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(legend.position = "none")
+```
+
+This also works for the pure text labels by using `geom_text_repel()`. Have a look at all the [usage examples](https://ggrepel.slowkow.com/articles/examples.html).
+
+## Add Text Annotations
+
+There are several ways how one can add annotations to a ggplot. We can again use `annotate(geom = "text")`, `annotate(geom = "label")`, `geom_text()` or `geom_label()`:
+
+```{r textbox-label}
+g <-
+  ggplot(chic, aes(x = temp, y = dewpoint)) +
+  geom_point(alpha = .5) +
+  labs(x = "Temperature (°F)", y = "Dewpoint")
+
+g + 
+  annotate(geom = "text", x = 25, y = 60, fontface = "bold", 
+                label = "This is a useful annotation")
+```
+
+However, now ggplot has drawn one text label per data point---that's 1,461 labels and you only see one! You can solve that by setting the `stat` argument to `"unique"`:
+
+```{r textbox-label-unique}
+g +
+  geom_text(aes(x = 25, y = 60,
+                label = "This is a useful annotation"),
+            stat = "unique")
+```
+
+By the way, of course one can change the properties of the displayed text:
+
+```{r textbox-label-custom}
+g +
+  geom_text(aes(x = 25, y = 60,
+                label = "This is a useful annotation"),
+            stat = "unique", family = "Bangers",
+            size = 7, color = "darkcyan")
+```
+
+In case you use one of the facet functions to visualize your data you might run into trouble. One thing is that you may want to include the annotation only once:
+
+```{r label-facet-single}
+ann <- data.frame(
+  o3 = 30,
+  temp = 20,
+  season = factor("Summer", levels = levels(chic$season)),
+  label = "Here is enough space\nfor some annotations."
+)
+
+g <-
+  ggplot(chic, aes(x = o3, y = temp)) +
+  geom_point() +
+  labs(x = "Ozone", y = "Temperature (°F)")
+
+g +
+  geom_text(data = ann, aes(label = label),
+            size = 7, fontface = "bold",
+            family = "Roboto Condensed") +
+  facet_wrap(~season)
+```
+
+Another challenge are facets in combination with free scales that might cut your text:
+
+```{r label-facet-scales-problem}
+g +
+  geom_text(aes(x = 23, y = 97,
+                label = "This is not a useful annotation"),
+            size = 5, fontface = "bold") +
+  scale_y_continuous(limits = c(NA, 100)) +
+  facet_wrap(~season, scales = "free_x")
+```
+
+One solution is to calculate the midpoint of the axis, here `x`, beforehand:
+
+```{r label-facet-scales-problem-solved-prep}
+ann <-
+  chic |>
+  dplyr::group_by(season) |>
+  dplyr::summarize(
+    o3 = min(o3, na.rm = TRUE) +
+          (max(o3, na.rm = TRUE) - min(o3, na.rm = TRUE)) / 2
+)
+
+ann
+```
+
+... and use the aggreated data to specify the placement of the annotation:
+
+```{r label-facet-scales-problem-solved-plot}
+g +
+  geom_text(data = ann,
+            aes(x = o3, y = 97,
+                label = "This is a useful annotation"),
+            size = 5, fontface = "bold") +
+  scale_y_continuous(limits = c(NA, 100)) +
+  facet_wrap(~season, scales = "free_x")
+```
+
+However, there is a simpler approach (in terms of fixing the cordinates)---but it also takes a while to know the code by heart. The `{grid}` package in combination with `{ggplot2}`'s `annotation_custom()` allows you to specify the location based on scaled coordinates where 0 is low and 1 is high. `grobTree()` creates a grid graphical object and `textGrob` creates the text graphical object. The value of this is particularly evident when you have multiple plots with different scales.
+
+```{r grobTree}
+library(grid)
+my_grob <- grobTree(textGrob("This text stays in place!",
+                             x = .1, y = .9, hjust = 0,
+                             gp = gpar(col = "black",
+                                       fontsize = 15,
+                                       fontface = "bold")))
+
+g +
+  annotation_custom(my_grob) +
+  facet_wrap(~season, scales = "free_x") +
+  scale_y_continuous(limits = c(NA, 100))
+```
+
+## Use Markdown and HTML Rendering for Annotations
+
+Again, we are using Claus Wilke's [`{ggtext}` package](https://wilkelab.org/ggtext/) that is designed for improved text rendering support for `{ggplot2}`. The `{ggtext}` package defines two new theme elements, `element_markdown()` and `element_textbox()`. The package also provides additional geoms. `geom_richtext()` is a replacement for `geom_text()` and `geom_label()` and renders text as markdown...
+
+```{r ggtext-geom-richtext-md}
+library(ggtext)
+
+lab_md <- "This plot shows **temperature** in *°F* versus **ozone level** in *ppm*"
+
+g +
+  geom_richtext(aes(x = 35, y = 3, label = lab_md),
+                stat = "unique")
+```
+
+... or html:
+
+```{r ggtext-geom-richtext-html}
+lab_html <- "&#9733; This plot shows <b style='color:red;'>temperature</b> in <i>°F</i> versus <b style='color:blue;'>ozone level</b>in <i>ppm</i> &#9733;"
+
+g +
+  geom_richtext(aes(x = 33, y = 3, label = lab_html),
+                stat = "unique")
+```
+
+The geom comes with a lot of details one can modify, such as angle (which is not possible in the default `geom_text()` and `geom_label()`), properties of the box and properties of the text.
+
+```{r ggtext-geom-richtext-modify}
+g +
+  geom_richtext(aes(x = 10, y = 25, label = lab_md),
+                stat = "unique", angle = 30,
+                color = "white", fill = "steelblue",
+                label.color = NA, hjust = 0, vjust = 0,
+                family = "Playfair Display")
+```
+
+The other geom from the `{ggtext}` package is `geom_textbox()`. This geom allows for dynamic wrapping of strings which is very useful for longer annotations such as info boxes and subtitles.
+
+```{r ggtetxt-geom-textbox}
+lab_long <- "**Lorem ipsum dolor**<br><i style='font-size:8pt;color:red;'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</i>"
+
+g +
+  geom_textbox(aes(x = 40, y = 10, label = lab_long),
+               width = unit(15, "lines"), stat = "unique")
+```
+
+Note that it is not possible to either rotate the textbox (always horizontal) nor to change the justification of the text (always left-aligned).

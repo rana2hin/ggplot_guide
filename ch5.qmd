@@ -1,0 +1,149 @@
+# Working with Titles {#titles}
+
+```{r data-import, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+```
+
+## Add a Title
+
+We can add a title by using the `ggtitle()` function:
+
+```{r title}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  ggtitle("Temperatures in Chicago")
+```
+
+Alternatively, you can utilize `labs()`. Here, you can include multiple arguments, such as a subtitle, a caption, and a tag, in addition to axis titles as demonstrated earlier:
+
+```{r title-labs}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)",
+       title = "Temperatures in Chicago",
+       subtitle = "Seasonal pattern of daily temperatures from 1997 to 2001",
+       caption = "Data: NMMAPS",
+       tag = "Fig. 1")
+```
+
+## Making Title Bold & Adding a Space at the Baseline
+
+Once again, to adjust the properties of a theme element, we employ the `theme()` function. Similar to modifying text elements like `axis.title` and `axis.text`, we can alter the font face and margin for the title. These modifications apply not only to the title but also to other labels such as `plot.subtitle`, `plot.caption`, `plot.tag`, `legend.title`, `legend.text`, `axis.title`, and `axis.text`.
+
+```{r title-bold}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)",
+       title = "Temperatures in Chicago") +
+  theme(plot.title = element_text(face = "bold",
+                                  margin = margin(10, 0, 10, 0),
+                                  size = 14))
+```
+
+💡 **A helpful mnemonic for remembering the order of the margin arguments is "_t_\-_r_\-oub-_l_\-_e_", which corresponds to the first letter of each side.**
+
+## Adjusting Position of Titles
+
+The general alignment (left, center, right) is controlled by `hjust` (horizontal adjustment):
+
+```{r title-adjust}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = NULL,
+       title = "Temperatures in Chicago",
+       caption = "Data: NMMAPS") +
+  theme(plot.title = element_text(hjust = 1, size = 16, face = "bold.italic"))
+```
+
+Certainly, it's also possible to adjust the vertical alignment, which is controlled by `vjust`. Since 2019, users have been able to specify the alignment of the title, subtitle, and caption either based on the panel area (the default) or the plot margin via `plot.title.position` and `plot.caption.position`. The latter is often the preferred choice from a design perspective, as it yields better results in most cases. Many users have expressed satisfaction with this new feature, particularly as it addresses issues with alignment, especially when dealing with very long y-axis labels:
+
+```{r title-position-default}
+(g <- ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  scale_y_continuous(label = function(x) {return(paste(x, "Degrees Fahrenheit"))}) +
+  labs(x = "Year", y = NULL,
+       title = "Temperatures in Chicago between 1997 and 2001 in Degrees Fahrenheit",
+       caption = "Data: NMMAPS") +
+  theme(plot.title = element_text(size = 14, face = "bold.italic"),
+        plot.caption = element_text(hjust = 0)))
+```
+
+```{r title-position-plot}
+g + theme(plot.title.position = "plot",
+          plot.caption.position = "plot")
+```
+
+## Using a Non-Traditional Font in Your Title
+
+You can incorporate different fonts, not just the default one provided by ggplot (which can vary between operating systems). Several packages facilitate the usage of fonts installed on your machine, such as the [`showtext` package](https://github.com/yixuan/showtext), which simplifies the utilization of various font types (TrueType, OpenType, Type 1, web fonts, etc.) in R plots.
+
+Once the package is loaded, you'll need to import the desired font, which must also be installed on your device. I often utilize [Google fonts](https://fonts.google.com/), which can be imported using the `font_add_google()` function. However, you can add other fonts using `font_add()` as well. It's important to note that even when using Google fonts, you must install the font and restart RStudio to apply it. if you found any warnings after doing all the steps, or the fonts aren't working. Just install `extrafont` package and run `font_import()` function to import all the fonts in your system. and then `loadfonts(device = "win", quiet = TRUE)` to load the fonts. It'll work like a charm. You can also check the available fonts in your system by running `fonts()`.
+
+```{r showtext, message = FALSE}
+library(showtext)
+library(extrafont)
+font_add_google("Playfair Display", ## name of Google font
+                "Playfair Display")  ## name that will be used in R
+font_add_google("Bangers", "Bangers")
+loadfonts(device = "win", quiet = TRUE)
+```
+
+Now, we can use those font families by `theme()` function:
+
+```{r title-style}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)",
+       title = "Temperatures in Chicago",
+       subtitle = "Daily temperatures in °F from 1997 to 2001") +
+  theme(plot.title = element_text(family = "Bangers", hjust = .5, size = 25),
+        plot.subtitle = element_text(family = "Playfair Display", hjust = .5, size = 15))
+```
+
+You can also establish a non-default font for all text elements of your plots. For more details, refer to the section ["Working with Themes"](#themes). In this case, I'll use _Roboto Condensed_ as the new font for all subsequent plots.
+
+```{r default-font}
+font_add_google("Roboto Condensed", "Roboto Condensed")
+theme_set(theme_bw(base_size = 12, base_family = "Roboto Condensed"))
+```
+
+<p style="color:gray;">
+
+(Previously, this tutorial utilized the [`{extrafont}` package](https://cran.r-project.org/web/packages/extrafont/README.html), which performed admirably until last year. However, suddenly I encountered issues where I couldn't add any new fonts, and even after acquiring a new laptop, the package failed to detect any fonts altogether. As an alternative, I typically recommend the [`{ragg}` package](https://ragg.r-lib.org/) now. However, I encountered difficulties in making it work for my homepage. Therefore, I'm utilizing the `{showtext}` package, which is also excellent, albeit with a key distinction: you need to explicitly import the font you wish to use with `{showtext}`. Nonetheless, it appears that there are some technical challenges that are not optimally resolved by `{showtext}` (as mentioned in [this Twitter thread](https://twitter.com/thomasp85/status/1355083725156077571)), so you may want to consider using the package only as a last resort.)
+
+</p>
+
+## Adjusting Spacing in Multi-Line Text
+
+To modify the spacing between lines, you can utilize the `lineheight` argument. In the following example, I've compressed the lines together (lineheight < 1).
+
+```{r multiline-title}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  ggtitle("Temperatures in Chicago\nfrom 1997 to 2001") +
+  theme(plot.title = element_text(lineheight = .8, size = 16))
+```
+
+Now You can Change fonts on the fly!
+
+```{r}
+ggplot(chic, aes(x = date, y = temp)) +
+    geom_point(color = "firebrick") +
+    labs(x = "Year", y = "Temperature (°F)") +
+    ggtitle("Temperatures in Chicago\nfrom 1997 to 2001") +
+    theme_bw(base_family = "Berkshire Swash")
+```
+
+Or, Change it to Traditional `Times New Roman`:
+
+```{r}
+ggplot(chic, aes(x = date, y = temp)) +
+    geom_point(color = "firebrick") +
+    labs(x = "Year", y = "Temperature (°F)") +
+    ggtitle("Temperatures in Chicago\nfrom 1997 to 2001") +
+    theme_bw(base_family = "Times New Roman")
+```

@@ -1,0 +1,289 @@
+# Working with Axes {#axes}
+
+```{r data-import, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+```
+
+## Change Axis Titles
+
+To add clear and descriptive labels to the axes, we can utilize the `labs()` function. This function allows us to provide a character string for each label we wish to modify, such as `x` and `y`:
+
+```{r axis-labs}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)")
+```
+
+<details>
+
+<summary>💁 <i>You also can add axis titles by using `xlab()` and `ylab()`. Click to see example.</i></summary>
+
+```{r axis-labs-2}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  xlab("Year") +
+  ylab("Temperature (°F)")
+```
+
+</details>
+
+Typically, you can specify symbols by directly adding the symbol itself (e.g., "°"). However, the code below also enables the addition of not only symbols but also features like superscripts:
+
+```{r axis-labs-expression}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = expression(paste("Temperature (", degree ~ F, ")"^"(Hey, why should we use metric units?!)")))
+```
+
+## Increase Space between Axis and Axis Titles
+
+`theme()` is a crucial command for adjusting specific theme elements such as texts, titles, boxes, symbols, backgrounds, and more. We'll be utilizing this command extensively! Initially, we'll focus on modifying text elements. We can customize the properties of all text elements or specific ones, such as axis titles, by overriding the default `element_text()` within the `theme()` call:
+
+```{r labs-move-away-vjust}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(axis.title.x = element_text(vjust = 0, size = 15),
+        axis.title.y = element_text(vjust = 2, size = 15))
+```
+
+The `vjust` parameter controls vertical alignment and typically ranges between 0 and 1, but you can also specify values outside that range. It's worth noting that even when adjusting the position of the axis title along the y-axis horizontally, we still need to specify `vjust` (which is correct from the perspective of the label's alignment). Additionally, you can modify the distance by specifying the margin for both text elements:
+
+```{r labs-move-away-margin}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(axis.title.x = element_text(margin = margin(t = 10), size = 15),
+        axis.title.y = element_text(margin = margin(r = 10), size = 15))
+```
+
+The labels `t` and `r` within the `margin()` object correspond to _top_ and _right_, respectively. Alternatively, you can specify all four margins using `margin(t, r, b, l)`. It's important to note that we need to adjust the right margin to modify the space on the y-axis, not the bottom margin.
+
+💡 **A helpful mnemonic for remembering the order of the margin sides is "_t_\-_r_\-ou-_b_\-_l_\-e".**
+
+## Change Aesthetics of Axis Titles
+
+Once more, we utilize the `theme()` function to modify the `axis.title` element and/or its subordinated elements, `axis.title.x` and `axis.title.y`. Within the `element_text()` function, we can override defaults for properties such as `size`, `color`, and `face`:
+
+```{r labs-color-axes-1}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(axis.title = element_text(size = 15, color = "firebrick",
+                                  face = "italic"))
+```
+
+The `face` argument can be used to make the font `bold` or `italic` or even `bold.italic`.
+
+```{r labs-color-axes-2}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(axis.title.x = element_text(color = "sienna", size = 15),
+        axis.title.y = element_text(color = "orangered", size = 15))
+```
+
+<details>
+
+<summary>💁 <i>You could also employ a combination of `axis.title` and `axis.title.y`, as `axis.title.x` inherits values from `axis.title`. Expand to See the example below:</i></summary>
+
+```{r labs-color-axes-3}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(axis.title = element_text(color = "sienna", size = 15),
+        axis.title.y = element_text(color = "orangered", size = 15))
+```
+
+</details>
+
+You can adjust some properties for both axis titles simultaneously, while modifying others exclusively for one axis or individual properties for each axis title:
+
+```{r labs-color-axes-4}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(axis.title = element_text(color = "sienna", size = 15, face = "bold"),
+        axis.title.y = element_text(face = "bold.italic"))
+```
+
+## Change Aesthetics of Axis Text
+
+Likewise, you can alter the appearance of the axis text (i.e., the numbers) by utilizing `axis.text` and/or its subordinated elements, `axis.text.x` and `axis.text.y`:
+
+```{r labs-color-axes-text}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(axis.text = element_text(color = "dodgerblue", size = 12),
+        axis.text.x = element_text(face = "italic"))
+```
+
+## Rotate Axis Text
+
+You can rotate any text elements by specifying an `angle`. Subsequently, you can adjust the position of the text horizontally (0 = left, 1 = right) and vertically (0 = top, 1 = bottom) using `hjust` and `vjust`:
+
+```{r axis-text}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(axis.text.x = element_text(angle = 50, vjust = 1, hjust = 1, size = 12))
+```
+
+## Removing Axis Text & Ticks
+
+There might be rare occasions where you need to remove axis text and ticks. Here's how you can achieve it:
+
+```{r axis-no-labs}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(axis.ticks.y = element_blank(),
+        axis.text.y = element_blank())
+```
+
+I've introduced three theme elements—text, lines, and rectangles—but there's actually one more: `element_blank()`, which removes the element entirely. However, it's not considered an official element like the others.
+
+💡 **If you wish to remove a theme element entirely, you can always use `element_blank()`.**
+
+## Removing Axis Titles
+
+We can use `theme_blank()`, but it's much simpler to just omit the label in the `labs()` (or `xlab()`) call:
+
+```{r axis-no-title}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = NULL, y = "")
+```
+
+💡 **Note that `NULL` removes the element (similarly to `element_blank()`), while empty quotes `""` will keep the spacing for the axis title but print nothing.**
+
+## Limiting Axis Range
+
+Occasionally, you may want to focus on a specific range of your data without altering the dataset itself. You can accomplish this with ease:
+
+```{r axis-limit}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  ylim(c(0, 50))
+```
+
+Alternatively, you can utilize `scale_y_continuous(limits = c(0, 50))` or `coord_cartesian(ylim = c(0, 50))`. The former removes all data points outside the specified range, while the latter adjusts the visible area, similar to `ylim(c(0, 50))`. At first glance, it may seem that both approaches yield the same result. However, there is an important distinction—compare the following two plots:
+
+```{r axis-limit-comp, echo=FALSE, purl=FALSE}
+p1 <- ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  scale_y_continuous(limits = c(0, 50)) +
+  ggtitle("scale_y_continuous(limits) or ylim()")
+
+p2 <- ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  coord_cartesian(ylim = c(0, 50)) +
+  ggtitle("coord_cartesian(ylim)")
+
+library(patchwork)
+p1 + p2
+```
+
+You may have noticed that on the left, there is some empty buffer around your y limits, while on the right, points are plotted right up to the border and even beyond. This effectively illustrates the concept of subsetting (left) versus zooming (right). To demonstrate why this distinction is significant, let's examine a different chart type: a box plot.
+
+```{r axis-limit-comp-box, echo=FALSE, purl=FALSE}
+p1 <- ggplot(chic, aes(x = factor(year), y = temp)) +
+  geom_boxplot() +
+  labs(x = "Year", y = "Temperature (°F)") +
+  scale_y_continuous(limits = c(0, 50)) +
+  ggtitle("scale_y_continuous(limits) or ylim()")
+
+p2 <- ggplot(chic, aes(x = factor(year), y = temp)) +
+  geom_boxplot() +
+  labs(x = "Year", y = "Temperature (°F)") +
+  coord_cartesian(ylim = c(0, 50)) +
+  ggtitle("coord_cartesian(ylim)")
+
+p1 + p2
+```
+
+Indeed, because `scale_x|y_continuous()` subsets the data first, we obtain completely different (and potentially incorrect, especially if this was not our intention) estimates for the box plots! This realization highlights the importance of ensuring data integrity throughout the plotting process. It's crucial to avoid inadvertently manipulating the data while plotting, as it could lead to inaccurate summary statistics reported in your report, paper, or thesis.
+
+## Forcing Plot to Start at Origin
+
+Related to that, you can instruct R to plot the graph starting at the origin:
+
+```{r origin}
+chic_high <- dplyr::filter(chic, temp > 25, o3 > 20)
+
+ggplot(chic_high, aes(x = temp, y = o3)) +
+  geom_point(color = "darkcyan") +
+  labs(x = "Temperature higher than 25°F",
+       y = "Ozone higher than 20 ppb") +
+  expand_limits(x = 0, y = 0)
+```
+
+<details>
+
+<summary>💁 <i>Using `coord_cartesian(xlim = c(0, NA), ylim = c(0, NA))` will produce the same result. CLICK to See the example below:</i></summary>
+
+```{r origin-coord}
+chic_high <- dplyr::filter(chic, temp > 25, o3 > 20)
+
+ggplot(chic_high, aes(x = temp, y = o3)) +
+  geom_point(color = "darkcyan") +
+  labs(x = "Temperature higher than 25°F",
+       y = "Ozone higher than 20 ppb") +
+  coord_cartesian(xlim = c(0, NA), ylim = c(0, NA))
+```
+
+</details>
+
+But we can also ensure that it _truly_ starts at the origin!
+
+```{r origin-force}
+ggplot(chic_high, aes(x = temp, y = o3)) +
+  geom_point(color = "darkcyan") +
+  labs(x = "Temperature higher than 25°F",
+       y = "Ozone higher than 20 ppb") +
+  expand_limits(x = 0, y = 0) +
+  coord_cartesian(expand = FALSE, clip = "off")
+```
+
+💡 **The `clip = "off"` argument in any coordinate system, always starting with `coord_*`, enables drawing outside of the panel area.**
+
+Here, I invoke it to ensure that the tick marks at `c(0, 0)` remain intact and are not truncated. For further insights, refer to the [Twitter thread by Claus Wilke](https://twitter.com/clauswilke/status/991542952802619392?lang=en).
+
+## Axes with Same Scaling
+
+For demonstration purposes, let's plot temperature against temperature with some random noise. The `coord_equal()` function provides a coordinate system with a specified ratio, representing the number of units on the y-axis equivalent to one unit on the x-axis. By default, `ratio = 1` ensures that one unit on the x-axis is the same length as one unit on the y-axis:
+
+```{r axes-equal}
+ggplot(chic, aes(x = temp, y = temp + rnorm(nrow(chic), sd = 20))) +
+  geom_point(color = "sienna") +
+  labs(x = "Temperature (°F)", y = "Temperature (°F) + random noise") +
+  xlim(c(0, 100)) + ylim(c(0, 150)) +
+  coord_fixed()
+```
+
+Ratios higher than one result in units on the y-axis being longer than units on the x-axis, while ratios lower than one have the opposite effect:
+
+```{r axes-fixed-2, fig.height=3}
+ggplot(chic, aes(x = temp, y = temp + rnorm(nrow(chic), sd = 20))) +
+  geom_point(color = "sienna") +
+  labs(x = "Temperature (°F)", y = "Temperature (°F) + random noise") +
+  xlim(c(0, 100)) + ylim(c(0, 150)) +
+  coord_fixed(ratio = 1/5)
+```
+
+## Using a Function to Alter Labels
+
+Occasionally, it's useful to slightly modify your labels, such as adding units or percent signs, without altering your underlying data. You can achieve this using a function:
+
+```{r labs-alt}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = NULL) +
+  scale_y_continuous(label = function(x) {return(paste(x, "Degrees Fahrenheit"))})
+```

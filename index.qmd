@@ -1,4 +1,4 @@
-# 😊 Before We Start {.unnumbered}
+# Before We Start {.unnumbered}
 
 In December 2017, after completing my first year of statistics, I delved into learning R. Having a background in `Java`, `C`, and `C++` coding since high school, I enjoyed R but found its plots not so appealing and the code a bit tricky. On a quest for something beautiful and user-friendly, I stumbled upon a blog titled [**Beautiful plotting in R: A ggplot2 cheatsheet**](http://zevross.com/blog/2014/08/04/beautiful-plotting-in-r-a-ggplot2-cheatsheet-3/) by [Zev Ross](https://twitter.com/zevross), last updated in January 2016. Intrigued, I decided to follow the tutorial step by step, learning a great deal. As time passed, I tweaked and expanded the codes, adding new chart types and resources.
 
@@ -10,7 +10,7 @@ I incorporated the following enhancements into my tutorial:
 *   Implementing changes to the style and aesthetics of plots, including axis titles, legends, and color schemes for all plots.
 *   Ensuring that the tutorial remains up-to-date with changes in `{ggplot2}` (current version: 3.4.0).
 *   Modifying data import methods to utilize GitHub as a data source.
-*   Offering additional tips on various topics such as chart selection, color palettes, title modifications, adding lines, adjusting legends, annotations with labels, arrows and boxes, multi-panel plots, and interactive visualizations. ...
+*   Offering additional tips on various topics such as chart selection, color palettes, title modifications, adding lines, adjusting legends, annotations with labels, arrows and boxes, multi-panel plots, Geospatial Visualizations and interactive visualizations. ...
 
 What you'll discover {#toc}
 ---------------------------

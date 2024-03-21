@@ -4,29 +4,29 @@
     "href": "index.html",
     "title": "ggplot2: Unleash Your Inner Artist",
     "section": "",
-    "text": "😊 Before We Start\nIn December 2017, after completing my first year of statistics, I delved into learning R. Having a background in Java, C, and C++ coding since high school, I enjoyed R but found its plots not so appealing and the code a bit tricky. On a quest for something beautiful and user-friendly, I stumbled upon a blog titled Beautiful plotting in R: A ggplot2 cheatsheet by Zev Ross, last updated in January 2016. Intrigued, I decided to follow the tutorial step by step, learning a great deal. As time passed, I tweaked and expanded the codes, adding new chart types and resources.\nRealizing that Zev Ross’s blog hadn’t been updated for years, I took the initiative to create my own version, incorporating updates like the amazing {patchwork}, {ggtext}, and {ggforce} packages. I also shared insights on custom fonts, colors, and introduced a variety of R packages for interactive charts. The journey led to a unique tutorial, and now, I’ve decided to make it public, adding even more updates, such as Maps! because who doesn’t love maps!!\nI incorporated the following enhancements into my tutorial:",
+    "text": "Before We Start\nIn December 2017, after completing my first year of statistics, I delved into learning R. Having a background in Java, C, and C++ coding since high school, I enjoyed R but found its plots not so appealing and the code a bit tricky. On a quest for something beautiful and user-friendly, I stumbled upon a blog titled Beautiful plotting in R: A ggplot2 cheatsheet by Zev Ross, last updated in January 2016. Intrigued, I decided to follow the tutorial step by step, learning a great deal. As time passed, I tweaked and expanded the codes, adding new chart types and resources.\nRealizing that Zev Ross’s blog hadn’t been updated for years, I took the initiative to create my own version, incorporating updates like the amazing {patchwork}, {ggtext}, and {ggforce} packages. I also shared insights on custom fonts, colors, and introduced a variety of R packages for interactive charts. The journey led to a unique tutorial, and now, I’ve decided to make it public, adding even more updates, such as Maps! because who doesn’t love maps!!\nI incorporated the following enhancements into my tutorial:",
     "crumbs": [
-      "😊 Before We Start"
+      "Before We Start"
     ]
   },
   {
     "objectID": "intro.html",
     "href": "intro.html",
-    "title": "1  Introduction",
+    "title": "1  Tie Your Seatbelt",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "To fully execute the tutorial, you’ll need to install the following packages:\n\n{ggplot2}, a part of the {tidyverse} package collection\n{tidyverse} package collection, including:\n\n{dplyr} for data wrangling\n{tibble} for modern data frames\n{tidyr} for data cleaning\n{forcats} for handling factors\n\n{corrr} for calculating correlation matrices\n{cowplot} for composing ggplots\n{ggforce} for creating sina plots and other advanced visualizations\n{ggrepel} for enhancing text labeling in plots\n{ggridges} for creating ridge plots\n{ggsci} for accessing nice color palettes\n{ggtext} for advanced text rendering in plots\n{ggthemes} for additional plot themes\n{grid} for creating graphical objects\n{gridExtra} for additional functions for “grid” graphics\n{patchwork} for generating multi-panel plots\n{prismatic} for manipulating colors\n{rcartocolor} for accessing great color palettes\n{scico} for perceptional uniform color palettes\n{showtext} for utilizing custom fonts\n{shiny} for developing interactive apps\nSeveral packages for interactive visualizations, including:\n\n{charter}\n{echarts4r}\n{ggiraph}\n{highcharter}\n{plotly}\n\n\n\n# install CRAN packages\ninstall.packages(\n  c(\"ggplot2\", \"tibble\", \"tidyr\", \"forcats\", \"purrr\", \"prismatic\", \"corrr\", \n    \"cowplot\", \"ggforce\", \"ggrepel\", \"ggridges\", \"ggsci\", \"ggtext\", \"ggthemes\", \n    \"grid\", \"gridExtra\", \"patchwork\", \"rcartocolor\", \"scico\", \"showtext\", \n    \"shiny\", \"plotly\", \"highcharter\", \"echarts4r\")\n)\n\n# install from GitHub since not on CRAN\ninstall.packages(devtools)\ndevtools::install_github(\"JohnCoene/charter\")\n\nFor instructional purposes, and to ensure smooth transitions for learners navigating directly to specific plots, I’ll load the necessary package beside {ggplot2} in the corresponding section.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Tie Your Seatbelt</span>"
     ]
   },
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "2  Summary",
+    "title": "Remarks, Tipps & Resources",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "text": "Using ggplot2 in Loops and Functions\nThe grid-based graphics functions in lattice and ggplot2 create a graph object. When you use these functions interactively at the command line, the result is automatically printed. However, when using source() or inside your own functions, you will need an explicit print() statement, i.e., print(g) in most of our examples. For more information, see also the R FAQ page.",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "Remarks, Tipps & Resources"
     ]
   },
   {
@@ -46,7 +46,907 @@
     "section": "What you’ll discover",
     "text": "What you’ll discover\n\nTie Your Seatbelt: Setting the stage for your journey into advanced plotting techniques.\nThe Dataset: Understanding the importance of data in crafting compelling visualizations.\nThe {ggplot2} Package: Unleashing the power of {ggplot2} for elegant and customizable plots.\nA Default ggplot: Exploring the basics with a default {ggplot} and understanding its components.\nWorking with Axes: Mastering the art of manipulating axes to convey meaningful insights.\nWorking with Titles: Crafting informative and visually appealing titles to captivate your audience.\nWorking with Legends: Enhancing clarity and interpretation by effectively managing legends.\nWorking with Backgrounds & Grid Lines: Elevating aesthetics with stylish backgrounds and grid lines.\nWorking with Margins: Fine-tuning margins to optimize plot presentation.\nWorking with Multi-Panel Plots: Diving into the world of multi-panel plots for comprehensive data representation.\nWorking with Colors: Harnessing the power of color to convey information and evoke emotions.\nWorking with Themes: Creating cohesive visual narratives with carefully curated themes.\nWorking with Lines: Adding emphasis and clarity through strategic use of lines.\nWorking with Text: Utilizing text annotations to provide context and highlight key findings.\nWorking with Coordinates: Manipulating coordinates to achieve desired plot layouts and perspectives.\nWorking with Chart Types: Expanding your repertoire with diverse and impactful chart types.\nWorking with Ribbons (AUC, CI, etc.): Enhancing visualizations with ribbons for confidence intervals and more.\nWorking with Smoothings: Incorporating smoothings to reveal underlying trends and patterns.\nWorking with Interactive Plots: Engaging your audience with interactive visualizations for dynamic exploration.\nRemarks, Tipps & Resources: Leveraging insights, tips, and resources to further refine your plotting skills.",
     "crumbs": [
-      "😊 Before We Start"
+      "Before We Start"
+    ]
+  },
+  {
+    "objectID": "Chapter2_The_dataset.html",
+    "href": "Chapter2_The_dataset.html",
+    "title": "2  The Dataset",
+    "section": "",
+    "text": "We are utilizing data from the National Morbidity and Mortality Air Pollution Study (NMMAPS), focusing specifically on data pertaining to Chicago and the years 1997 to 2000 to ensure manageability of the plots. For a more comprehensive understanding of this dataset, readers can refer to Roger Peng’s book Statistical Methods in Environmental Epidemiology with R.\nTo import the data into our R session, we can employ read_csv() from the {readr} package. Subsequently, we’ll store the data in a variable named chic using the assignment arrow &lt;-. Just Copy and Paste the following code.\n\nchic &lt;- readr::read_csv(\"https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae\")\n\nRows: 1461 Columns: 10\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (3): city, season, month\ndbl  (6): temp, o3, dewpoint, pm10, yday, year\ndate (1): date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n💡 The :: symbolizes namespace and enables accessing a function without loading the entire package. Alternatively, you could load the readr package first using library(readr) and then execute chic &lt;- read_csv(...) subsequently.\n\ntibble::glimpse(chic)\n\nRows: 1,461\nColumns: 10\n$ city     &lt;chr&gt; \"chic\", \"chic\", \"chic\", \"chic\", \"chic\", \"chic\", \"chic\", \"chic…\n$ date     &lt;date&gt; 1997-01-01, 1997-01-02, 1997-01-03, 1997-01-04, 1997-01-05, …\n$ temp     &lt;dbl&gt; 36.0, 45.0, 40.0, 51.5, 27.0, 17.0, 16.0, 19.0, 26.0, 16.0, 1…\n$ o3       &lt;dbl&gt; 5.659256, 5.525417, 6.288548, 7.537758, 20.760798, 14.940874,…\n$ dewpoint &lt;dbl&gt; 37.500, 47.250, 38.000, 45.500, 11.250, 5.750, 7.000, 17.750,…\n$ pm10     &lt;dbl&gt; 13.052268, 41.948600, 27.041751, 25.072573, 15.343121, 9.3646…\n$ season   &lt;chr&gt; \"Winter\", \"Winter\", \"Winter\", \"Winter\", \"Winter\", \"Winter\", \"…\n$ yday     &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18…\n$ month    &lt;chr&gt; \"Jan\", \"Jan\", \"Jan\", \"Jan\", \"Jan\", \"Jan\", \"Jan\", \"Jan\", \"Jan\"…\n$ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1…\n\nhead(chic, 10)\n\n# A tibble: 10 × 10\n   city  date        temp    o3 dewpoint  pm10 season  yday month  year\n   &lt;chr&gt; &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt; &lt;dbl&gt;\n 1 chic  1997-01-01  36    5.66    37.5  13.1  Winter     1 Jan    1997\n 2 chic  1997-01-02  45    5.53    47.2  41.9  Winter     2 Jan    1997\n 3 chic  1997-01-03  40    6.29    38    27.0  Winter     3 Jan    1997\n 4 chic  1997-01-04  51.5  7.54    45.5  25.1  Winter     4 Jan    1997\n 5 chic  1997-01-05  27   20.8     11.2  15.3  Winter     5 Jan    1997\n 6 chic  1997-01-06  17   14.9      5.75  9.36 Winter     6 Jan    1997\n 7 chic  1997-01-07  16   11.9      7    20.2  Winter     7 Jan    1997\n 8 chic  1997-01-08  19    8.68    17.8  33.1  Winter     8 Jan    1997\n 9 chic  1997-01-09  26   13.4     24    12.1  Winter     9 Jan    1997\n10 chic  1997-01-10  16   10.4      5.38 24.8  Winter    10 Jan    1997",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Dataset</span>"
+    ]
+  },
+  {
+    "objectID": "ch2.html",
+    "href": "ch2.html",
+    "title": "2  The Dataset",
+    "section": "",
+    "text": "We are utilizing data from the National Morbidity and Mortality Air Pollution Study (NMMAPS), focusing specifically on data pertaining to Chicago and the years 1997 to 2000 to ensure manageability of the plots. For a more comprehensive understanding of this dataset, readers can refer to Roger Peng’s book Statistical Methods in Environmental Epidemiology with R.\nTo import the data into our R session, we can employ read_csv() from the {readr} package. Subsequently, we’ll store the data in a variable named chic using the assignment arrow &lt;-. Just Copy and Paste the following code.\n\nchic &lt;- readr::read_csv(\"https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae\")\n\nRows: 1461 Columns: 10\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (3): city, season, month\ndbl  (6): temp, o3, dewpoint, pm10, yday, year\ndate (1): date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n💡 The :: symbolizes namespace and enables accessing a function without loading the entire package. Alternatively, you could load the readr package first using library(readr) and then execute chic &lt;- read_csv(...) subsequently.\n\ntibble::glimpse(chic)\n\nRows: 1,461\nColumns: 10\n$ city     &lt;chr&gt; \"chic\", \"chic\", \"chic\", \"chic\", \"chic\", \"chic\", \"chic\", \"chic…\n$ date     &lt;date&gt; 1997-01-01, 1997-01-02, 1997-01-03, 1997-01-04, 1997-01-05, …\n$ temp     &lt;dbl&gt; 36.0, 45.0, 40.0, 51.5, 27.0, 17.0, 16.0, 19.0, 26.0, 16.0, 1…\n$ o3       &lt;dbl&gt; 5.659256, 5.525417, 6.288548, 7.537758, 20.760798, 14.940874,…\n$ dewpoint &lt;dbl&gt; 37.500, 47.250, 38.000, 45.500, 11.250, 5.750, 7.000, 17.750,…\n$ pm10     &lt;dbl&gt; 13.052268, 41.948600, 27.041751, 25.072573, 15.343121, 9.3646…\n$ season   &lt;chr&gt; \"Winter\", \"Winter\", \"Winter\", \"Winter\", \"Winter\", \"Winter\", \"…\n$ yday     &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18…\n$ month    &lt;chr&gt; \"Jan\", \"Jan\", \"Jan\", \"Jan\", \"Jan\", \"Jan\", \"Jan\", \"Jan\", \"Jan\"…\n$ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1…\n\n\n\nlibrary(gt)\nhead(chic, 10) %&gt;% gt()\n\n\n\n\n\n\n\n\ncity\ndate\ntemp\no3\ndewpoint\npm10\nseason\nyday\nmonth\nyear\n\n\n\n\nchic\n1997-01-01\n36.0\n5.659256\n37.500\n13.052268\nWinter\n1\nJan\n1997\n\n\nchic\n1997-01-02\n45.0\n5.525417\n47.250\n41.948600\nWinter\n2\nJan\n1997\n\n\nchic\n1997-01-03\n40.0\n6.288548\n38.000\n27.041751\nWinter\n3\nJan\n1997\n\n\nchic\n1997-01-04\n51.5\n7.537758\n45.500\n25.072573\nWinter\n4\nJan\n1997\n\n\nchic\n1997-01-05\n27.0\n20.760798\n11.250\n15.343121\nWinter\n5\nJan\n1997\n\n\nchic\n1997-01-06\n17.0\n14.940874\n5.750\n9.364655\nWinter\n6\nJan\n1997\n\n\nchic\n1997-01-07\n16.0\n11.920985\n7.000\n20.228428\nWinter\n7\nJan\n1997\n\n\nchic\n1997-01-08\n19.0\n8.678477\n17.750\n33.134819\nWinter\n8\nJan\n1997\n\n\nchic\n1997-01-09\n26.0\n13.355892\n24.000\n12.118381\nWinter\n9\nJan\n1997\n\n\nchic\n1997-01-10\n16.0\n10.448264\n5.375\n24.761534\nWinter\n10\nJan\n1997",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>The Dataset</span>"
+    ]
+  },
+  {
+    "objectID": "ch3.html",
+    "href": "ch3.html",
+    "title": "3  The ggplot2 Package",
+    "section": "",
+    "text": "3.1 A Default ggplot\nBefore diving into the capabilities of {ggplot2}, we need to load the package. Alternatively, we can load it through the tidyverse package collection:\nlibrary(ggplot2)\n# Or,\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ lubridate 1.9.3     ✔ tibble    3.2.1\n✔ purrr     1.0.2     ✔ tidyr     1.3.1\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nThe syntax of {ggplot2} differs from base R. Following the basic elements, a default ggplot requires specifying three things: the data, aesthetics, and a geometry. To begin defining a plotting object, we call ggplot(data = df), indicating that we’ll work with that dataset. Typically, we aim to plot two variables—one on the x-axis and one on the y-axis. These are positional aesthetics, so we add aes(x = var1, y = var2) to the ggplot() call (where aes() denotes aesthetics). However, there are cases where one may need to specify one, three, or more variables, which we’ll address later.\n💡 We indicate the data outside of aes() and include the variables that ggplot maps to the aesthetics inside of aes().\nIn this instance, we assign the variable date to the x-position and the variable temp to the y-position. Subsequently, we’ll also map variables to various other aesthetics such as color, size, and shape.\n(g &lt;- ggplot(chic, aes(x = date, y = temp)))\nAh, the reason only a panel is generated when executing this code is because {ggplot2} lacks information on how we want to visualize the data. We still need to specify a geometry!\nIn {ggplot2}, you can store the current ggobject in a variable of your choosing, such as g. This allows you to extend the ggobject later by adding additional layers, either all at once or by assigning it to the same or another variable.\n💡 By using parentheses when assigning an object, the object will be printed immediately. Instead of writing g &lt;- ggplot(...) followed by g, we can simply write (g &lt;- ggplot(...)).\nThere’s a wide array of geometries in {ggplot2}, often referred to as geoms because their function names typically start with geom_. You can find the full list of default geoms here, and there are even more options available through extension packages, which you can explore here. To instruct {ggplot2} on the style we want to use, we can, for example, add geom_point() to create a scatter plot:\ng + geom_point()\nGreat! However, this data could also be represented as a line plot (although it might not be the optimal choice, but it’s a common practice). So, we can simply replace geom_point() with geom_line() and boom!\ng + geom_line()\nIndeed, one can combine multiple geometric layers, and this is where the magic and fun truly begin!\ng + geom_line() + geom_point()\nThat’s enough discussion on geometries for now. Don’t worry, we’ll dive into various plot types at a later point, as outlined here.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>The `ggplot2` Package</span>"
+    ]
+  },
+  {
+    "objectID": "ch3.html#default",
+    "href": "ch3.html#default",
+    "title": "3  The ggplot2 Package",
+    "section": "",
+    "text": "3.1.1 Change Properties of Geometries\nWithin the geom_* command, you can already manipulate visual aesthetics such as the color, shape, and size of your points. Let’s transform all points into large fire-red diamonds!\n\ng + geom_point(color = \"firebrick\", shape = \"diamond\", size = 2)\n\n\n\n\n\n\n\n\n💡 {ggplot2} understands both color and colour as well as the short version col.\n\n\n💁 You can utilize preset colors (a full list can be found here) or hex color codes, both enclosed in quotes. Additionally, you can specify RGB/RGBA colors using the rgb() function. Click to expand:\n\n\ng + geom_point(color = \"#b22222\", shape = \"diamond\", size = 2)\ng + geom_point(color = rgb(178, 34, 34, maxColorValue = 255), shape = \"diamond\", size = 2)\n\n\n\n\n\n\n\n\n\n\n\nEach geom has its unique properties, referred to as arguments, and the same argument might produce different effects depending on the geom you’re employing.\n\ng + geom_point(color = \"firebrick\", shape = \"diamond\", size = 2) +\n    geom_line(color = \"firebrick\", linetype = \"dotted\", lwd = .3)\n\n\n\n\n\n\n\n\n\n\n3.1.2 Replace the default ggplot2 theme\nTo further demonstrate ggplot’s versatility, let’s enhance the appearance by removing the default grayish {ggplot2} style and setting a different built-in theme, such as theme_bw(). By using theme_set(), all subsequent plots will adopt the same black-and-white theme. This adjustment will notably enhance the appearance of the red points!\n\ntheme_set(theme_bw())\n\ng + geom_point(color = \"firebrick\")\n\n\n\n\n\n\n\n\nFor further details on using built-in themes and customizing themes, refer to the section “Working with Themes”. Starting from the next chapter, we’ll also utilize the theme() function to customize specific elements of the theme.\n💡 theme() is a crucial command for manually adjusting various theme elements such as texts, rectangles, and lines.\nTo explore the numerous details of a ggplot theme that can be modified, refer to the extensive list available here. Take your time, as it’s a comprehensive list!",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>The `ggplot2` Package</span>"
+    ]
+  },
+  {
+    "objectID": "ch4.html",
+    "href": "ch4.html",
+    "title": "4  Working with Axes",
+    "section": "",
+    "text": "4.1 Change Axis Titles\nTo add clear and descriptive labels to the axes, we can utilize the labs() function. This function allows us to provide a character string for each label we wish to modify, such as x and y:\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\")\nTypically, you can specify symbols by directly adding the symbol itself (e.g., “°”). However, the code below also enables the addition of not only symbols but also features like superscripts:\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = expression(paste(\"Temperature (\", degree ~ F, \")\"^\"(Hey, why should we use metric units?!)\")))",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with Axes</span>"
+    ]
+  },
+  {
+    "objectID": "ch4.html#change-axis-titles",
+    "href": "ch4.html#change-axis-titles",
+    "title": "4  Working with Axes",
+    "section": "",
+    "text": "💁 You also can add axis titles by using xlab() and ylab(). Click to see example.\n\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  xlab(\"Year\") +\n  ylab(\"Temperature (°F)\")",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with Axes</span>"
+    ]
+  },
+  {
+    "objectID": "ch4.html#increase-space-between-axis-and-axis-titles",
+    "href": "ch4.html#increase-space-between-axis-and-axis-titles",
+    "title": "4  Working with Axes",
+    "section": "4.2 Increase Space between Axis and Axis Titles",
+    "text": "4.2 Increase Space between Axis and Axis Titles\ntheme() is a crucial command for adjusting specific theme elements such as texts, titles, boxes, symbols, backgrounds, and more. We’ll be utilizing this command extensively! Initially, we’ll focus on modifying text elements. We can customize the properties of all text elements or specific ones, such as axis titles, by overriding the default element_text() within the theme() call:\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(axis.title.x = element_text(vjust = 0, size = 15),\n        axis.title.y = element_text(vjust = 2, size = 15))\n\n\n\n\n\n\n\n\nThe vjust parameter controls vertical alignment and typically ranges between 0 and 1, but you can also specify values outside that range. It’s worth noting that even when adjusting the position of the axis title along the y-axis horizontally, we still need to specify vjust (which is correct from the perspective of the label’s alignment). Additionally, you can modify the distance by specifying the margin for both text elements:\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(axis.title.x = element_text(margin = margin(t = 10), size = 15),\n        axis.title.y = element_text(margin = margin(r = 10), size = 15))\n\n\n\n\n\n\n\n\nThe labels t and r within the margin() object correspond to top and right, respectively. Alternatively, you can specify all four margins using margin(t, r, b, l). It’s important to note that we need to adjust the right margin to modify the space on the y-axis, not the bottom margin.\n💡 A helpful mnemonic for remembering the order of the margin sides is “t-r-ou-b-l-e”.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with Axes</span>"
+    ]
+  },
+  {
+    "objectID": "ch4.html#change-aesthetics-of-axis-titles",
+    "href": "ch4.html#change-aesthetics-of-axis-titles",
+    "title": "4  Working with Axes",
+    "section": "4.3 Change Aesthetics of Axis Titles",
+    "text": "4.3 Change Aesthetics of Axis Titles\nOnce more, we utilize the theme() function to modify the axis.title element and/or its subordinated elements, axis.title.x and axis.title.y. Within the element_text() function, we can override defaults for properties such as size, color, and face:\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(axis.title = element_text(size = 15, color = \"firebrick\",\n                                  face = \"italic\"))\n\n\n\n\n\n\n\n\nThe face argument can be used to make the font bold or italic or even bold.italic.\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(axis.title.x = element_text(color = \"sienna\", size = 15),\n        axis.title.y = element_text(color = \"orangered\", size = 15))\n\n\n\n\n\n\n\n\n\n\n💁 You could also employ a combination of axis.title and axis.title.y, as axis.title.x inherits values from axis.title. Expand to See the example below:\n\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(axis.title = element_text(color = \"sienna\", size = 15),\n        axis.title.y = element_text(color = \"orangered\", size = 15))\n\n\n\n\n\n\n\n\n\nYou can adjust some properties for both axis titles simultaneously, while modifying others exclusively for one axis or individual properties for each axis title:\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(axis.title = element_text(color = \"sienna\", size = 15, face = \"bold\"),\n        axis.title.y = element_text(face = \"bold.italic\"))",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with Axes</span>"
+    ]
+  },
+  {
+    "objectID": "ch4.html#change-aesthetics-of-axis-text",
+    "href": "ch4.html#change-aesthetics-of-axis-text",
+    "title": "4  Working with Axes",
+    "section": "4.4 Change Aesthetics of Axis Text",
+    "text": "4.4 Change Aesthetics of Axis Text\nLikewise, you can alter the appearance of the axis text (i.e., the numbers) by utilizing axis.text and/or its subordinated elements, axis.text.x and axis.text.y:\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(axis.text = element_text(color = \"dodgerblue\", size = 12),\n        axis.text.x = element_text(face = \"italic\"))",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with Axes</span>"
+    ]
+  },
+  {
+    "objectID": "ch4.html#rotate-axis-text",
+    "href": "ch4.html#rotate-axis-text",
+    "title": "4  Working with Axes",
+    "section": "4.5 Rotate Axis Text",
+    "text": "4.5 Rotate Axis Text\nYou can rotate any text elements by specifying an angle. Subsequently, you can adjust the position of the text horizontally (0 = left, 1 = right) and vertically (0 = top, 1 = bottom) using hjust and vjust:\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(axis.text.x = element_text(angle = 50, vjust = 1, hjust = 1, size = 12))",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with Axes</span>"
+    ]
+  },
+  {
+    "objectID": "ch4.html#removing-axis-text-ticks",
+    "href": "ch4.html#removing-axis-text-ticks",
+    "title": "4  Working with Axes",
+    "section": "4.6 Removing Axis Text & Ticks",
+    "text": "4.6 Removing Axis Text & Ticks\nThere might be rare occasions where you need to remove axis text and ticks. Here’s how you can achieve it:\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(axis.ticks.y = element_blank(),\n        axis.text.y = element_blank())\n\n\n\n\n\n\n\n\nI’ve introduced three theme elements—text, lines, and rectangles—but there’s actually one more: element_blank(), which removes the element entirely. However, it’s not considered an official element like the others.\n💡 If you wish to remove a theme element entirely, you can always use element_blank().",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with Axes</span>"
+    ]
+  },
+  {
+    "objectID": "ch4.html#removing-axis-titles",
+    "href": "ch4.html#removing-axis-titles",
+    "title": "4  Working with Axes",
+    "section": "4.7 Removing Axis Titles",
+    "text": "4.7 Removing Axis Titles\nWe can use theme_blank(), but it’s much simpler to just omit the label in the labs() (or xlab()) call:\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = NULL, y = \"\")\n\n\n\n\n\n\n\n\n💡 Note that NULL removes the element (similarly to element_blank()), while empty quotes \"\" will keep the spacing for the axis title but print nothing.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with Axes</span>"
+    ]
+  },
+  {
+    "objectID": "ch4.html#limiting-axis-range",
+    "href": "ch4.html#limiting-axis-range",
+    "title": "4  Working with Axes",
+    "section": "4.8 Limiting Axis Range",
+    "text": "4.8 Limiting Axis Range\nOccasionally, you may want to focus on a specific range of your data without altering the dataset itself. You can accomplish this with ease:\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  ylim(c(0, 50))\n\nWarning: Removed 777 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nAlternatively, you can utilize scale_y_continuous(limits = c(0, 50)) or coord_cartesian(ylim = c(0, 50)). The former removes all data points outside the specified range, while the latter adjusts the visible area, similar to ylim(c(0, 50)). At first glance, it may seem that both approaches yield the same result. However, there is an important distinction—compare the following two plots:\n\n\nWarning: Removed 777 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nYou may have noticed that on the left, there is some empty buffer around your y limits, while on the right, points are plotted right up to the border and even beyond. This effectively illustrates the concept of subsetting (left) versus zooming (right). To demonstrate why this distinction is significant, let’s examine a different chart type: a box plot.\n\n\nWarning: Removed 777 rows containing non-finite outside the scale range\n(`stat_boxplot()`).\n\n\n\n\n\n\n\n\n\nIndeed, because scale_x|y_continuous() subsets the data first, we obtain completely different (and potentially incorrect, especially if this was not our intention) estimates for the box plots! This realization highlights the importance of ensuring data integrity throughout the plotting process. It’s crucial to avoid inadvertently manipulating the data while plotting, as it could lead to inaccurate summary statistics reported in your report, paper, or thesis.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with Axes</span>"
+    ]
+  },
+  {
+    "objectID": "ch4.html#forcing-plot-to-start-at-origin",
+    "href": "ch4.html#forcing-plot-to-start-at-origin",
+    "title": "4  Working with Axes",
+    "section": "4.9 Forcing Plot to Start at Origin",
+    "text": "4.9 Forcing Plot to Start at Origin\nRelated to that, you can instruct R to plot the graph starting at the origin:\n\nchic_high &lt;- dplyr::filter(chic, temp &gt; 25, o3 &gt; 20)\n\nggplot(chic_high, aes(x = temp, y = o3)) +\n  geom_point(color = \"darkcyan\") +\n  labs(x = \"Temperature higher than 25°F\",\n       y = \"Ozone higher than 20 ppb\") +\n  expand_limits(x = 0, y = 0)\n\n\n\n\n\n\n\n\n\n\n💁 Using coord_cartesian(xlim = c(0, NA), ylim = c(0, NA)) will produce the same result. CLICK to See the example below:\n\n\nchic_high &lt;- dplyr::filter(chic, temp &gt; 25, o3 &gt; 20)\n\nggplot(chic_high, aes(x = temp, y = o3)) +\n  geom_point(color = \"darkcyan\") +\n  labs(x = \"Temperature higher than 25°F\",\n       y = \"Ozone higher than 20 ppb\") +\n  coord_cartesian(xlim = c(0, NA), ylim = c(0, NA))\n\n\n\n\n\n\n\n\n\nBut we can also ensure that it truly starts at the origin!\n\nggplot(chic_high, aes(x = temp, y = o3)) +\n  geom_point(color = \"darkcyan\") +\n  labs(x = \"Temperature higher than 25°F\",\n       y = \"Ozone higher than 20 ppb\") +\n  expand_limits(x = 0, y = 0) +\n  coord_cartesian(expand = FALSE, clip = \"off\")\n\n\n\n\n\n\n\n\n💡 The clip = \"off\" argument in any coordinate system, always starting with coord_*, enables drawing outside of the panel area.\nHere, I invoke it to ensure that the tick marks at c(0, 0) remain intact and are not truncated. For further insights, refer to the Twitter thread by Claus Wilke.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with Axes</span>"
+    ]
+  },
+  {
+    "objectID": "ch4.html#axes-with-same-scaling",
+    "href": "ch4.html#axes-with-same-scaling",
+    "title": "4  Working with Axes",
+    "section": "4.10 Axes with Same Scaling",
+    "text": "4.10 Axes with Same Scaling\nFor demonstration purposes, let’s plot temperature against temperature with some random noise. The coord_equal() function provides a coordinate system with a specified ratio, representing the number of units on the y-axis equivalent to one unit on the x-axis. By default, ratio = 1 ensures that one unit on the x-axis is the same length as one unit on the y-axis:\n\nggplot(chic, aes(x = temp, y = temp + rnorm(nrow(chic), sd = 20))) +\n  geom_point(color = \"sienna\") +\n  labs(x = \"Temperature (°F)\", y = \"Temperature (°F) + random noise\") +\n  xlim(c(0, 100)) + ylim(c(0, 150)) +\n  coord_fixed()\n\nWarning: Removed 47 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nRatios higher than one result in units on the y-axis being longer than units on the x-axis, while ratios lower than one have the opposite effect:\n\nggplot(chic, aes(x = temp, y = temp + rnorm(nrow(chic), sd = 20))) +\n  geom_point(color = \"sienna\") +\n  labs(x = \"Temperature (°F)\", y = \"Temperature (°F) + random noise\") +\n  xlim(c(0, 100)) + ylim(c(0, 150)) +\n  coord_fixed(ratio = 1/5)\n\nWarning: Removed 48 rows containing missing values or values outside the scale range\n(`geom_point()`).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with Axes</span>"
+    ]
+  },
+  {
+    "objectID": "ch4.html#using-a-function-to-alter-labels",
+    "href": "ch4.html#using-a-function-to-alter-labels",
+    "title": "4  Working with Axes",
+    "section": "4.11 Using a Function to Alter Labels",
+    "text": "4.11 Using a Function to Alter Labels\nOccasionally, it’s useful to slightly modify your labels, such as adding units or percent signs, without altering your underlying data. You can achieve this using a function:\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = NULL) +\n  scale_y_continuous(label = function(x) {return(paste(x, \"Degrees Fahrenheit\"))})",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with Axes</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html",
+    "href": "ch5.html",
+    "title": "5  Working with Titles",
+    "section": "",
+    "text": "5.1 Add a Title\nWe can add a title by using the ggtitle() function:\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  ggtitle(\"Temperatures in Chicago\")\nAlternatively, you can utilize labs(). Here, you can include multiple arguments, such as a subtitle, a caption, and a tag, in addition to axis titles as demonstrated earlier:\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\",\n       title = \"Temperatures in Chicago\",\n       subtitle = \"Seasonal pattern of daily temperatures from 1997 to 2001\",\n       caption = \"Data: NMMAPS\",\n       tag = \"Fig. 1\")",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Working with Titles</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#making-title-bold-adding-a-space-at-the-baseline",
+    "href": "ch5.html#making-title-bold-adding-a-space-at-the-baseline",
+    "title": "5  Working with Titles",
+    "section": "5.2 Making Title Bold & Adding a Space at the Baseline",
+    "text": "5.2 Making Title Bold & Adding a Space at the Baseline\nOnce again, to adjust the properties of a theme element, we employ the theme() function. Similar to modifying text elements like axis.title and axis.text, we can alter the font face and margin for the title. These modifications apply not only to the title but also to other labels such as plot.subtitle, plot.caption, plot.tag, legend.title, legend.text, axis.title, and axis.text.\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\",\n       title = \"Temperatures in Chicago\") +\n  theme(plot.title = element_text(face = \"bold\",\n                                  margin = margin(10, 0, 10, 0),\n                                  size = 14))\n\n\n\n\n\n\n\n\n💡 A helpful mnemonic for remembering the order of the margin arguments is “t-r-oub-l-e”, which corresponds to the first letter of each side.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Working with Titles</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#adjusting-position-of-titles",
+    "href": "ch5.html#adjusting-position-of-titles",
+    "title": "5  Working with Titles",
+    "section": "5.3 Adjusting Position of Titles",
+    "text": "5.3 Adjusting Position of Titles\nThe general alignment (left, center, right) is controlled by hjust (horizontal adjustment):\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = NULL,\n       title = \"Temperatures in Chicago\",\n       caption = \"Data: NMMAPS\") +\n  theme(plot.title = element_text(hjust = 1, size = 16, face = \"bold.italic\"))\n\n\n\n\n\n\n\n\nCertainly, it’s also possible to adjust the vertical alignment, which is controlled by vjust. Since 2019, users have been able to specify the alignment of the title, subtitle, and caption either based on the panel area (the default) or the plot margin via plot.title.position and plot.caption.position. The latter is often the preferred choice from a design perspective, as it yields better results in most cases. Many users have expressed satisfaction with this new feature, particularly as it addresses issues with alignment, especially when dealing with very long y-axis labels:\n\n(g &lt;- ggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  scale_y_continuous(label = function(x) {return(paste(x, \"Degrees Fahrenheit\"))}) +\n  labs(x = \"Year\", y = NULL,\n       title = \"Temperatures in Chicago between 1997 and 2001 in Degrees Fahrenheit\",\n       caption = \"Data: NMMAPS\") +\n  theme(plot.title = element_text(size = 14, face = \"bold.italic\"),\n        plot.caption = element_text(hjust = 0)))\n\n\n\n\n\n\n\n\n\ng + theme(plot.title.position = \"plot\",\n          plot.caption.position = \"plot\")",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Working with Titles</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#using-a-non-traditional-font-in-your-title",
+    "href": "ch5.html#using-a-non-traditional-font-in-your-title",
+    "title": "5  Working with Titles",
+    "section": "5.4 Using a Non-Traditional Font in Your Title",
+    "text": "5.4 Using a Non-Traditional Font in Your Title\nYou can incorporate different fonts, not just the default one provided by ggplot (which can vary between operating systems). Several packages facilitate the usage of fonts installed on your machine, such as the showtext package, which simplifies the utilization of various font types (TrueType, OpenType, Type 1, web fonts, etc.) in R plots.\nOnce the package is loaded, you’ll need to import the desired font, which must also be installed on your device. I often utilize Google fonts, which can be imported using the font_add_google() function. However, you can add other fonts using font_add() as well. It’s important to note that even when using Google fonts, you must install the font and restart RStudio to apply it. if you found any warnings after doing all the steps, or the fonts aren’t working. Just install extrafont package and run font_import() function to import all the fonts in your system. and then loadfonts(device = \"win\", quiet = TRUE) to load the fonts. It’ll work like a charm. You can also check the available fonts in your system by running fonts().\n\nlibrary(showtext)\nlibrary(extrafont)\nfont_add_google(\"Playfair Display\", ## name of Google font\n                \"Playfair Display\")  ## name that will be used in R\nfont_add_google(\"Bangers\", \"Bangers\")\nloadfonts(device = \"win\", quiet = TRUE)\n\nNow, we can use those font families by theme() function:\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\",\n       title = \"Temperatures in Chicago\",\n       subtitle = \"Daily temperatures in °F from 1997 to 2001\") +\n  theme(plot.title = element_text(family = \"Bangers\", hjust = .5, size = 25),\n        plot.subtitle = element_text(family = \"Playfair Display\", hjust = .5, size = 15))\n\n\n\n\n\n\n\n\nYou can also establish a non-default font for all text elements of your plots. For more details, refer to the section “Working with Themes”. In this case, I’ll use Roboto Condensed as the new font for all subsequent plots.\n\nfont_add_google(\"Roboto Condensed\", \"Roboto Condensed\")\ntheme_set(theme_bw(base_size = 12, base_family = \"Roboto Condensed\"))\n\n\n(Previously, this tutorial utilized the {extrafont} package, which performed admirably until last year. However, suddenly I encountered issues where I couldn’t add any new fonts, and even after acquiring a new laptop, the package failed to detect any fonts altogether. As an alternative, I typically recommend the {ragg} package now. However, I encountered difficulties in making it work for my homepage. Therefore, I’m utilizing the {showtext} package, which is also excellent, albeit with a key distinction: you need to explicitly import the font you wish to use with {showtext}. Nonetheless, it appears that there are some technical challenges that are not optimally resolved by {showtext} (as mentioned in this Twitter thread), so you may want to consider using the package only as a last resort.)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Working with Titles</span>"
+    ]
+  },
+  {
+    "objectID": "ch5.html#adjusting-spacing-in-multi-line-text",
+    "href": "ch5.html#adjusting-spacing-in-multi-line-text",
+    "title": "5  Working with Titles",
+    "section": "5.5 Adjusting Spacing in Multi-Line Text",
+    "text": "5.5 Adjusting Spacing in Multi-Line Text\nTo modify the spacing between lines, you can utilize the lineheight argument. In the following example, I’ve compressed the lines together (lineheight &lt; 1).\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  ggtitle(\"Temperatures in Chicago\\nfrom 1997 to 2001\") +\n  theme(plot.title = element_text(lineheight = .8, size = 16))\n\n\n\n\n\n\n\n\nNow You can Change fonts on the fly!\n\nggplot(chic, aes(x = date, y = temp)) +\n    geom_point(color = \"firebrick\") +\n    labs(x = \"Year\", y = \"Temperature (°F)\") +\n    ggtitle(\"Temperatures in Chicago\\nfrom 1997 to 2001\") +\n    theme_bw(base_family = \"Berkshire Swash\")\n\n\n\n\n\n\n\n\nOr, Change it to Traditional Times New Roman:\n\nggplot(chic, aes(x = date, y = temp)) +\n    geom_point(color = \"firebrick\") +\n    labs(x = \"Year\", y = \"Temperature (°F)\") +\n    ggtitle(\"Temperatures in Chicago\\nfrom 1997 to 2001\") +\n    theme_bw(base_family = \"Times New Roman\")",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Working with Titles</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html",
+    "href": "ch6.html",
+    "title": "6  Working with Legends",
+    "section": "",
+    "text": "6.1 Disabling the Legend\nOne of the most common questions is: “How do I remove the legend?”\nIt’s quite straightforward and always effective with theme(legend.position = \"none\"):\nggplot(chic,\n       aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(legend.position = \"none\")\nYou can also utilize guides(color = \"none\") or scale_color_discrete(guide = \"none\"), depending on the specific case. While altering the theme element removes all legends at once, you can selectively remove specific legends using the latter options while keeping others:\nggplot(chic,\n       aes(x = date, y = temp,\n           color = season, shape = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  guides(color = \"none\")\nHere, for example, we retain the legend for the shapes while discarding the one for the colors.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html#eliminating-legend-titles",
+    "href": "ch6.html#eliminating-legend-titles",
+    "title": "6  Working with Legends",
+    "section": "6.2 Eliminating Legend Titles",
+    "text": "6.2 Eliminating Legend Titles\nAs we’ve previously learned, utilize element_blank() to render nothing:\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(legend.title = element_blank())\n\n\n\n\n\n\n\n\n\n\n💁 You can achieve the same outcome by setting the legend name to NULL, either through scale_color_discrete(name = NULL) or labs(color = NULL). Expand to see examples.\n\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  scale_color_discrete(name = NULL)\n\n\n\n\n\n\n\n\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  labs(color = NULL)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html#adjusting-legend-position",
+    "href": "ch6.html#adjusting-legend-position",
+    "title": "6  Working with Legends",
+    "section": "6.3 Adjusting Legend Position",
+    "text": "6.3 Adjusting Legend Position\nTo relocate the legend from its default position on the right side, you can use the legend.position argument within theme. Available positions include “top”, “right” (the default), “bottom”, and “left”.\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(legend.position = \"top\")\n\n\n\n\n\n\n\n\nYou can also position the legend inside the panel by specifying a vector with relative x and y coordinates ranging from 0 (left or bottom) to 1 (right or top):\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\",\n       color = NULL) +\n  theme(legend.position = c(.15, .15),\n        legend.background = element_rect(fill = \"transparent\"))\n\nWarning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2\n3.5.0.\nℹ Please use the `legend.position.inside` argument of `theme()` instead.\n\n\n\n\n\n\n\n\n\nHere, I also override the default white legend background with a transparent fill to ensure the legend doesn’t obscure any data points.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html#modifying-legend-direction",
+    "href": "ch6.html#modifying-legend-direction",
+    "title": "6  Working with Legends",
+    "section": "6.4 Modifying Legend Direction",
+    "text": "6.4 Modifying Legend Direction\nBy default, the legend direction is vertical. However, when you select either the “top” or “bottom” position, it becomes horizontal. Nevertheless, you can freely switch the direction as desired:\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(legend.position = c(.5, .97),\n        legend.background = element_rect(fill = \"transparent\")) +\n  guides(color = guide_legend(direction = \"horizontal\"))",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html#change-style-of-the-legend-title",
+    "href": "ch6.html#change-style-of-the-legend-title",
+    "title": "6  Working with Legends",
+    "section": "6.5 Change Style of the Legend Title",
+    "text": "6.5 Change Style of the Legend Title\nYou can customize the appearance of the legend title by adjusting the theme element legend.title:\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(legend.title = element_text(family = \"Playfair Display\",\n                                    color = \"chocolate\",\n                                    size = 14, face = \"bold\"))",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html#modifying-legend-title",
+    "href": "ch6.html#modifying-legend-title",
+    "title": "6  Working with Legends",
+    "section": "6.6 Modifying Legend Title",
+    "text": "6.6 Modifying Legend Title\nThe simplest method to change the title of the legend is through the labs() layer:\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\",\n       color = \"Seasons\\nindicated\\nby colors:\") +\n  theme(legend.title = element_text(family = \"Playfair Display\",\n                                    color = \"chocolate\",\n                                    size = 14, face = \"bold\"))\n\n\n\n\n\n\n\n\nYou can adjust the legend details using scale_color_discrete(name = \"title\") or guides(color = guide_legend(\"title\")):\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(legend.title = element_text(family = \"Playfair Display\",\n                                    color = \"chocolate\",\n                                    size = 14, face = \"bold\")) +\n  scale_color_discrete(name = \"Seasons\\nindicated\\nby colors:\")",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html#rearrange-order-of-legend-keys",
+    "href": "ch6.html#rearrange-order-of-legend-keys",
+    "title": "6  Working with Legends",
+    "section": "6.7 Rearrange Order of Legend Keys",
+    "text": "6.7 Rearrange Order of Legend Keys\nThis can be accomplished by changing the levels of season:\n\nchic$season &lt;-\n  factor(chic$season,\n         levels = c(\"Winter\", \"Spring\", \"Summer\", \"Autumn\"))\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\")",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html#modify-legend-labels",
+    "href": "ch6.html#modify-legend-labels",
+    "title": "6  Working with Legends",
+    "section": "6.8 Modify Legend Labels",
+    "text": "6.8 Modify Legend Labels\nTo replace the seasons with the months they represent, provide a vector of names in the scale_color_discrete() call:\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  scale_color_discrete(\n    name = \"Seasons:\",\n    labels = c(\"Mar—May\", \"Jun—Aug\", \"Sep—Nov\", \"Dec—Feb\")\n  ) +\n  theme(legend.title = element_text(\n    family = \"Playfair Display\", color = \"chocolate\", size = 14, face = 2\n  ))",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html#adjust-background-boxes-in-the-legend",
+    "href": "ch6.html#adjust-background-boxes-in-the-legend",
+    "title": "6  Working with Legends",
+    "section": "6.9 Adjust Background Boxes in the Legend",
+    "text": "6.9 Adjust Background Boxes in the Legend\nTo alter the background color (fill) of the legend keys, we modify the setting for the theme element legend.key:\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(legend.key = element_rect(fill = \"darkgoldenrod1\"),\n        legend.title = element_text(family = \"Playfair Display\",\n                                    color = \"chocolate\",\n                                    size = 14, face = 2)) +\n  scale_color_discrete(\"Seasons:\")\n\n\n\n\n\n\n\n\nIf you wish to remove them entirely, use fill = NA or fill = \"transparent\".",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html#adjust-size-of-legend-symbols",
+    "href": "ch6.html#adjust-size-of-legend-symbols",
+    "title": "6  Working with Legends",
+    "section": "6.10 Adjust Size of Legend Symbols",
+    "text": "6.10 Adjust Size of Legend Symbols\nThe default size of points in the legend may cause them to appear too small, especially without boxes. To modify this, you can again use the guides layer as follows:\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(legend.key = element_rect(fill = NA),\n        legend.title = element_text(color = \"chocolate\",\n                                    size = 14, face = 2)) +\n  scale_color_discrete(\"Seasons:\") +\n  guides(color = guide_legend(override.aes = list(size = 6)))",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html#exclude-a-layer-from-the-legend",
+    "href": "ch6.html#exclude-a-layer-from-the-legend",
+    "title": "6  Working with Legends",
+    "section": "6.11 Exclude a Layer from the Legend",
+    "text": "6.11 Exclude a Layer from the Legend\nSuppose you have two different geometric layers mapped to the same variable, such as color being used as an aesthetic for both a point layer and a rug layer of the same data. By default, both the points and the “line” end up in the legend like this:\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  geom_rug()\n\n\n\n\n\n\n\n\nYou can utilize show.legend = FALSE to exclude a layer from the legend:\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  geom_rug(show.legend = FALSE)",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html#manually-adding-legend-items",
+    "href": "ch6.html#manually-adding-legend-items",
+    "title": "6  Working with Legends",
+    "section": "6.12 Manually Adding Legend Items",
+    "text": "6.12 Manually Adding Legend Items\nBy default, {ggplot2} won’t add a legend unless you map aesthetics (color, size, etc.) to a variable. However, there are occasions where you may want to include a legend for clarity.\nHere’s the default behavior:\n\nggplot(chic, aes(x = date, y = o3)) +\n  geom_line(color = \"gray\") +\n  geom_point(color = \"darkorange2\") +\n  labs(x = \"Year\", y = \"Ozone\")\n\n\n\n\n\n\n\n\nTo force a legend, we can map a guide to a variable. Here, we’re mapping the lines and the points using aes(), but we’re not mapping to a variable in our dataset. Instead, we’re using a single string for each, ensuring we get just one color for each.\n\nggplot(chic, aes(x = date, y = o3)) +\n  geom_line(aes(color = \"line\")) +\n  geom_point(aes(color = \"points\")) +\n  labs(x = \"Year\", y = \"Ozone\") +\n  scale_color_discrete(\"Type:\")\n\n\n\n\n\n\n\n\nWe’re getting close, but this is not what we want. We desire gray lines and red points. To change the colors, we use scale_color_manual(). Additionally, we override the legend aesthetics using the guide() function.\nNow, we have a plot with gray lines and red points, as well as a single gray line and a single red point as legend symbols.\n\nggplot(chic, aes(x = date, y = o3)) +\n  geom_line(aes(color = \"line\")) +\n  geom_point(aes(color = \"points\")) +\n  labs(x = \"Year\", y = \"Ozone\") +\n  scale_color_manual(name = NULL,\n                     guide = \"legend\",\n                     values = c(\"points\" = \"darkorange2\",\n                                \"line\" = \"gray\")) +\n  guides(color = guide_legend(override.aes = list(linetype = c(1, 0),\n                                                  shape = c(NA, 16))))",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch6.html#use-other-legend-styles",
+    "href": "ch6.html#use-other-legend-styles",
+    "title": "6  Working with Legends",
+    "section": "6.13 Use Other Legend Styles",
+    "text": "6.13 Use Other Legend Styles\nThe default legend for categorical variables such as season is a guide_legend(), as you have seen in several previous examples. However, if you map a continuous variable to an aesthetic, {ggplot2} will by default not use guide_legend() but guide_colorbar() (or guide_colourbar()).\n\nggplot(chic,\n       aes(x = date, y = temp, color = temp)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\", color = \"Temperature (°F)\")\n\n\n\n\n\n\n\n\nHowever, by using guide_legend(), you can force the legend to display discrete colors for a given number of breaks as in the case of a categorical variable:\n\nggplot(chic,\n       aes(x = date, y = temp, color = temp)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\", color = \"Temperature (°F)\") +\n  guides(color = guide_legend())\n\n\n\n\n\n\n\n\nYou can also utilize binned scales:\n\nggplot(chic,\n       aes(x = date, y = temp, color = temp)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\", color = \"Temperature (°F)\") +\n  guides(color = guide_bins())\n\n\n\n\n\n\n\n\n… or binned scales as discrete colorbars:\n\nggplot(chic,\n       aes(x = date, y = temp, color = temp)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\", color = \"Temperature (°F)\") +\n  guides(color = guide_colorsteps())",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Working with Legends</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html",
+    "href": "ch7.html",
+    "title": "7  Working with Backgrounds & Grid Lines",
+    "section": "",
+    "text": "7.1 Change the Panel Background Color\nYou can adjust the background color (fill) of the panel area (where the data is plotted) by modifying the theme element panel.background:\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"#1D8565\", size = 2) +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(panel.background = element_rect(\n    fill = \"#64D2AA\", color = \"#64D2AA\", linewidth = 2)\n  )\nKeep in mind that the true color — the outline of the panel background — didn’t change despite our specification. This is because there’s a layer on top of panel.background, namely panel.border. However, it’s important to use a transparent fill here; otherwise, your data will be hidden behind this layer. In the following example, I illustrate this by using a semitransparent hex color for the fill argument in element_rect:\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"#1D8565\", size = 2) +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(panel.border = element_rect(\n    fill = \"#64D2AA99\", color = \"#64D2AA\", linewidth = 2)\n  )",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Working with Backgrounds & Grid Lines</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#change-grid-lines",
+    "href": "ch7.html#change-grid-lines",
+    "title": "7  Working with Backgrounds & Grid Lines",
+    "section": "7.2 Change Grid Lines",
+    "text": "7.2 Change Grid Lines\nThere are two types of grid lines: major grid lines indicating the ticks and minor grid lines between the major ones. You can customize both by overwriting the defaults for panel.grid or for each set of gridlines separately, panel.grid.major and panel.grid.minor.\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(panel.grid.major = element_line(color = \"gray10\", linewidth = .5),\n        panel.grid.minor = element_line(color = \"gray70\", linewidth = .25))\n\n\n\n\n\n\n\n\nYou can even specify settings for all four different levels of grid lines: major horizontal, major vertical, minor horizontal, and minor vertical.\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(panel.grid.major = element_line(linewidth = .5, linetype = \"dashed\"),\n        panel.grid.minor = element_line(linewidth = .25, linetype = \"dotted\"),\n        panel.grid.major.x = element_line(color = \"red1\"),\n        panel.grid.major.y = element_line(color = \"blue1\"),\n        panel.grid.minor.x = element_line(color = \"red4\"),\n        panel.grid.minor.y = element_line(color = \"blue4\"))\n\n\n\n\n\n\n\n\nAnd, of course, you can remove some or all grid lines if you like. For instance, to remove all grid lines, you can set panel.grid = element_blank(). Alternatively, you can remove only major or minor grid lines by specifying panel.grid.major or panel.grid.minor accordingly and setting them to element_blank().\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(panel.grid.minor = element_blank())\n\n\n\n\n\n\n\n\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(panel.grid = element_blank())",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Working with Backgrounds & Grid Lines</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#change-spacing-of-gridlines",
+    "href": "ch7.html#change-spacing-of-gridlines",
+    "title": "7  Working with Backgrounds & Grid Lines",
+    "section": "7.3 Change Spacing of Gridlines",
+    "text": "7.3 Change Spacing of Gridlines\nFurthermore, you can also define the breaks between both major and minor grid lines by specifying the breaks argument.\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  scale_y_continuous(breaks = seq(0, 100, 10),\n                     minor_breaks = seq(0, 100, 2.5))",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Working with Backgrounds & Grid Lines</span>"
+    ]
+  },
+  {
+    "objectID": "ch7.html#change-the-plot-background-color",
+    "href": "ch7.html#change-the-plot-background-color",
+    "title": "7  Working with Backgrounds & Grid Lines",
+    "section": "7.4 Change the Plot Background Color",
+    "text": "7.4 Change the Plot Background Color\nSimilarly, to change the background color (fill) of the plot area, you can modify the theme element plot.background using the theme() function. This allows you to customize the appearance of the entire plot area according to your preferences.\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(plot.background = element_rect(fill = \"gray60\",\n                                       color = \"gray30\", linewidth = 2))\n\n\n\n\n\n\n\n\nYou can achieve a unique background color by either setting the same colors in both panel.background and plot.background or by setting the background filling of the panel to \"transparent\" or NA. This customization can help you create visually appealing plots that match your design preferences.\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(panel.background = element_rect(fill = NA),\n        plot.background = element_rect(fill = \"gray60\",\n                                       color = \"gray30\", linewidth = 2))",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Working with Backgrounds & Grid Lines</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html",
+    "href": "ch9.html",
+    "title": "9  Working with Multi-Panel Plots",
+    "section": "",
+    "text": "9.1 Create a Grid of Small Multiples Based on Two Variables\nWhen dealing with two variables, facet_grid is the appropriate choice. In this function, the order of the variables determines the number of rows and columns in the grid:\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"orangered\", alpha = .3) +\n  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  facet_grid(year ~ season)\nTo switch from a row-based arrangement to a column-based one, you can modify facet_grid(year ~ season) to facet_grid(season ~ year).",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Multi-Panel Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html#create-small-multiples-based-on-one-variable",
+    "href": "ch9.html#create-small-multiples-based-on-one-variable",
+    "title": "9  Working with Multi-Panel Plots",
+    "section": "9.2 Create Small Multiples Based on One Variable",
+    "text": "9.2 Create Small Multiples Based on One Variable\nfacet_wrap creates a facet of a single variable, specified with a tilde in front: facet_wrap(~ variable). The appearance of these subplots is determined by the arguments ncol and nrow:\n\ng &lt;-\n  ggplot(chic, aes(x = date, y = temp)) +\n    geom_point(color = \"chartreuse4\", alpha = .3) +\n    labs(x = \"Year\", y = \"Temperature (°F)\") +\n    theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))\n\ng + facet_wrap(~ year)\n\n\n\n\n\n\n\n\nAccordingly, you can arrange the plots as you like, instead as a matrix in one row…\n\ng + facet_wrap(~ year, nrow = 1)\n\n\n\n\n\n\n\n\n… or even as a asymmetric grid of plots:\n\ng + facet_wrap(~ year, ncol = 3) + theme(axis.title.x = element_text(hjust = .15))",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Multi-Panel Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html#allow-axes-to-roam-free",
+    "href": "ch9.html#allow-axes-to-roam-free",
+    "title": "9  Working with Multi-Panel Plots",
+    "section": "9.3 Allow Axes to Roam Free",
+    "text": "9.3 Allow Axes to Roam Free\nThe default for multi-panel plots in {ggplot2} is to use equivalent scales in each panel. But sometimes you want to allow a panels own data to determine the scale. This is often not a good idea since it may give your user the wrong impression about the data. But sometimes it is indeed useful and to do this you can set scales = \"free\":\n\ng + facet_wrap(~ year, nrow = 2, scales = \"free\")\n\n\n\n\n\n\n\n\nNote that both, x and y axes differ in their range!\n\n9.3.0.1 Use facet_wrap with Two Variables\nThe function facet_wrap can also take two variables:\n\ng + facet_wrap(year ~ season, nrow = 4, scales = \"free_x\")\n\n\n\n\n\n\n\n\nWhen using facet_wrap you are still able to control the grid design: you can rearrange the number of plots per row and column and you can also let all axes roam free. In contrast, facet_grid will also take a free argument but will only let it roam free per column or row:\n\ng + facet_grid(year ~ season, scales = \"free_x\")",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Multi-Panel Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html#modify-style-of-strip-texts",
+    "href": "ch9.html#modify-style-of-strip-texts",
+    "title": "9  Working with Multi-Panel Plots",
+    "section": "9.4 Modify Style of Strip Texts",
+    "text": "9.4 Modify Style of Strip Texts\nBy using theme, you can modify the appearance of the strip text (i.e. the title for each facet) and the strip text boxes:\n\ng + facet_wrap(~ year, nrow = 1, scales = \"free_x\") +\n  theme(strip.text = element_text(face = \"bold\", color = \"chartreuse4\",\n                                  hjust = 0, size = 20),\n        strip.background = element_rect(fill = \"chartreuse3\", linetype = \"dotted\"))\n\n\n\n\n\n\n\n\nThe following two functions adapted from this answer by Claus Wilke, the author of the {ggtext} package, allow to highlight specific labels in combination with element_textbox() that is provided by {ggtext}.\n\nlibrary(ggtext)\nlibrary(purrr) ## for %||%\n\nelement_textbox_highlight &lt;- function(..., hi.labels = NULL, hi.fill = NULL,\n                                      hi.col = NULL, hi.box.col = NULL, hi.family = NULL) {\n  structure(\n    c(element_textbox(...),\n      list(hi.labels = hi.labels, hi.fill = hi.fill, hi.col = hi.col, hi.box.col = hi.box.col, hi.family = hi.family)\n    ),\n    class = c(\"element_textbox_highlight\", \"element_textbox\", \"element_text\", \"element\")\n  )\n}\n\nelement_grob.element_textbox_highlight &lt;- function(element, label = \"\", ...) {\n  if (label %in% element$hi.labels) {\n    element$fill &lt;- element$hi.fill %||% element$fill\n    element$colour &lt;- element$hi.col %||% element$colour\n    element$box.colour &lt;- element$hi.box.col %||% element$box.colour\n    element$family &lt;- element$hi.family %||% element$family\n  }\n  NextMethod()\n}\n\nNow you can use it and specify for example all striptexts:\n\ng + facet_wrap(year ~ season, nrow = 4, scales = \"free_x\") +\n  theme(\n    strip.background = element_blank(),\n    strip.text = element_textbox_highlight(\n      family = \"Playfair Display\", size = 12, face = \"bold\",\n      fill = \"white\", box.color = \"chartreuse4\", color = \"chartreuse4\",\n      halign = .5, linetype = 1, r = unit(5, \"pt\"), width = unit(1, \"npc\"),\n      padding = margin(5, 0, 3, 0), margin = margin(0, 1, 3, 1),\n      hi.labels = c(\"1997\", \"1998\", \"1999\", \"2000\"),\n      hi.fill = \"chartreuse4\", hi.box.col = \"black\", hi.col = \"white\"\n    )\n  )\n\n\n\n\n\n\n\n\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(aes(color = season == \"Summer\"), alpha = .3) +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  facet_wrap(~ season, nrow = 1) +\n  scale_color_manual(values = c(\"gray40\", \"firebrick\"), guide = \"none\") +\n  theme(\n    axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1),\n    strip.background = element_blank(),\n    strip.text = element_textbox_highlight(\n      size = 12, face = \"bold\",\n      fill = \"white\", box.color = \"white\", color = \"gray40\",\n      halign = .5, linetype = 1, r = unit(0, \"pt\"), width = unit(1, \"npc\"),\n      padding = margin(2, 0, 1, 0), margin = margin(0, 1, 3, 1),\n      hi.labels = \"Summer\", hi.family = \"Bangers\",\n      hi.fill = \"firebrick\", hi.box.col = \"firebrick\", hi.col = \"white\"\n    )\n  )",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Multi-Panel Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch9.html#create-a-panel-of-different-plots",
+    "href": "ch9.html#create-a-panel-of-different-plots",
+    "title": "9  Working with Multi-Panel Plots",
+    "section": "9.5 Create a Panel of Different Plots",
+    "text": "9.5 Create a Panel of Different Plots\nThere are several ways how plots can be combined. The easiest approach in my opinion is the {patchwork} package by Thomas Lin Pedersen:\n\np1 &lt;- ggplot(chic, aes(x = date, y = temp,\n                       color = season)) +\n        geom_point() +\n        geom_rug() +\n        labs(x = \"Year\", y = \"Temperature (°F)\")\n\np2 &lt;- ggplot(chic, aes(x = date, y = o3)) +\n        geom_line(color = \"gray\") +\n        geom_point(color = \"darkorange2\") +\n        labs(x = \"Year\", y = \"Ozone\")\n\nlibrary(patchwork)\np1 + p2\n\n\n\n\n\n\n\n\nWe can change the order by “dividing” both plots (and note the alignment even though one has a legend and one doesn’t!):\n\np1 / p2\n\n\n\n\n\n\n\n\nAnd also nested plots are possible!\n\n(g + p2) / p1\n\n\n\n\n\n\n\n\n(Note the alignment of the plots even though only one plot includes a legend.)\nAlternatively, the {cowplot} package by Claus Wilke provides the functionality to combine multiple plots (and lots of other good utilities):\n\nlibrary(cowplot)\n\n\nAttaching package: 'cowplot'\n\n\nThe following object is masked from 'package:patchwork':\n\n    align_plots\n\n\nThe following object is masked from 'package:lubridate':\n\n    stamp\n\nplot_grid(plot_grid(g, p1), p2, ncol = 1)\n\n\n\n\n\n\n\n\n… and so does the {gridExtra} package as well:\n\nlibrary(gridExtra)\n\n\nAttaching package: 'gridExtra'\n\n\nThe following object is masked from 'package:dplyr':\n\n    combine\n\ngrid.arrange(g, p1, p2,\n             layout_matrix = rbind(c(1, 2), c(3, 3)))\n\n\n\n\n\n\n\n\nThe same idea of defining a layout can be used with {patchwork} which allows creating complex compositions:\n\nlayout &lt;- \"\nAABBBB#\nAACCDDE\n##CCDD#\n##CC###\n\"\n\np2 + p1 + p1 + g + p2 +\n  plot_layout(design = layout)",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Working with Multi-Panel Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch8.html",
+    "href": "ch8.html",
+    "title": "8  Working with Margins",
+    "section": "",
+    "text": "Sometimes it is useful to add a little space to the plot margin. Similar to the previous examples, we can use an argument to the theme() function. In this case, the argument is plot.margin. As illustrated in the previous example where we changed the background color using plot.background, we can now add extra space to both the left and right.\nThe plot.margin argument can handle a variety of different units (cm, inches, etc.), but it requires the use of the unit function from the package grid to specify the units. You can either provide the same value for all sides (easiest via rep(x, 4)) or particular distances for each. Here, I am using a 1cm margin on the top and bottom, 3 cm margin on the right, and an 8 cm margin on the left.\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(plot.background = element_rect(fill = \"gray60\"),\n        plot.margin = margin(t = 1, r = 3, b = 1, l = 8, unit = \"cm\"))\n\n\n\n\n\n\n\n\n💁 You can also use unit() instead of margin(). Expand to see example.\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(plot.background = element_rect(fill = \"gray60\"),\n        plot.margin = unit(c(1, 3, 1, 8), \"cm\"))",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Working with Margins</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html",
+    "href": "ch10.html",
+    "title": "10  Working with Colors",
+    "section": "",
+    "text": "10.1 Specify Single Colors\nStatic, single colors are simple to use. We can specify a single color for a geom:\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"steelblue\", size = 2) +\n  labs(x = \"Year\", y = \"Temperature (°F)\")\n… and in case it provides both, a color (outline color) and a fill (filling color):\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(shape = 21, size = 2, stroke = 1,\n             color = \"#3cc08f\", fill = \"#c08f3c\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\")\nTian Zheng at Columbia has created a useful PDF of R colors. Of course, you can also specify hex color codes (simply as strings as in the example above) as well as RGB or RGBA values (via the rgb() function: rgb(red, green, blue, alpha)).",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Working with Colors</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#assign-colors-to-variables",
+    "href": "ch10.html#assign-colors-to-variables",
+    "title": "10  Working with Colors",
+    "section": "10.2 Assign Colors to Variables",
+    "text": "10.2 Assign Colors to Variables\nIn {ggplot2}, colors that are assigned to variables are modified via the scale_color_* and the scale_fill_* functions. In order to use color with your data, most importantly you need to know if you are dealing with a categorical or continuous variable. The color palette should be chosen depending on type of the variable, with sequential or diverging color palettes being used for continuous variables and qualitative color palettes for categorical variables:",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Working with Colors</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#qualitative-variables",
+    "href": "ch10.html#qualitative-variables",
+    "title": "10  Working with Colors",
+    "section": "10.3 Qualitative Variables",
+    "text": "10.3 Qualitative Variables\nQualitative or categorical variables represent types of data which can be divided into groups (categories). The variable can be further specified as nominal, ordinal, and binary (dichotomous). Examples of qualitative/categorical variables are:\nThe default categorical color palette looks like this:\n\n(ga &lt;- ggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\", color = NULL))\n\n\n\n\n\n\n\n\n\n10.3.1 Manually Select Qualitative Colors\nYou can pick your own set of colors and assign them to a categorical variables via the function scale_*_manual() (the * can be either color, colour, or fill). The number of specified colors has to match the number of categories:\n\nga + scale_color_manual(values = c(\"dodgerblue4\",\n                                   \"darkolivegreen4\",\n                                   \"darkorchid3\",\n                                   \"goldenrod1\"))\n\n\n\n\n\n\n\n\n\n\n10.3.2 Use Built-In Qualitative Color Palettes\nThe ColorBrewer palettes is a popular online tool for selecting color schemes for maps. The different sets of colors have been designed to produce attractive color schemes of similar appearance ranging from three to twelve. Those palettes are available as built-in functions in the {ggplot2} package and can be applied by calling scale_*_brewer():\n\nga + scale_color_brewer(palette = \"Set1\")\n\n\n\n\n\n\n\n\n💡 You can explore all schemes available via RColorBrewer::display.brewer.all().\n\n\n10.3.3 Use Qualitative Color Palettes from Extension Packages\nThere are many extension packages that provide additional color palettes. Their use differs depending on the way the package is designed. For an extensive overview of color palettes available in R, check the collection provided by Emil Hvitfeldt. One can also use his {paletteer} package, a comprehensive collection of color palettes in R that uses a consistent syntax.\nExamples:\nThe {ggthemes} package for example lets R users access the Tableau colors. Tableau is a famous visualiztion software with a well-known color palette.\n\nlibrary(ggthemes)\nga + scale_color_tableau()\n\n\n\n\n\n\n\n\nThe {ggsci} package provides scientific journal and sci-fi themed color palettes. Want to have a plot with colors that look like being published in Science or Nature? Here you go!\n\nlibrary(ggsci)\ng1 &lt;- ga + scale_color_aaas()\ng2 &lt;- ga + scale_color_npg()\n\nlibrary(patchwork)\n(g1 + g2) * theme(legend.position = \"top\")",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Working with Colors</span>"
+    ]
+  },
+  {
+    "objectID": "ch10.html#quantitative-variables",
+    "href": "ch10.html#quantitative-variables",
+    "title": "10  Working with Colors",
+    "section": "10.4 Quantitative Variables",
+    "text": "10.4 Quantitative Variables\nQuantitative variables represent a measurable quantity and are thus numerical. Quantitative data can be further classified as being either continuous (floating numbers possible) or discrete (integers only):\nIn our example we will change the variable we want to color to ozone, a continuous variable that is strongly related to temperature (higher temperature = higher ozone). The function scale_*_gradient() is a sequential gradient while scale_*_gradient2() is diverging.\nHere is the default {ggplot2} sequential color scheme for continuous variables:\n\ngb &lt;- ggplot(chic, aes(x = date, y = temp, color = temp)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\", color = \"Temperature (°F):\")\n\ngb + scale_color_continuous()\n\n\n\n\n\n\n\n\nThis code produces the same plot:\n\ngb + scale_color_gradient()\n\nAnd here is the diverging default color scheme:\n\nmid &lt;- mean(chic$temp)  ## midpoint\n\ngb + scale_color_gradient2(midpoint = mid)\n\n\n\n\n\n\n\n\n\n10.4.1 Manually Set a Sequential Color Scheme\nYou can manually set gradually changing color palettes for continuous variables via scale_*_gradient():\n\ngb + scale_color_gradient(low = \"darkkhaki\",\n                          high = \"darkgreen\")\n\n\n\n\n\n\n\n\nTemperature data is normally distributed so how about a diverging color scheme (rather than sequential)… For diverging color you can use the scale_*_gradient2() function:\n\ngb + scale_color_gradient2(midpoint = mid, low = \"#dd8a0b\",\n                           mid = \"grey92\", high = \"#32a676\")\n\n\n\n\n\n\n\n\n\n\n10.4.2 The Beautiful Viridis Color Palette\nThe viridis color palettes do not only make your plots look pretty and good to perceive but also easier to read by those with colorblindness and print well in gray scale. You can test how your plots might appear under various form of colorblindness using {dichromat} package.\nAnd they also come now shipped with {ggplot2}! The following multi-panel plot illustrates three out of the four viridis palettes:\n\np1 &lt;- gb + scale_color_viridis_c() + ggtitle(\"'viridis' (default)\")\np2 &lt;- gb + scale_color_viridis_c(option = \"inferno\") + ggtitle(\"'inferno'\")\np3 &lt;- gb + scale_color_viridis_c(option = \"plasma\") + ggtitle(\"'plasma'\")\np4 &lt;- gb + scale_color_viridis_c(option = \"cividis\") + ggtitle(\"'cividis'\")\n\nlibrary(patchwork)\n(p1 + p2 + p3 + p4) * theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\n\nIt is also possible to use the viridis color palettes for discrete variables:\n\nga + scale_color_viridis_d(guide = \"none\")\n\n\n\n\n\n\n\n\n\n\n10.4.3 Use Quantitative Color Palettes from Extension Packages\nThe many extension packages provide not only additional categorical color palettes but also sequential, diverging and even cyclical palettes. Again, I point you to the great collection provided by Emil Hvitfeldt for an overview.\nExamples:\nThe {rcartocolors} packages ports the beautiful CARTOcolors to {ggplot2} and contains several of my most-used palettes:\n\nlibrary(rcartocolor)\ng1 &lt;- gb + scale_color_carto_c(palette = \"BurgYl\")\ng2 &lt;- gb + scale_color_carto_c(palette = \"Earth\")\n\n(g1 + g2) * theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\n\nThe {scico} package provides access to the color palettes developed by Fabio Crameri. These color palettes are not only beautiful and often unusual but also a good choice since they have been developed to be perceptually uniform and ordered. In addition, they work for people with color vision deficiency and in grayscale:\n\nlibrary(scico)\ng1 &lt;- gb + scale_color_scico(palette = \"berlin\")\ng2 &lt;- gb + scale_color_scico(palette = \"hawaii\", direction = -1)\n\n(g1 + g2) * theme(legend.position = \"bottom\")\n\n\n\n\n\n\n\n\n\n10.4.3.1 Modify Color Palettes Afterwards\nSince the release of ggplot2 3.0.0, one can modify layer aesthetics after they have been mapped to the data. Or as the {ggplot2} phrases it: “Use after_scale() to flag evaluation of mapping for after data has been scaled.”\nSo why not use the modified colors in the first place? Since {ggplot2} can only handle one color and one fill scale, this is an interesting functionality. Look closer at the following example where we use clr_negate() from the {prismatic} package:\n\nlibrary(prismatic)\n\nggplot(chic, aes(date, temp, color = temp)) +\n  geom_point(size = 5) +\n  geom_point(aes(color = temp,\n                 color = after_scale(clr_negate(color))),\n             size = 2) +\n  scale_color_scico(palette = \"hawaii\", guide = \"none\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\")\n\nWarning: Duplicated aesthetics after name standardisation: colour\n\n\n\n\n\n\n\n\n\nChanging the color scheme afterwards is especially fun with functions from the {prismatic} packages, namely clr_negate(), clr_lighten(), clr_darken() and clr_desaturate(). You can even combine those functions. Here, we plot a box plot that has both arguments, color and fill:\n\nlibrary(prismatic)\n\nggplot(chic, aes(date, temp)) +\n  geom_boxplot(\n    aes(color = season,\n        fill = after_scale(clr_desaturate(clr_lighten(color, .6), .6))),\n    linewidth = 1\n  ) +\n  scale_color_brewer(palette = \"Dark2\", guide = \"none\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\")\n\n\n\n\n\n\n\n\nNote that you need to specify the color and/or fill in the aes() of the respective geom_*() or stat_*() to make after_scale() work.\n💡 This seems a bit complicated for now—one could simply use the color and fill scales for both. Yes, that is true but think about use cases where you need several color and/or fill scales. In such a case, it would be senseless to occupy the fill scale with a slightly darker version of the palette used for color.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Working with Colors</span>"
+    ]
+  },
+  {
+    "objectID": "ch11.html",
+    "href": "ch11.html",
+    "title": "11  Working with Themes",
+    "section": "",
+    "text": "11.1 Change the Overall Plotting Style\nYou can change the entire look of the plots by using themes. {ggplot2} comes with eight built-in themes:\nAttaching package: 'gridExtra'\n\n\nThe following object is masked from 'package:dplyr':\n\n    combine\nThere are several packages that provide additional themes, some even with different default color palettes. As an example, Jeffrey Arnold has put together the library {ggthemes} with several custom themes imitating popular designs. For a list you can visit the {ggthemes} package site. Without any coding you can just adapt several styles, some of them well known for their style and aesthetics.\nHere is an example copying the plotting style in the The Economist magazine by using theme_economist() and scale_color_economist():\nlibrary(ggthemes)\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  ggtitle(\"Ups and Downs of Chicago's Daily Temperatures\") +\n  theme_economist() +\n  scale_color_economist(name = NULL)\nAnother example is the plotting style of Tufte, a minimal ink theme based on Edward Tufte’s book The Visual Display of Quantitative Information. This is the book that popularized Minard’s chart depicting Napoleon’s march on Russia as one of the best statistical drawings ever created. Tufte’s plots became famous due to the purism in their style. But see yourself:\nlibrary(dplyr)\nchic_2000 &lt;- filter(chic, year == 2000)\n\nggplot(chic_2000, aes(x = temp, y = o3)) +\n  geom_point() +\n  labs(x = \"Temperature (°F)\", y = \"Ozone\") +\n  ggtitle(\"Temperature and Ozone Levels During the Year 2000 in Chicago\") +\n  theme_tufte()\nI reduced the number of data points here simply to fit it Tufte’s minimalism style. If you like the way of plotting have a look on this blog entry creating several Tufte plots in R.\nAnother neat packages with modern themes and a preset of non-default fonts is the {hrbrthemes} package by Bob Rudis with several light but also dark themes:\nlibrary(hrbrthemes)\n\nggplot(chic, aes(x = temp, y = o3)) +\n  geom_point(aes(color = dewpoint), show.legend = FALSE) +\n  labs(x = \"Temperature (°F)\", y = \"Ozone\") +\n  ggtitle(\"Temperature and Ozone Levels in Chicago\")",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Working with Themes</span>"
+    ]
+  },
+  {
+    "objectID": "ch11.html#change-the-font-of-all-text-elements",
+    "href": "ch11.html#change-the-font-of-all-text-elements",
+    "title": "11  Working with Themes",
+    "section": "11.2 Change the Font of All Text Elements",
+    "text": "11.2 Change the Font of All Text Elements\nIt is incredibly easy to change the settings of all the text elements at once. All themes come with an argument called base_family:\n\ng &lt;- ggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"firebrick\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\",\n       title = \"Temperatures in Chicago\")\n\ng + theme_bw(base_family = \"Playfair Display\")",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Working with Themes</span>"
+    ]
+  },
+  {
+    "objectID": "ch11.html#change-the-size-of-all-text-elements",
+    "href": "ch11.html#change-the-size-of-all-text-elements",
+    "title": "11  Working with Themes",
+    "section": "11.3 Change the Size of All Text Elements",
+    "text": "11.3 Change the Size of All Text Elements\nThe theme_*() functions also come with several other base_* arguments. If you have a closer look at the default theme (see chapter “Create and Use Your Custom Theme” below) you will notice that the sizes of all the elements are relative (rel()) to the base_size. As a result, you can simply change the base_size if you want to increase readability of your plots:\n\ng + theme_bw(base_size = 30, base_family = \"Roboto Condensed\")",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Working with Themes</span>"
+    ]
+  },
+  {
+    "objectID": "ch11.html#change-the-size-of-all-line-and-rect-elements",
+    "href": "ch11.html#change-the-size-of-all-line-and-rect-elements",
+    "title": "11  Working with Themes",
+    "section": "11.4 Change the Size of All Line and Rect Elements",
+    "text": "11.4 Change the Size of All Line and Rect Elements\nSimilarly, you can change the size of all elements of type line and rect:\n\ng + theme_bw(base_line_size = 1, base_rect_size = 1)",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Working with Themes</span>"
+    ]
+  },
+  {
+    "objectID": "ch11.html#create-your-own-theme",
+    "href": "ch11.html#create-your-own-theme",
+    "title": "11  Working with Themes",
+    "section": "11.5 Create Your Own Theme",
+    "text": "11.5 Create Your Own Theme\nIf you want to change the theme for an entire session you can use theme_set as in theme_set(theme_bw()). The default is called theme_gray (or theme_gray). If you wanted to create your own custom theme, you could extract the code directly from the gray theme and modify. Note that the rel() function change the sizes relative to the base_size.\n\ntheme_gray\n\nfunction (base_size = 11, base_family = \"\", base_line_size = base_size/22, \n    base_rect_size = base_size/22) \n{\n    half_line &lt;- base_size/2\n    t &lt;- theme(line = element_line(colour = \"black\", linewidth = base_line_size, \n        linetype = 1, lineend = \"butt\"), rect = element_rect(fill = \"white\", \n        colour = \"black\", linewidth = base_rect_size, linetype = 1), \n        text = element_text(family = base_family, face = \"plain\", \n            colour = \"black\", size = base_size, lineheight = 0.9, \n            hjust = 0.5, vjust = 0.5, angle = 0, margin = margin(), \n            debug = FALSE), axis.line = element_blank(), axis.line.x = NULL, \n        axis.line.y = NULL, axis.text = element_text(size = rel(0.8), \n            colour = \"grey30\"), axis.text.x = element_text(margin = margin(t = 0.8 * \n            half_line/2), vjust = 1), axis.text.x.top = element_text(margin = margin(b = 0.8 * \n            half_line/2), vjust = 0), axis.text.y = element_text(margin = margin(r = 0.8 * \n            half_line/2), hjust = 1), axis.text.y.right = element_text(margin = margin(l = 0.8 * \n            half_line/2), hjust = 0), axis.text.r = element_text(margin = margin(l = 0.8 * \n            half_line/2, r = 0.8 * half_line/2), hjust = 0.5), \n        axis.ticks = element_line(colour = \"grey20\"), axis.ticks.length = unit(half_line/2, \n            \"pt\"), axis.ticks.length.x = NULL, axis.ticks.length.x.top = NULL, \n        axis.ticks.length.x.bottom = NULL, axis.ticks.length.y = NULL, \n        axis.ticks.length.y.left = NULL, axis.ticks.length.y.right = NULL, \n        axis.minor.ticks.length = rel(0.75), axis.title.x = element_text(margin = margin(t = half_line/2), \n            vjust = 1), axis.title.x.top = element_text(margin = margin(b = half_line/2), \n            vjust = 0), axis.title.y = element_text(angle = 90, \n            margin = margin(r = half_line/2), vjust = 1), axis.title.y.right = element_text(angle = -90, \n            margin = margin(l = half_line/2), vjust = 1), legend.background = element_rect(colour = NA), \n        legend.spacing = unit(2 * half_line, \"pt\"), legend.spacing.x = NULL, \n        legend.spacing.y = NULL, legend.margin = margin(half_line, \n            half_line, half_line, half_line), legend.key = NULL, \n        legend.key.size = unit(1.2, \"lines\"), legend.key.height = NULL, \n        legend.key.width = NULL, legend.key.spacing = unit(half_line, \n            \"pt\"), legend.text = element_text(size = rel(0.8)), \n        legend.title = element_text(hjust = 0), legend.ticks.length = rel(0.2), \n        legend.position = \"right\", legend.direction = NULL, legend.justification = \"center\", \n        legend.box = NULL, legend.box.margin = margin(0, 0, 0, \n            0, \"cm\"), legend.box.background = element_blank(), \n        legend.box.spacing = unit(2 * half_line, \"pt\"), panel.background = element_rect(fill = \"grey92\", \n            colour = NA), panel.border = element_blank(), panel.grid = element_line(colour = \"white\"), \n        panel.grid.minor = element_line(linewidth = rel(0.5)), \n        panel.spacing = unit(half_line, \"pt\"), panel.spacing.x = NULL, \n        panel.spacing.y = NULL, panel.ontop = FALSE, strip.background = element_rect(fill = \"grey85\", \n            colour = NA), strip.clip = \"inherit\", strip.text = element_text(colour = \"grey10\", \n            size = rel(0.8), margin = margin(0.8 * half_line, \n                0.8 * half_line, 0.8 * half_line, 0.8 * half_line)), \n        strip.text.x = NULL, strip.text.y = element_text(angle = -90), \n        strip.text.y.left = element_text(angle = 90), strip.placement = \"inside\", \n        strip.placement.x = NULL, strip.placement.y = NULL, strip.switch.pad.grid = unit(half_line/2, \n            \"pt\"), strip.switch.pad.wrap = unit(half_line/2, \n            \"pt\"), plot.background = element_rect(colour = \"white\"), \n        plot.title = element_text(size = rel(1.2), hjust = 0, \n            vjust = 1, margin = margin(b = half_line)), plot.title.position = \"panel\", \n        plot.subtitle = element_text(hjust = 0, vjust = 1, margin = margin(b = half_line)), \n        plot.caption = element_text(size = rel(0.8), hjust = 1, \n            vjust = 1, margin = margin(t = half_line)), plot.caption.position = \"panel\", \n        plot.tag = element_text(size = rel(1.2), hjust = 0.5, \n            vjust = 0.5), plot.tag.position = \"topleft\", plot.margin = margin(half_line, \n            half_line, half_line, half_line), complete = TRUE)\n    ggplot_global$theme_all_null %+replace% t\n}\n&lt;bytecode: 0x00000196b792f4c8&gt;\n&lt;environment: namespace:ggplot2&gt;\n\n\nNow, let us modify the default theme function and have a look at the result:\n\ntheme_2hin &lt;- function (base_size = 12, base_family = \"Roboto Condensed\") {\n  half_line &lt;- base_size/2\n  theme(\n    line = element_line(color = \"black\", linewidth = .5,\n                        linetype = 1, lineend = \"butt\"),\n    rect = element_rect(fill = \"white\", color = \"black\",\n                        linewidth = .5, linetype = 1),\n    text = element_text(family = base_family, face = \"plain\",\n                        color = \"black\", size = base_size,\n                        lineheight = .9, hjust = .5, vjust = .5,\n                        angle = 0, margin = margin(), debug = FALSE),\n    axis.line = element_blank(),\n    axis.line.x = NULL,\n    axis.line.y = NULL,\n    axis.text = element_text(size = base_size * 1.1, color = \"gray30\"),\n    axis.text.x = element_text(margin = margin(t = .8 * half_line/2),\n                               vjust = 1),\n    axis.text.x.top = element_text(margin = margin(b = .8 * half_line/2),\n                                   vjust = 0),\n    axis.text.y = element_text(margin = margin(r = .8 * half_line/2),\n                               hjust = 1),\n    axis.text.y.right = element_text(margin = margin(l = .8 * half_line/2),\n                                     hjust = 0),\n    axis.ticks = element_line(color = \"gray30\", linewidth = .7),\n    axis.ticks.length = unit(half_line / 1.5, \"pt\"),\n    axis.ticks.length.x = NULL,\n    axis.ticks.length.x.top = NULL,\n    axis.ticks.length.x.bottom = NULL,\n    axis.ticks.length.y = NULL,\n    axis.ticks.length.y.left = NULL,\n    axis.ticks.length.y.right = NULL,\n    axis.title.x = element_text(margin = margin(t = half_line),\n                                vjust = 1, size = base_size * 1.3,\n                                face = \"bold\"),\n    axis.title.x.top = element_text(margin = margin(b = half_line),\n                                    vjust = 0),\n    axis.title.y = element_text(angle = 90, vjust = 1,\n                                margin = margin(r = half_line),\n                                size = base_size * 1.3, face = \"bold\"),\n    axis.title.y.right = element_text(angle = -90, vjust = 0,\n                                      margin = margin(l = half_line)),\n    legend.background = element_rect(color = NA),\n    legend.spacing = unit(.4, \"cm\"),\n    legend.spacing.x = NULL,\n    legend.spacing.y = NULL,\n    legend.margin = margin(.2, .2, .2, .2, \"cm\"),\n    legend.key = element_rect(fill = \"gray95\", color = \"white\"),\n    legend.key.size = unit(1.2, \"lines\"),\n    legend.key.height = NULL,\n    legend.key.width = NULL,\n    legend.text = element_text(size = rel(.8)),\n    legend.text.align = NULL,\n    legend.title = element_text(hjust = 0),\n    legend.title.align = NULL,\n    legend.position = \"right\",\n    legend.direction = NULL,\n    legend.justification = \"center\",\n    legend.box = NULL,\n    legend.box.margin = margin(0, 0, 0, 0, \"cm\"),\n    legend.box.background = element_blank(),\n    legend.box.spacing = unit(.4, \"cm\"),\n    panel.background = element_rect(fill = \"white\", color = NA),\n    panel.border = element_rect(color = \"gray30\",\n                                fill = NA, linewidth = .7),\n    panel.grid.major = element_line(color = \"gray90\", linewidth = 1),\n    panel.grid.minor = element_line(color = \"gray90\", linewidth = .5,\n                                    linetype = \"dashed\"),\n    panel.spacing = unit(base_size, \"pt\"),\n    panel.spacing.x = NULL,\n    panel.spacing.y = NULL,\n    panel.ontop = FALSE,\n    strip.background = element_rect(fill = \"white\", color = \"gray30\"),\n    strip.text = element_text(color = \"black\", size = base_size),\n    strip.text.x = element_text(margin = margin(t = half_line,\n                                                b = half_line)),\n    strip.text.y = element_text(angle = -90,\n                                margin = margin(l = half_line,\n                                                r = half_line)),\n    strip.text.y.left = element_text(angle = 90),\n    strip.placement = \"inside\",\n    strip.placement.x = NULL,\n    strip.placement.y = NULL,\n    strip.switch.pad.grid = unit(0.1, \"cm\"),\n    strip.switch.pad.wrap = unit(0.1, \"cm\"),\n    plot.background = element_rect(color = NA),\n    plot.title = element_text(size = base_size * 1.8, hjust = .5,\n                              vjust = 1, face = \"bold\",\n                              margin = margin(b = half_line * 1.2)),\n    plot.title.position = \"panel\",\n    plot.subtitle = element_text(size = base_size * 1.3,\n                                 hjust = .5, vjust = 1,\n                                 margin = margin(b = half_line * .9)),\n    plot.caption = element_text(size = rel(0.9), hjust = 1, vjust = 1,\n                                margin = margin(t = half_line * .9)),\n    plot.caption.position = \"panel\",\n    plot.tag = element_text(size = rel(1.2), hjust = .5, vjust = .5),\n    plot.tag.position = \"topleft\",\n    plot.margin = margin(rep(base_size, 4)),\n    complete = TRUE\n  )\n}\n\n💡 You can only overwrite the defaults for all elements you want to change. Here I listed all so you can see that you can change literally change everything!\nHave a look on the modified aesthetics with its new look of panel and gridlines as well as axes ticks, texts and titles:\n\ntheme_set(theme_2hin())\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() + labs(x = \"Year\", y = \"Temperature (°F)\") + guides(color = \"none\")\n\n\n\n\n\n\n\n\nThis way of changing the plot design is highly recommended! It allows you to quickly change any element of your plots by changing it once. You can within a few seconds plot all your results in a congruent style and adapt it to other needs (e.g. a presentation with bigger font size or journal requirements).",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Working with Themes</span>"
+    ]
+  },
+  {
+    "objectID": "ch11.html#update-the-current-theme",
+    "href": "ch11.html#update-the-current-theme",
+    "title": "11  Working with Themes",
+    "section": "11.6 Update the Current Theme",
+    "text": "11.6 Update the Current Theme\nYou can also set quick changes using theme_update():\n\ntheme_2hin &lt;- theme_update(panel.background = element_rect(fill = \"gray60\"))\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point() + labs(x = \"Year\", y = \"Temperature (°F)\") + guides(color = \"none\")\n\n\n\n\n\n\n\n\nFor further exercises, we are going to use our own theme with a white filling and without the minor grid lines:\n\ntheme_2hin &lt;- theme_update(\n  panel.background = element_rect(fill = \"white\"),\n  panel.grid.major = element_line(linewidth = .5),\n  panel.grid.minor = element_blank()\n)",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Working with Themes</span>"
+    ]
+  },
+  {
+    "objectID": "ch12.html",
+    "href": "ch12.html",
+    "title": "12  Working with Lines",
+    "section": "",
+    "text": "12.1 Add Horizonal or Vertical Lines to a Plot\nYou might want to highlight a given range or threshold, which can be done plotting a line at defined coordinates using geom_hline() (for “horizontal lines”) or geom_vline() (for “vertical lines”):\nggplot(chic, aes(x = date, y = temp, color = o3)) +\n  geom_point() +\n  geom_hline(yintercept = c(0, 73)) +\n  labs(x = \"Year\", y = \"Temperature (°F)\")\ng &lt;- ggplot(chic, aes(x = temp, y = dewpoint)) +\n  geom_point(color = \"dodgerblue\", alpha = .5) +\n  labs(x = \"Temperature (°F)\", y = \"Dewpoint\")\n\ng +\n  geom_vline(aes(xintercept = median(temp)), linewidth = 1.5,\n             color = \"firebrick\", linetype = \"dashed\") +\n  geom_hline(aes(yintercept = median(dewpoint)), linewidth = 1.5,\n             color = \"firebrick\", linetype = \"dashed\")\nIf you want to add a line with a slope not being 0 or 1, respectively, you need to use geom_abline(). This is for example the case if you want to add a regression line using the arguments intercept and slope:\nreg &lt;- lm(dewpoint ~ temp, data = chic)\n\ng +\n  geom_abline(intercept = coefficients(reg)[1],\n              slope = coefficients(reg)[2],\n              color = \"darkorange2\", \n              linewidth = 1.5) +\n  labs(title = paste0(\"y = \", round(coefficients(reg)[2], 2),\n                      \" * x + \", round(coefficients(reg)[1], 2)))\nLater, we will learn how to add a linear fit with one command using stat_smooth(method = \"lm\"). However, there might be other reasons to add a line with a given slope and this is how one does it 🤷",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Working with Lines</span>"
+    ]
+  },
+  {
+    "objectID": "ch12.html#add-a-line-within-a-plot",
+    "href": "ch12.html#add-a-line-within-a-plot",
+    "title": "12  Working with Lines",
+    "section": "12.2 Add a Line within a Plot",
+    "text": "12.2 Add a Line within a Plot\nThe previous approaches always covered the whole range of the plot panel, but sometimes one wants to highlight only a given area or use lines for annotations. In this case, geom_linerange() is here to help:\n\ng +\n  ## vertical line\n  geom_linerange(aes(x = 50, ymin = 20, ymax = 55),\n                 color = \"steelblue\", linewidth = 2) +\n  ## horizontal line\n  geom_linerange(aes(xmin = -Inf, xmax = 25, y = 0),\n                 color = \"red\", linewidth = 1)\n\n\n\n\n\n\n\n\nOr you can use annotate(geom = \"segment\") to draw lines with a slope differing from 0 and 1:\n\ng +\n  annotate(geom = \"segment\", \n           x = 50, xend = 75,\n                   y = 20, yend = 45,\n               color = \"purple\", linewidth = 2)",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Working with Lines</span>"
+    ]
+  },
+  {
+    "objectID": "ch12.html#add-curved-lines-and-arrows-to-a-plot",
+    "href": "ch12.html#add-curved-lines-and-arrows-to-a-plot",
+    "title": "12  Working with Lines",
+    "section": "12.3 Add Curved Lines and Arrows to a Plot",
+    "text": "12.3 Add Curved Lines and Arrows to a Plot\nannotate(geom = \"curve\") adds curves. Well, and straight lines if you like:\n\ng +\n  annotate(geom = \"curve\",x = 0, y = 60, xend = 75, yend = 0,\n             color = \"tan\", linewidth = 2) +\n  annotate(geom = \"curve\", \n           x = 0, y = 60, xend = 75, yend = 0,\n             curvature = -0.7, angle = 45,\n             color = \"darkgoldenrod1\", linewidth = 1) +\n  annotate(geom = \"curve\", x = 0, y = 60, xend = 75, yend = 0,\n             curvature = 0, linewidth = 1.5)\n\n\n\n\n\n\n\n\nThe same geom can be used to draw arrows:\n\ng +\n  annotate(geom = \"curve\", x = 0, y = 60, xend = 75, yend = 0,\n             color = \"tan\", linewidth = 2, \n             arrow = arrow(length = unit(0.07, \"npc\"))) +\n  annotate(geom = \"curve\", x = 5, y = 55, xend = 70, yend = 5,\n             curvature = -0.7, angle = 45,\n             color = \"darkgoldenrod1\", linewidth = 1,\n             arrow = arrow(length = unit(0.03, \"npc\"),\n                           type = \"closed\",\n                           ends = \"both\"))",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Working with Lines</span>"
+    ]
+  },
+  {
+    "objectID": "ch13.html",
+    "href": "ch13.html",
+    "title": "13  Working with Text",
+    "section": "",
+    "text": "13.1 Add Labels to Your Data\nSometimes, we want to label our data points. To avoid overlaying and crowding by text labels, we use a 1% sample of the original data, equally representing the four seasons. We are using geom_label() which comes with a new aesthetic called label:\nset.seed(2020)\n\nsample &lt;- chic |&gt;\n  dplyr::group_by(season) |&gt;\n  dplyr::sample_frac(0.01)\n\n## code without pipes:\n## sample &lt;- sample_frac(group_by(chic, season), .01)\n\nggplot(sample, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  geom_label(aes(label = season), hjust = .5, vjust = -.5) +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  xlim(as.Date(c('1997-01-01', '2000-12-31'))) +\n  ylim(c(0, 90)) +\n  theme(legend.position = \"none\")\nOkay, avoiding overlap of labels did not work out. But don’t worry, we are going to fix it in a minute!\nThe {ggrepel} package offers some great utilities by providing geoms for {ggplot2} to repel overlapping text as in our examples above. We simply replace geom_text() by geom_text_repel() and geom_label() by geom_label_repel():\nlibrary(ggrepel)\n\nggplot(sample, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  geom_label_repel(aes(label = season), fontface = \"bold\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(legend.position = \"none\")\nIt may look nicer with filled boxes so we map season to fill instead to color and set a white color for the text:\nggplot(sample, aes(x = date, y = temp)) +\n  geom_point(data = chic, size = .5) +\n  geom_point(aes(color = season), size = 1.5) +\n  geom_label_repel(aes(label = season, fill = season),\n                   color = \"white\", fontface = \"bold\",\n                   segment.color = \"grey30\") +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  theme(legend.position = \"none\")\nThis also works for the pure text labels by using geom_text_repel(). Have a look at all the usage examples.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Working with Text</span>"
+    ]
+  },
+  {
+    "objectID": "ch13.html#add-labels-to-your-data",
+    "href": "ch13.html#add-labels-to-your-data",
+    "title": "13  Working with Text",
+    "section": "",
+    "text": "💁 You can also use geom_text() if you don’t like boxes around your labels. Expand to see example.\n\n\nggplot(sample, aes(x = date, y = temp, color = season)) +\n  geom_point() +\n  geom_text(aes(label = season), fontface = \"bold\",\n            hjust = .5, vjust = -.25) +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  xlim(as.Date(c('1997-01-01', '2000-12-31'))) +\n  ylim(c(0, 90)) +\n  theme(legend.position = \"none\")",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Working with Text</span>"
+    ]
+  },
+  {
+    "objectID": "ch13.html#add-text-annotations",
+    "href": "ch13.html#add-text-annotations",
+    "title": "13  Working with Text",
+    "section": "13.2 Add Text Annotations",
+    "text": "13.2 Add Text Annotations\nThere are several ways how one can add annotations to a ggplot. We can again use annotate(geom = \"text\"), annotate(geom = \"label\"), geom_text() or geom_label():\n\ng &lt;-\n  ggplot(chic, aes(x = temp, y = dewpoint)) +\n  geom_point(alpha = .5) +\n  labs(x = \"Temperature (°F)\", y = \"Dewpoint\")\n\ng + \n  annotate(geom = \"text\", x = 25, y = 60, fontface = \"bold\", \n                label = \"This is a useful annotation\")\n\n\n\n\n\n\n\n\nHowever, now ggplot has drawn one text label per data point—that’s 1,461 labels and you only see one! You can solve that by setting the stat argument to \"unique\":\n\ng +\n  geom_text(aes(x = 25, y = 60,\n                label = \"This is a useful annotation\"),\n            stat = \"unique\")\n\nWarning in geom_text(aes(x = 25, y = 60, label = \"This is a useful annotation\"), : All aesthetics have length 1, but the data has 1461 rows.\nℹ Did you mean to use `annotate()`?\n\n\n\n\n\n\n\n\n\nBy the way, of course one can change the properties of the displayed text:\n\ng +\n  geom_text(aes(x = 25, y = 60,\n                label = \"This is a useful annotation\"),\n            stat = \"unique\", family = \"Bangers\",\n            size = 7, color = \"darkcyan\")\n\nWarning in geom_text(aes(x = 25, y = 60, label = \"This is a useful annotation\"), : All aesthetics have length 1, but the data has 1461 rows.\nℹ Did you mean to use `annotate()`?\n\n\n\n\n\n\n\n\n\nIn case you use one of the facet functions to visualize your data you might run into trouble. One thing is that you may want to include the annotation only once:\n\nann &lt;- data.frame(\n  o3 = 30,\n  temp = 20,\n  season = factor(\"Summer\", levels = levels(chic$season)),\n  label = \"Here is enough space\\nfor some annotations.\"\n)\n\ng &lt;-\n  ggplot(chic, aes(x = o3, y = temp)) +\n  geom_point() +\n  labs(x = \"Ozone\", y = \"Temperature (°F)\")\n\ng +\n  geom_text(data = ann, aes(label = label),\n            size = 7, fontface = \"bold\",\n            family = \"Roboto Condensed\") +\n  facet_wrap(~season)\n\n\n\n\n\n\n\n\nAnother challenge are facets in combination with free scales that might cut your text:\n\ng +\n  geom_text(aes(x = 23, y = 97,\n                label = \"This is not a useful annotation\"),\n            size = 5, fontface = \"bold\") +\n  scale_y_continuous(limits = c(NA, 100)) +\n  facet_wrap(~season, scales = \"free_x\")\n\nWarning in geom_text(aes(x = 23, y = 97, label = \"This is not a useful annotation\"), : All aesthetics have length 1, but the data has 1461 rows.\nℹ Did you mean to use `annotate()`?\n\n\n\n\n\n\n\n\n\nOne solution is to calculate the midpoint of the axis, here x, beforehand:\n\nann &lt;-\n  chic |&gt;\n  dplyr::group_by(season) |&gt;\n  dplyr::summarize(\n    o3 = min(o3, na.rm = TRUE) +\n          (max(o3, na.rm = TRUE) - min(o3, na.rm = TRUE)) / 2\n)\n\nann\n\n# A tibble: 4 × 2\n  season    o3\n  &lt;chr&gt;  &lt;dbl&gt;\n1 Autumn  23.3\n2 Spring  31.0\n3 Summer  29.2\n4 Winter  21.5\n\n\n… and use the aggreated data to specify the placement of the annotation:\n\ng +\n  geom_text(data = ann,\n            aes(x = o3, y = 97,\n                label = \"This is a useful annotation\"),\n            size = 5, fontface = \"bold\") +\n  scale_y_continuous(limits = c(NA, 100)) +\n  facet_wrap(~season, scales = \"free_x\")\n\n\n\n\n\n\n\n\nHowever, there is a simpler approach (in terms of fixing the cordinates)—but it also takes a while to know the code by heart. The {grid} package in combination with {ggplot2}’s annotation_custom() allows you to specify the location based on scaled coordinates where 0 is low and 1 is high. grobTree() creates a grid graphical object and textGrob creates the text graphical object. The value of this is particularly evident when you have multiple plots with different scales.\n\nlibrary(grid)\nmy_grob &lt;- grobTree(textGrob(\"This text stays in place!\",\n                             x = .1, y = .9, hjust = 0,\n                             gp = gpar(col = \"black\",\n                                       fontsize = 15,\n                                       fontface = \"bold\")))\n\ng +\n  annotation_custom(my_grob) +\n  facet_wrap(~season, scales = \"free_x\") +\n  scale_y_continuous(limits = c(NA, 100))",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Working with Text</span>"
+    ]
+  },
+  {
+    "objectID": "ch13.html#use-markdown-and-html-rendering-for-annotations",
+    "href": "ch13.html#use-markdown-and-html-rendering-for-annotations",
+    "title": "13  Working with Text",
+    "section": "13.3 Use Markdown and HTML Rendering for Annotations",
+    "text": "13.3 Use Markdown and HTML Rendering for Annotations\nAgain, we are using Claus Wilke’s {ggtext} package that is designed for improved text rendering support for {ggplot2}. The {ggtext} package defines two new theme elements, element_markdown() and element_textbox(). The package also provides additional geoms. geom_richtext() is a replacement for geom_text() and geom_label() and renders text as markdown…\n\nlibrary(ggtext)\n\nlab_md &lt;- \"This plot shows **temperature** in *°F* versus **ozone level** in *ppm*\"\n\ng +\n  geom_richtext(aes(x = 35, y = 3, label = lab_md),\n                stat = \"unique\")\n\nWarning in geom_richtext(aes(x = 35, y = 3, label = lab_md), stat = \"unique\"): All aesthetics have length 1, but the data has 1461 rows.\nℹ Did you mean to use `annotate()`?\n\n\n\n\n\n\n\n\n\n… or html:\n\nlab_html &lt;- \"&#9733; This plot shows &lt;b style='color:red;'&gt;temperature&lt;/b&gt; in &lt;i&gt;°F&lt;/i&gt; versus &lt;b style='color:blue;'&gt;ozone level&lt;/b&gt;in &lt;i&gt;ppm&lt;/i&gt; &#9733;\"\n\ng +\n  geom_richtext(aes(x = 33, y = 3, label = lab_html),\n                stat = \"unique\")\n\nWarning in geom_richtext(aes(x = 33, y = 3, label = lab_html), stat = \"unique\"): All aesthetics have length 1, but the data has 1461 rows.\nℹ Did you mean to use `annotate()`?\n\n\n\n\n\n\n\n\n\nThe geom comes with a lot of details one can modify, such as angle (which is not possible in the default geom_text() and geom_label()), properties of the box and properties of the text.\n\ng +\n  geom_richtext(aes(x = 10, y = 25, label = lab_md),\n                stat = \"unique\", angle = 30,\n                color = \"white\", fill = \"steelblue\",\n                label.color = NA, hjust = 0, vjust = 0,\n                family = \"Playfair Display\")\n\nWarning in geom_richtext(aes(x = 10, y = 25, label = lab_md), stat = \"unique\", : All aesthetics have length 1, but the data has 1461 rows.\nℹ Did you mean to use `annotate()`?\n\n\n\n\n\n\n\n\n\nThe other geom from the {ggtext} package is geom_textbox(). This geom allows for dynamic wrapping of strings which is very useful for longer annotations such as info boxes and subtitles.\n\nlab_long &lt;- \"**Lorem ipsum dolor**&lt;br&gt;&lt;i style='font-size:8pt;color:red;'&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;br&gt;Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/i&gt;\"\n\ng +\n  geom_textbox(aes(x = 40, y = 10, label = lab_long),\n               width = unit(15, \"lines\"), stat = \"unique\")\n\nWarning in geom_textbox(aes(x = 40, y = 10, label = lab_long), width = unit(15, : All aesthetics have length 1, but the data has 1461 rows.\nℹ Did you mean to use `annotate()`?\n\n\n\n\n\n\n\n\n\nNote that it is not possible to either rotate the textbox (always horizontal) nor to change the justification of the text (always left-aligned).",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Working with Text</span>"
+    ]
+  },
+  {
+    "objectID": "ch14.html",
+    "href": "ch14.html",
+    "title": "14  Working with Coordinates",
+    "section": "",
+    "text": "14.1 Flip a Plot\nIt is incredibly easy to flip a plot on its side. Here I have added the coord_flip() which is all you need to flip the plot. This makes most sense when using geom’s to represent categorical data, for example bar charts or, as in the following example, box and whiskers plots:\nggplot(chic, aes(x = season, y = o3)) +\n  geom_boxplot(fill = \"indianred\") +\n  labs(x = \"Season\", y = \"Ozone\") +\n  coord_flip()",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Working with Coordinates</span>"
+    ]
+  },
+  {
+    "objectID": "ch14.html#flip-a-plot",
+    "href": "ch14.html#flip-a-plot",
+    "title": "14  Working with Coordinates",
+    "section": "",
+    "text": "💁 Since {ggplot2} version 3.0.0 it is also possible to draw geom’s horizontally via the argument orientation = \"y\". Expand to see example.\n\n\nggplot(chic, aes(x = o3, y = season)) +\n  geom_boxplot(fill = \"indianred\", orientation = \"y\") +\n  labs(x = \"Ozone\", y = \"Season\")",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Working with Coordinates</span>"
+    ]
+  },
+  {
+    "objectID": "ch14.html#fix-an-axis",
+    "href": "ch14.html#fix-an-axis",
+    "title": "14  Working with Coordinates",
+    "section": "14.2 Fix an Axis",
+    "text": "14.2 Fix an Axis\nOne can fix the aspect ratio of the Cartesian coordinate system and literally force a physical representation of the units along the x and y axes:\n\nggplot(chic, aes(x = temp, y = o3)) +\n  geom_point() +\n  labs(x = \"Temperature (°F)\", y = \"Ozone Level\") +\n  scale_x_continuous(breaks = seq(0, 80, by = 20)) +\n  coord_fixed(ratio = 1)\n\n\n\n\n\n\n\n\nThis way one can ensure not only a fixed step length on the axes but also that the exported plot looks as expected. However, your saved plot likely contains a lot of white space in case you do not use a suitable aspect ratio:\n\nggplot(chic, aes(x = temp, y = o3)) +\n  geom_point() +\n  labs(x = \"Temperature (°F)\", y = \"Ozone Level\") +\n  scale_x_continuous(breaks = seq(0, 80, by = 20)) +\n  coord_fixed(ratio = 1/3) +\n  theme(plot.background = element_rect(fill = \"grey80\"))",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Working with Coordinates</span>"
+    ]
+  },
+  {
+    "objectID": "ch14.html#reverse-an-axis",
+    "href": "ch14.html#reverse-an-axis",
+    "title": "14  Working with Coordinates",
+    "section": "14.3 Reverse an Axis",
+    "text": "14.3 Reverse an Axis\nYou can also easily reverse an axis using scale_x_reverse() or scale_y_reverse(), respectively:\n\nggplot(chic, aes(x = date, y = temp, color = o3)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  scale_y_reverse()\n\n\n\n\n\n\n\n\n\n\n💁 Note that this will only work for continuous data. If you want to reverse discrete data, use the fct_rev() function from the {forcats} package. Expand to see example.\n\n\n## the default\nggplot(chic, aes(x = temp, y = season)) +\n  geom_jitter(aes(color = season), show.legend = FALSE) +\n  labs(x = \"Temperature (°F)\", y = NULL)\n\n\n\n\n\n\n\n\n\nlibrary(forcats)\nset.seed(10)\nggplot(chic, aes(x = temp, y = fct_rev(season))) +\n  geom_jitter(aes(color = season), show.legend = FALSE) +\n  labs(x = \"Temperature (°F)\", y = NULL)",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Working with Coordinates</span>"
+    ]
+  },
+  {
+    "objectID": "ch14.html#transform-an-axis",
+    "href": "ch14.html#transform-an-axis",
+    "title": "14  Working with Coordinates",
+    "section": "14.4 Transform an Axis",
+    "text": "14.4 Transform an Axis\n… or transform the default linear mapping by using scale_y_log10() or scale_y_sqrt(). As an example, here is a log10-transformed axis (which introduces NA’s in this case so be careful):\n\nggplot(chic, aes(x = date, y = temp, color = o3)) +\n  geom_point() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") +\n  scale_y_log10(lim = c(0.1, 100))\n\nWarning in transformation$transform(x): NaNs produced\n\n\nWarning in scale_y_log10(lim = c(0.1, 100)): log-10 transformation introduced\ninfinite values.\n\n\nWarning: Removed 3 rows containing missing values or values outside the scale range\n(`geom_point()`).",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Working with Coordinates</span>"
+    ]
+  },
+  {
+    "objectID": "ch14.html#circularize-a-plot",
+    "href": "ch14.html#circularize-a-plot",
+    "title": "14  Working with Coordinates",
+    "section": "14.5 Circularize a Plot",
+    "text": "14.5 Circularize a Plot\nIt is also possible to circularize (polarize?) the coordinate system by calling coord_polar().\n\nchic |&gt;\n  dplyr::group_by(season) |&gt;\n  dplyr::summarize(o3 = median(o3)) |&gt;\n  ggplot(aes(x = season, y = o3)) +\n    geom_col(aes(fill = season), color = NA) +\n    labs(x = \"\", y = \"Median Ozone Level\") +\n    coord_polar() +\n    guides(fill = \"none\")\n\n\n\n\n\n\n\n\nThis coordinate system allows to draw pie charts as well:\n\nchic_sum &lt;-\n  chic |&gt;\n  dplyr::mutate(o3_avg = median(o3)) |&gt;\n  dplyr::filter(o3 &gt; o3_avg) |&gt;\n  dplyr::mutate(n_all = n()) |&gt;\n  dplyr::group_by(season) |&gt;\n  dplyr::summarize(rel = n() / unique(n_all))\n\nggplot(chic_sum, aes(x = \"\", y = rel)) +\n  geom_col(aes(fill = season), width = 1, color = NA) +\n  labs(x = \"\", y = \"Proportion of Days Exceeding\\nthe Median Ozone Level\") +\n  coord_polar(theta = \"y\") +\n  scale_fill_brewer(palette = \"Set1\", name = \"Season:\") +\n  theme(axis.ticks = element_blank(),\n        panel.grid = element_blank())\n\n\n\n\n\n\n\n\nI suggest to always look also at the outcome of the same code in a Cartesian coordinate system, which is the default, to understand the logic behind coord_polar() and theta:\n\nggplot(chic_sum, aes(x = \"\", y = rel)) +\n  geom_col(aes(fill = season), width = 1, color = NA) +\n  labs(x = \"\", y = \"Proportion of Days Exceeding\\nthe Median Ozone Level\") +\n  #coord_polar(theta = \"y\") +\n  scale_fill_brewer(palette = \"Set1\", name = \"Season:\") +\n  theme(axis.ticks = element_blank(),\n        panel.grid = element_blank())",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Working with Coordinates</span>"
+    ]
+  },
+  {
+    "objectID": "ch15.html",
+    "href": "ch15.html",
+    "title": "15  Working with Chart Types",
+    "section": "",
+    "text": "15.1 Alternatives to a Box Plot\nBox plots are great, but they can be so incredibly boring. Also, even if you are used to looking at box plots, remember there might be plenty people looking at your plot that have never seen a box and whisker plot before.\nThere are alternatives, but first we are plotting a common box plot:\ng &lt;-\n  ggplot(chic, aes(x = season, y = o3,\n                   color = season)) +\n    labs(x = \"Season\", y = \"Ozone\") +\n    scale_color_brewer(palette = \"Dark2\", guide = \"none\")\n\ng + geom_boxplot()",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Working with Chart Types</span>"
+    ]
+  },
+  {
+    "objectID": "ch15.html#alternatives-to-a-box-plot",
+    "href": "ch15.html#alternatives-to-a-box-plot",
+    "title": "15  Working with Chart Types",
+    "section": "",
+    "text": "💁 Expand for a short recap on box and whiskers plots.\n\nA box-and-whisker plot (sometimes called simply a box plot) is a histogram-like method of displaying data, invented by J. Tukey. The thick middle line notates the median, also known as quartile Q2. The limits of the box are determined by the lower and upper quartiles, Q1 and Q3. The box contains thus 50% of the data and is called “interquartile range” (IQR). The length of the whiskers is determined by the most extreme values that are not considered as outliers (i.e. values that are within 3/2 times the interquartile range).  \n\n\n\n\n15.1.1 Alternative: Plot of Points\nLet’s plot just each data point of the raw data:\n\ng + geom_point()\n\n\n\n\n\n\n\n\nNot only boring but uninformative. To improve the plot, one could add transparency to deal with overplotting:\n\ng + geom_point(alpha = .1)\n\n\n\n\n\n\n\n\nHowever, setting transparency is difficult here since either the overlap is still too high or the extreme values are not visible. Bad, so let’s try something else.\n\n\n15.1.2 Alternative: Jitter the Points\nTry adding a little jitter to the data. I like this for in-house visualization but be careful using jittering because you are purposely adding noise to your data and this can result in misinterpretation of your data.\n\ng + geom_jitter(width = .3, alpha = .5)\n\n\n\n\n\n\n\n\n\n\n15.1.3 Alternative: Violin Plots\nViolin plots, similar to box plots except you are using a kernel density to show where you have the most data, are a useful visualization.\n\ng + geom_violin(fill = \"gray80\", linewidth = 1, alpha = .5)\n\n\n\n\n\n\n\n\n\n\n15.1.4 Alternative: Combining Violin Plots with Jitter\nWe can of course combine both, estimated densities and the raw data points:\n\ng + geom_violin(fill = \"gray80\", linewidth = 1, alpha = .5) +\n    geom_jitter(alpha = .25, width = .3) +\n    coord_flip()\n\n\n\n\n\n\n\n\nThe {ggforce} package provides so-called sina functions where the width of the jitter is controlled by the density distribution of the data—that makes the jittering a bit more visually appealing:\n\nlibrary(ggforce)\n\ng + geom_violin(fill = \"gray80\", linewidth = 1, alpha = .5) +\n    geom_sina(alpha = .25) +\n    coord_flip()\n\n\n\n\n\n\n\n\n\n\n15.1.5 Alternative: Combining Violin Plots with Box Plots\nTo allow for easy estimation of quantiles, we can also add the box of the box plot inside the violins to indicate 25%-quartile, median and 75%-quartile:\n\ng + geom_violin(aes(fill = season), linewidth = 1, alpha = .5) +\n    geom_boxplot(outlier.alpha = 0, coef = 0,\n                 color = \"gray40\", width = .2) +\n    scale_fill_brewer(palette = \"Dark2\", guide = \"none\") +\n    coord_flip()",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Working with Chart Types</span>"
+    ]
+  },
+  {
+    "objectID": "ch15.html#create-a-rug-representation-to-a-plot",
+    "href": "ch15.html#create-a-rug-representation-to-a-plot",
+    "title": "15  Working with Chart Types",
+    "section": "15.2 Create a Rug Representation to a Plot",
+    "text": "15.2 Create a Rug Representation to a Plot\nA rug represents the data of a single quantitative variable, displayed as marks along an axis. In most cases, it is used in addition to scatter plots or heatmaps to visualize the overall distribution of one or both of the variables:\n\nggplot(chic, aes(x = date, y = temp,\n                 color = season)) +\n  geom_point(show.legend = FALSE) +\n  geom_rug(show.legend = FALSE) +\n  labs(x = \"Year\", y = \"Temperature (°F)\")\n\n\n\n\n\n\n\n\n\nggplot(chic, aes(x = date, y = temp, color = season)) +\n  geom_point(show.legend = FALSE) +\n  geom_rug(sides = \"r\", alpha = .3, show.legend = FALSE) +\n  labs(x = \"Year\", y = \"Temperature (°F)\")",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Working with Chart Types</span>"
+    ]
+  },
+  {
+    "objectID": "ch15.html#create-a-correlation-matrix",
+    "href": "ch15.html#create-a-correlation-matrix",
+    "title": "15  Working with Chart Types",
+    "section": "15.3 Create a Correlation Matrix",
+    "text": "15.3 Create a Correlation Matrix\nThere are several packages that allow to create correlation matrix plots, some also using the{ggplot2} infrastructure and thus returning ggplots. I am going to show you how to do this without extension packages.\nFirst step is to create the correlation matrix. Here, we use the {corrr} package that works nicely with pipes but there are also many others out there. We are using Pearson because all the variables are fairly normally distributed (but you may consider Spearman if your variables follow a different pattern). Note that since a correlation matrix has redundant information we are setting half of it to NA.\n\ncorm &lt;-\n  chic |&gt;\n  dplyr::select(temp, dewpoint, pm10, o3) |&gt;\n  corrr::correlate(diagonal = 1) |&gt;\n  corrr::shave(upper = FALSE)\n\nCorrelation computed with\n• Method: 'pearson'\n• Missing treated using: 'pairwise.complete.obs'\n\nlibrary(gt)\ncorm %&gt;% gt()\n\n\n\n\n\n\n\n\nterm\ntemp\ndewpoint\npm10\no3\n\n\n\n\ntemp\n1\n0.9577391\n0.3679648\n0.5349655\n\n\ndewpoint\nNA\n1.0000000\n0.3274569\n0.4539134\n\n\npm10\nNA\nNA\n1.0000000\n0.2060732\n\n\no3\nNA\nNA\nNA\n1.0000000\n\n\n\n\n\n\n\n\nNow we put the resulting matrix in long format using the pivot_longer() function from the {tidyr} package. We also directly format the labels and place empty quotes for the upper triangle. Note that I use sprintf() to ensure that the label always display two digits.\n\ncorm &lt;- corm |&gt;\n  tidyr::pivot_longer(\n    cols = -term,\n    names_to = \"colname\",\n    values_to = \"corr\"\n  ) |&gt;\n  dplyr::mutate(\n    rowname = forcats::fct_inorder(term),\n    colname = forcats::fct_inorder(colname),\n    label = dplyr::if_else(is.na(corr), \"\", sprintf(\"%1.2f\", corr))\n  )\n\n\n\n\n\n\n\n\n\nterm\ncolname\ncorr\nlabel\n\n\n\n\ntemp\ntemp\ntemp\n1.0000000\n1.00\n\n\ntemp\ntemp\ndewpoint\n0.9577391\n0.96\n\n\ntemp\ntemp\npm10\n0.3679648\n0.37\n\n\ntemp\ntemp\no3\n0.5349655\n0.53\n\n\ndewpoint\ndewpoint\ntemp\nNA\n\n\n\ndewpoint\ndewpoint\ndewpoint\n1.0000000\n1.00\n\n\ndewpoint\ndewpoint\npm10\n0.3274569\n0.33\n\n\ndewpoint\ndewpoint\no3\n0.4539134\n0.45\n\n\npm10\npm10\ntemp\nNA\n\n\n\npm10\npm10\ndewpoint\nNA\n\n\n\npm10\npm10\npm10\n1.0000000\n1.00\n\n\npm10\npm10\no3\n0.2060732\n0.21\n\n\no3\no3\ntemp\nNA\n\n\n\no3\no3\ndewpoint\nNA\n\n\n\no3\no3\npm10\nNA\n\n\n\no3\no3\no3\n1.0000000\n1.00\n\n\n\n\n\n\n\n\nFor the plot we will use geom_tile() for the heatmap and geom_text() for the labels:\n\nggplot(corm, aes(rowname, fct_rev(colname),\n                 fill = corr)) +\n  geom_tile() +\n  geom_text(aes(label = label)) +\n  coord_fixed() +\n  labs(x = NULL, y = NULL)\n\n\n\n\n\n\n\n\nI like to have a diverging color palette—it is important that the scale is centered at zero correlation!—with white indicating missing data. Also I like to have no grid lines and padding around the heatmap as well as labels that are colored depending on the underlying fill:\n\nggplot(corm, aes(rowname, fct_rev(colname),\n                 fill = corr)) +\n  geom_tile() +\n  geom_text(aes(\n    label = label,\n    color = abs(corr) &lt; .75\n  )) +\n  coord_fixed(expand = FALSE) +\n  scale_color_manual(\n    values = c(\"white\", \"black\"),\n    guide = \"none\"\n  ) +\n  scale_fill_distiller(\n    palette = \"PuOr\", na.value = \"white\",\n    direction = 1, limits = c(-1, 1),\n    name = \"Pearson\\nCorrelation:\"\n  ) +\n  labs(x = NULL, y = NULL) +\n  theme(panel.border = element_rect(color = NA, fill = NA),\n        legend.position.inside = c(.85, .8))",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Working with Chart Types</span>"
+    ]
+  },
+  {
+    "objectID": "ch15.html#create-a-contour-plot",
+    "href": "ch15.html#create-a-contour-plot",
+    "title": "15  Working with Chart Types",
+    "section": "15.4 Create a Contour Plot",
+    "text": "15.4 Create a Contour Plot\nContour plots are nice way to display eatesholds of values. One can use them to bin data, showing the density of observations:\n\nggplot(chic, aes(temp, o3)) +\n  geom_density_2d() +\n  labs(x = \"Temperature (°F)\", x = \"Ozone Level\")\n\n\n\n\n\n\n\n\n\nggplot(chic, aes(temp, o3)) +\n  geom_density_2d_filled(show.legend = FALSE) +\n  coord_cartesian(expand = FALSE) +\n  labs(x = \"Temperature (°F)\", x = \"Ozone Level\")\n\n\n\n\n\n\n\n\nBut now, we are plotting three-dimensional data. We are going to plot the thresholds in dewpoint (i.e. the temperature at which airborne water vapor will condense to form liquid dew) related to temperature and ozone levels:\n\n## interpolate data\nfld &lt;- with(chic, akima::interp(x = temp, y = o3, z = dewpoint))\n\n## prepare data in long format\ndf &lt;- fld$z |&gt;\n  tibble::as_tibble(.name_repair = \"universal_quiet\") |&gt; \n  dplyr::mutate(x = dplyr::row_number()) |&gt;\n  tidyr::pivot_longer(\n    cols = -x,\n    names_to = \"y\",\n    names_transform = as.integer,\n    values_to = \"Dewpoint\", \n    names_prefix = \"...\",\n    values_drop_na = TRUE\n  )\n\ng &lt;- ggplot(data = df, aes(x = x, y = y, z = Dewpoint))  +\n  labs(x = \"Temperature (°F)\", y = \"Ozone Level\",\n       color = \"Dewpoint\")\n\ng + stat_contour(aes(color = after_stat(level)))\n\n\n\n\n\n\n\n\nSurprise! As it is defined, the drew point is in most cases equal to the measured temperature.\nThe lines are indicating different levels of drew points, but this is not a pretty plot and also hard to read due to missing borders. Let’s try a tile plot using the viridis color palette to encode the dewpoint of each combination of ozone level and temperature:\n\ng + geom_tile(aes(fill = Dewpoint)) +\n    scale_fill_viridis_c(option = \"inferno\")\n\n\n\n\n\n\n\n\nHow does it look if we combine a contour plot and a tile plot to fill the area under the contour lines?\n\ng + geom_tile(aes(fill = Dewpoint)) +\n    stat_contour(color = \"white\", linewidth = .7, bins = 5) +\n    scale_fill_viridis_c()",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Working with Chart Types</span>"
+    ]
+  },
+  {
+    "objectID": "ch15.html#create-a-heatmap-of-counts",
+    "href": "ch15.html#create-a-heatmap-of-counts",
+    "title": "15  Working with Chart Types",
+    "section": "15.5 Create a Heatmap of Counts",
+    "text": "15.5 Create a Heatmap of Counts\nSimilarly to our first contour maps, one can easily show the counts or densities of points binned to a hexagonal grid via geom_hex():\n\nlibrary(hexbin)\nggplot(chic, aes(temp, o3)) +\n  geom_hex() +\n  scale_fill_distiller(palette = \"YlOrRd\", direction = 1) +\n  labs(x = \"Temperature (°F)\", y = \"Ozone Level\")\n\n\n\n\n\n\n\n\nOften, white lines pop up in the resulting plot. One can fix that by mapping also color to either after_stat(count) (the default) or after_stat(density)…\n\nggplot(chic, aes(temp, o3)) +\n  geom_hex(aes(color = after_stat(count))) +\n  scale_fill_distiller(palette = \"YlOrRd\", direction = 1) +\n  scale_color_distiller(palette = \"YlOrRd\", direction = 1) +\n  labs(x = \"Temperature (°F)\", y = \"Ozone Level\")\n\n\n\n\n\n\n\n\n… or by setting the same color as outline for all hexagonal cells:\n\nggplot(chic, aes(temp, o3)) +\n  geom_hex(color = \"grey\") +\n  scale_fill_distiller(palette = \"YlOrRd\", direction = 1) +\n  labs(x = \"Temperature (°F)\", y = \"Ozone Level\")\n\n\n\n\n\n\n\n\nOne can also change the default binning to in- or decrease the number of hexagonal cells:\n\nggplot(chic, aes(temp, o3, fill = after_stat(density))) +\n  geom_hex(bins = 50, color = \"grey\") +\n  scale_fill_distiller(palette = \"YlOrRd\", direction = 1) +\n  labs(x = \"Temperature (°F)\", y = \"Ozone Level\")\n\n\n\n\n\n\n\n\nIf you want to have a regular grid, one can also use geom_bin2d() which summarizes the data to rectangular grid cells based on bins:\n\nggplot(chic, aes(temp, o3, fill = after_stat(density))) +\n  geom_bin2d(bins = 15, color = \"grey\") +\n  scale_fill_distiller(palette = \"YlOrRd\", direction = 1) +\n  labs(x = \"Temperature (°F)\", y = \"Ozone Level\")",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Working with Chart Types</span>"
+    ]
+  },
+  {
+    "objectID": "ch15.html#create-a-ridge-plot",
+    "href": "ch15.html#create-a-ridge-plot",
+    "title": "15  Working with Chart Types",
+    "section": "15.6 Create a Ridge Plot",
+    "text": "15.6 Create a Ridge Plot\nRidge(line) plots are a new type of plots which is very popular at the moment.\nWhile you can create those plots with basic {ggplot2} commands the popularity lead to a package that make it easier create those plots: {ggridges}. We are going to use this package here.\n\nlibrary(ggridges)\nggplot(chic, aes(x = temp, y = factor(year))) +\n   geom_density_ridges(fill = \"gray90\") +\n   labs(x = \"Temperature (°F)\", y = \"Year\")\n\nPicking joint bandwidth of 5.23\n\n\n\n\n\n\n\n\n\nYou can easily specify the overlap and the trailing tails by using the arguments rel_min_height and scale, respectively. The package also comes with its own theme (but I would prefer to build my own, see chapter “Create and Use Your Custom Theme”). Additionally, we change the colors based on year to make it more appealing.\n\nggplot(chic, aes(x = temp, y = factor(year), fill = year)) +\n  geom_density_ridges(alpha = .8, color = \"white\",\n                      scale = 2.5, rel_min_height = .01) +\n  labs(x = \"Temperature (°F)\", y = \"Year\") +\n  guides(fill = \"none\") +\n  theme_ridges()\n\nPicking joint bandwidth of 5.23\n\n\n\n\n\n\n\n\n\nYou can also get rid of the overlap using values below 1 for the scaling argument (but this somehow contradicts the idea of ridge plots…). Here is an example additionally using the viridis color gradient and the in-build theme:\n\nggplot(chic, aes(x = temp, y = season, fill = after_stat(x))) +\n  geom_density_ridges_gradient(scale = .9, gradient_lwd = .5,\n                               color = \"black\") +\n  scale_fill_viridis_c(option = \"plasma\", name = \"\") +\n  labs(x = \"Temperature (°F)\", y = \"Season\") +\n  theme_ridges(font_family = \"Roboto Condensed\", grid = FALSE)\n\nPicking joint bandwidth of 2.99\n\n\n\n\n\n\n\n\n\nWe can also compare several groups per ridgeline and coloring them according to their group. This follows the idea of Marc Belzunces.\n\nlibrary(dplyr)\n\n## only plot extreme season using dplyr from the tidyverse\nggplot(data = dplyr::filter(chic, season %in% c(\"Summer\", \"Winter\")),\n         aes(x = temp, y = year, fill = paste(year, season))) +\n  geom_density_ridges(alpha = .7, rel_min_height = .01,\n                      color = \"white\", from = -5, to = 95) +\n  scale_fill_cyclical(breaks = c(\"1997 Summer\", \"1997 Winter\"),\n                      labels = c(`1997 Summer` = \"Summer\",\n                                 `1997 Winter` = \"Winter\"),\n                      values = c(\"tomato\", \"dodgerblue\"),\n                      name = \"Season:\", guide = \"legend\") +\n  theme_ridges(grid = FALSE) +\n  labs(x = \"Temperature (°F)\", y = \"Year\")\n\nPicking joint bandwidth of 3.17\n\n\n\n\n\n\n\n\n\nThe {ggridges} package is also helpful to create histograms for different groups using stat = \"binline\" in the geom_density_ridges() command:\n\nggplot(chic, aes(x = temp, y = factor(year), fill = year)) +\n  geom_density_ridges(stat = \"binline\", bins = 25, scale = .9,\n                      draw_baseline = FALSE, show.legend = FALSE) +\n  theme_minimal() +\n  labs(x = \"Temperature (°F)\", y = \"Season\")",
+    "crumbs": [
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Working with Chart Types</span>"
+    ]
+  },
+  {
+    "objectID": "ch16.html",
+    "href": "ch16.html",
+    "title": "16  Working with Ribbons (AUC, CI, etc.)",
+    "section": "",
+    "text": "This is not a perfect dataset for demonstrating this, but using ribbon can be useful. In this example we will create a 30-day running average using the filter() function so that our ribbon is not too noisy.\n\nchic$o3run &lt;- as.numeric(stats::filter(chic$o3, rep(1/30, 30), sides = 2))\n\nggplot(chic, aes(x = date, y = o3run)) +\n   geom_line(color = \"chocolate\", lwd = .8) +\n   labs(x = \"Year\", y = \"Ozone\")\n\nWarning: Removed 29 rows containing missing values or values outside the scale range\n(`geom_line()`).\n\n\n\n\n\n\n\n\n\nHow does it look if we fill in the area below the curve using the geom_ribbon() function?\n\nggplot(chic, aes(x = date, y = o3run)) +\n   geom_ribbon(aes(ymin = 0, ymax = o3run),\n               fill = \"orange\", alpha = .4) +\n   geom_line(color = \"chocolate\", lwd = .8) +\n   labs(x = \"Year\", y = \"Ozone\")\n\nWarning: Removed 29 rows containing missing values or values outside the scale range\n(`geom_line()`).\n\n\n\n\n\n\n\n\n\nNice to indicate the area under the curve (AUC) but this is not the conventional way to use geom_ribbon().\n💁 And actually a nicer way to achieve the same is geom_area().\n\n\nExpand to see example.\n\n\nggplot(chic, aes(x = date, y = o3run)) +\n   geom_area(color = \"chocolate\", lwd = .8,\n             fill = \"orange\", alpha = .4) +\n   labs(x = \"Year\", y = \"Ozone\")\n\nWarning: Removed 29 rows containing non-finite outside the scale range\n(`stat_align()`).\n\n\n\n\n\n\n\n\n\n\nInstead, we draw a ribbon that gives us one standard deviation above and below our data:\n\nchic$mino3 &lt;- chic$o3run - sd(chic$o3run, na.rm = TRUE)\nchic$maxo3 &lt;- chic$o3run + sd(chic$o3run, na.rm = TRUE)\n\nggplot(chic, aes(x = date, y = o3run)) +\n   geom_ribbon(aes(ymin = mino3, ymax = maxo3), alpha = .5,\n               fill = \"darkseagreen3\", color = \"transparent\") +\n   geom_line(color = \"aquamarine4\", lwd = .7) +\n   labs(x = \"Year\", y = \"Ozone\")\n\nWarning: Removed 29 rows containing missing values or values outside the scale range\n(`geom_line()`).",
+    "crumbs": [
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Working with Ribbons (AUC, CI, etc.)</span>"
+    ]
+  },
+  {
+    "objectID": "ch17.html",
+    "href": "ch17.html",
+    "title": "17  Working with Smoothings",
+    "section": "",
+    "text": "17.1 Default: Adding a LOESS or GAM Smoothing\nYou can simply use stat_smooth()—not even a formula is required. This adds a LOESS (locally weighted scatter plot smoothing, method = \"loess\") if you have fewer than 1000 points or a GAM (generalized additive model, method = \"gam\") otherwise. Since we have more than 1000 points, the smoothing is based on a GAM:\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"gray40\", alpha = .5) +\n  stat_smooth() +\n  labs(x = \"Year\", y = \"Temperature (°F)\") \n\n`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = \"cs\")'\n💡 In most cases one wants the points to be on top of the ribbon so make sure you always call the smoothing before you add the points.",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Working with Smoothings</span>"
+    ]
+  },
+  {
+    "objectID": "ch17.html#adding-a-linear-fit",
+    "href": "ch17.html#adding-a-linear-fit",
+    "title": "17  Working with Smoothings",
+    "section": "17.2 Adding a Linear Fit",
+    "text": "17.2 Adding a Linear Fit\nThough the default is a LOESS or GAM smoothing, it is also easy to add a standard linear fit:\n\nggplot(chic, aes(x = temp, y = dewpoint)) +\n   geom_point(color = \"gray40\", alpha = .5) +\n   stat_smooth(method = \"lm\", se = FALSE,\n               color = \"firebrick\", linewidth = 1.3) +\n   labs(x = \"Temperature (°F)\", y = \"Dewpoint\")\n\n`geom_smooth()` using formula = 'y ~ x'",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Working with Smoothings</span>"
+    ]
+  },
+  {
+    "objectID": "ch17.html#specifying-the-formula-for-smoothing",
+    "href": "ch17.html#specifying-the-formula-for-smoothing",
+    "title": "17  Working with Smoothings",
+    "section": "17.3 Specifying the Formula for Smoothing",
+    "text": "17.3 Specifying the Formula for Smoothing\n{ggplot2} allows you to specify the model you want it to use. Maybe you want to use a polynomial regression?\n\nggplot(chic, aes(x = o3, y = temp)) +\n  geom_point(color = \"gray40\", alpha = .3) +\n  geom_smooth(\n    method = \"lm\",\n    formula = y ~ x + I(x^2) + I(x^3) + I(x^4) + I(x^5),\n    color = \"black\",\n    fill = \"firebrick\"\n  ) +\n  labs(x = \"Ozone Level\", y = \"Temperature (°F)\")\n\n\n\n\n\n\n\n\n\n\n💁 Huh, geom_smooth()? There is an important difference between geom and stat but here it really doesn’t matter which one you use. Expand to compare both.\n\n\nggplot(chic, aes(x = o3, y = temp)) +\n  geom_point(color = \"gray40\", alpha = .3) +\n  geom_smooth(stat = \"smooth\") + ## the default\n  labs(x = \"Ozone Level\", y = \"Temperature (°F)\")\n\n`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = \"cs\")'\n\n\n\n\n\n\n\n\n\n\nggplot(chic, aes(x = o3, y = temp)) +\n  geom_point(color = \"gray40\", alpha = .3) +\n  stat_smooth(geom = \"smooth\") + ## the default\n  labs(x = \"Ozone Level\", y = \"Temperature (°F)\")\n\n`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = \"cs\")'\n\n\n\n\n\n\n\n\n\n\nOr lets say you want to increase the GAM dimension (add some additional wiggles to the smooth):\n\ncols &lt;- c(\"darkorange2\", \"firebrick\", \"dodgerblue3\")\n\nggplot(chic, aes(x = date, y = temp)) +\n  geom_point(color = \"gray40\", alpha = .3) +\n  stat_smooth(aes(col = \"1000\"),\n              method = \"gam\",\n              formula = y ~ s(x, k = 1000),\n              se = FALSE, linewidth = 1.3) +\n  stat_smooth(aes(col = \"100\"),\n              method = \"gam\",\n              formula = y ~ s(x, k = 100),\n              se = FALSE, linewidth = 1) +\n  stat_smooth(aes(col = \"10\"),\n              method = \"gam\",\n              formula = y ~ s(x, k = 10),\n              se = FALSE, linewidth = .8) +\n  scale_color_manual(name = \"k\", values = cols) +\n  labs(x = \"Year\", y = \"Temperature (°F)\")",
+    "crumbs": [
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Working with Smoothings</span>"
+    ]
+  },
+  {
+    "objectID": "ch18.html",
+    "href": "ch18.html",
+    "title": "18  Working with Interactive Plots",
+    "section": "",
+    "text": "18.1 Combination of {ggplot2} and {shiny}\n{shiny} is a package from RStudio that makes it incredibly easy to build interactive web applications with R. For an introduction and live examples, visit the Shiny homepage.\nTo look at the potential use, you can check out the Hello Shiny examples. This is the first one:\nlibrary(shiny)\nrunExample(\"01_hello\")\nOf course, one can use ggplots in these apps. This example demonstrates the possibility to add some interactive user experience:\nrunExample(\"04_mpg\")",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Working with Interactive Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch18.html#plot.ly-via-plotly-and-ggplot2",
+    "href": "ch18.html#plot.ly-via-plotly-and-ggplot2",
+    "title": "18  Working with Interactive Plots",
+    "section": "18.2 Plot.ly via {plotly} and {ggplot2}",
+    "text": "18.2 Plot.ly via {plotly} and {ggplot2}\nPlot.ly is a tool for creating online, interactive graphics and web apps. The {plotly} package enables you to create those directly from your {ggplot2} plots and the workflow is surprisingly easy and can be done from within R. However, some of your theme settings might be changed and need to be modified manually afterwards. Also, and unfortunately, it is not straightforward to create facets or true multi-panel plots that scale nicely.\n\ng &lt;- ggplot(chic, aes(date, temp)) +\n  geom_line(color = \"grey\") +\n  geom_point(aes(color = season)) +\n  scale_color_brewer(palette = \"Dark2\", guide = \"none\") +\n  labs(x = NULL, y = \"Temperature (°F)\") +\n  theme_bw()\n\ng\n\n\n\n\n\n\n\nlibrary(plotly)\n\nggplotly(g)\n\n\n\n\n\nHere, for example, it keeps the overall theme setting but adds the legend again.",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Working with Interactive Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch18.html#ggiraph-and-ggplot2",
+    "href": "ch18.html#ggiraph-and-ggplot2",
+    "title": "18  Working with Interactive Plots",
+    "section": "18.3 ggiraph and ggplot2",
+    "text": "18.3 ggiraph and ggplot2\n{ggiraph} is an R package that allows you to create dynamic {ggplot2} graphs. This allows you to add tooltips, animations and JavaScript actions to the graphics. The package also allows the selection of graphical elements when used in Shiny applications.\n\nlibrary(ggiraph)\n\ng &lt;- ggplot(chic, aes(date, temp)) +\n  geom_line(color = \"grey\") +\n  geom_point_interactive(\n    aes(color = season, tooltip = season, data_id = season)\n  ) +\n  scale_color_brewer(palette = \"Dark2\", guide = \"none\") +\n  labs(x = NULL, y = \"Temperature (°F)\") +\n  theme_bw()\n\ngirafe(ggobj = g)",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Working with Interactive Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch18.html#highcharts-via-highcharter",
+    "href": "ch18.html#highcharts-via-highcharter",
+    "title": "18  Working with Interactive Plots",
+    "section": "18.4 Highcharts via {highcharter}",
+    "text": "18.4 Highcharts via {highcharter}\nHighcharts, a software library for interactive charting, is another visualization library written in pure JavaScript that has been ported to R. The package {highcharter} makes it possible to use them—but be aware that Highcharts is only free in case of non-commercial use.\n\nlibrary(highcharter)\n\nRegistered S3 method overwritten by 'quantmod':\n  method            from\n  as.zoo.data.frame zoo \n\n\nHighcharts (www.highcharts.com) is a Highsoft software product which is\n\n\nnot free for commercial and Governmental use\n\nhchart(chic, \"scatter\", hcaes(x = date, y = temp, group = season))",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Working with Interactive Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch18.html#echarts-via-echarts4r",
+    "href": "ch18.html#echarts-via-echarts4r",
+    "title": "18  Working with Interactive Plots",
+    "section": "18.5 Echarts via {echarts4r}",
+    "text": "18.5 Echarts via {echarts4r}\nApache ECharts is a free, powerful charting and visualization library offering an easy way of building intuitive, interactive, and highly customizable charts. Even though it is written in pure JavaScript, one can use it in R via the {echarts4r} library thanks to John Coene. Check out the impressive example gallery or this app made by the package developer John Coene.\n\nlibrary(echarts4r)\n\nchic |&gt;\n  e_charts(date) |&gt;\n  e_scatter(temp, symbol_size = 7) |&gt;\n  e_visual_map(temp) |&gt;\n  e_y_axis(name = \"Temperature (°F)\") |&gt;\n  e_legend(FALSE)",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Working with Interactive Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch18.html#chart.js-via-charter",
+    "href": "ch18.html#chart.js-via-charter",
+    "title": "18  Working with Interactive Plots",
+    "section": "18.6 Chart.js via {charter}",
+    "text": "18.6 Chart.js via {charter}\ncharter is another package developed by John Coene that enables the use of a JavaScript visualization library in R. The package allows you to build interactive plots with the help of the Charts.js framework.\n\nlibrary(charter)\n\nchic$date_num &lt;- as.numeric(chic$date)\n## doesn't work with class date\n\nchart(data = chic, caes(date_num, temp)) |&gt;\n  c_scatter(caes(color = season, group = season)) |&gt;\n  c_colors(RColorBrewer::brewer.pal(4, name = \"Dark2\"))",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Working with Interactive Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch18.html#bokeh-via-rbokeh",
+    "href": "ch18.html#bokeh-via-rbokeh",
+    "title": "18  Working with Interactive Plots",
+    "section": "18.7 Bokeh via {rbokeh}",
+    "text": "18.7 Bokeh via {rbokeh}\n{rbokeh} is an R package that allows you to create interactive visualizations using the Bokeh library. It is a powerful tool for creating interactive plots and adding interactivity to your visualizations. The following example demonstrates how to create an interactive scatter plot using {rbokeh}. You can find more examples and documentation on the rbokeh website.\n\nlibrary(rbokeh)\np &lt;- figure() %&gt;%\n  ly_points(Sepal.Length, Sepal.Width, data = iris,\n    color = Species, glyph = Species,\n    hover = list(Sepal.Length, Sepal.Width))\np",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Working with Interactive Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch18.html#advanced-interactive-plots-using-canvasexpress",
+    "href": "ch18.html#advanced-interactive-plots-using-canvasexpress",
+    "title": "18  Working with Interactive Plots",
+    "section": "18.8 Advanced Interactive plots using CanvasExpress",
+    "text": "18.8 Advanced Interactive plots using CanvasExpress\nCanvasXpress is a JavaScript library that allows you to create interactive visualizations. The package {canvasXpress} for R enables the creation of interactive plots directly from R. It is a powerful tool for creating visualizations and adding interactivity to your plots. The following example demonstrates how to create a bar-line graph using CanvasXpress. You can find more examples and documentation on the CanvasXpress website.\n\nlibrary(canvasXpress)\ny=read.table(\"https://www.canvasxpress.org/data/cX-generic-dat.txt\", header=TRUE, sep=\"\\t\", quote=\"\", row.names=1, fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE)\nx=read.table(\"https://www.canvasxpress.org/data/cX-generic-smp.txt\", header=TRUE, sep=\"\\t\", quote=\"\", row.names=1, fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE)\nz=read.table(\"https://www.canvasxpress.org/data/cX-generic-var.txt\", header=TRUE, sep=\"\\t\", quote=\"\", row.names=1, fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE)\ncanvasXpress(\n  data=y,\n  smpAnnot=x,\n  varAnnot=z,\n  graphOrientation=\"vertical\",\n  graphType=\"BarLine\",\n  legendColumns=2,\n  legendPosition=\"bottom\",\n  lineThickness=2,\n  lineType=\"spline\",\n  showTransition=FALSE,\n  smpLabelRotate=45,\n  smpTitle=\"Collection of Samples\",\n  subtitle=\"Random Data\",\n  theme=\"CanvasXpress\",\n  title=\"Bar-Line Graphs\",\n  xAxis=list(\"V1\", \"V2\"),\n  xAxis2=list(\"V3\", \"V4\"),\n  xAxis2TickFormat=\"%.0f T\",\n  xAxisTickFormat=\"%.0f M\"\n)",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Working with Interactive Plots</span>"
+    ]
+  },
+  {
+    "objectID": "ch18.html#dygraphs-via-dygraphs",
+    "href": "ch18.html#dygraphs-via-dygraphs",
+    "title": "18  Working with Interactive Plots",
+    "section": "18.9 Dygraphs via {dygraphs}",
+    "text": "18.9 Dygraphs via {dygraphs}\n{dygraphs} is an R package that allows you to create interactive time series plots. It is based on the JavaScript library Dygraphs.\n\nlibrary(dygraphs)\nlungDeaths &lt;- cbind(mdeaths, fdeaths)\ndygraph(lungDeaths)\n\n\n\n\n\nAnd there are many more options to create interactive plots in R. The choice of the right library depends on the specific requirements of your project and the desired level of interactivity. The examples above should give you a good starting point to explore the possibilities of interactive plots in R. We’ll add more examples in the future.",
+    "crumbs": [
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Working with Interactive Plots</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html#additional-resources",
+    "href": "summary.html#additional-resources",
+    "title": "Remarks, Tipps & Resources",
+    "section": "Additional Resources",
+    "text": "Additional Resources\n\n“ggplot2: Elegant Graphics for Data Analysis” by Hadley Wickham, available via open-access!\n“Fundamentals of Data Visualization” by Claus O. Wilke about data visualization in general but using {ggplot2}. (You can find the codes on his GitHub profile.)\n“Cookbook for R” by Winston Chang with recipes to produce R plots\nGallery of the Top 50 ggplot2 visualizations\nGallery of {ggplot2} extension packages\nHow to extend {ggplot2} by Hadley Wickham\nThe fantastic R4DS Online Learning Community that offers help and mentoring for all things related to the content of the “R for Data Science” book by Hadley Wickham\n#TidyTuesday, a weekly social data project focusing on ggplots—check also #TidyTuesday on Twitter and this collection of contributions by Neil Grantham\nA two-part, 4.5-hours tutorial series by Thomas Linn Pedersen (Part 1 | Part 2)",
+    "crumbs": [
+      "Remarks, Tipps & Resources"
+    ]
+  },
+  {
+    "objectID": "ch19.html",
+    "href": "ch19.html",
+    "title": "19  3D Plots Using {rayshader} package",
+    "section": "",
+    "text": "rayshader is an open source package for producing 2D and 3D data visualizations in R. rayshader uses elevation data in a base R matrix and a combination of raytracing, hillshading algorithms, and overlays to generate stunning 2D and 3D maps. In addition to maps, rayshader also allows the user to translate ggplot2 objects into beautiful 3D data visualizations.\nThe models can be rotated and examined interactively or the camera movement can be scripted to create animations. Scenes can also be rendered using a high-quality pathtracer, rayrender. The user can also create a cinematic depth of field post-processing effect to direct the user’s focus to important regions in the figure. The 3D models can also be exported to a 3D-printable format with a built-in STL export function, and can be exported to an OBJ file for use in other 3D modeling software. rayshader is a powerful tool for creating 3D visualizations of data, and can be used to create stunning visualizations for scientific research, data analysis, and art. You can find more information about rayshader at https://www.rayshader.com/.\nLet’s see some 3D plots using rayshader.\n\nlibrary(ggplot2)\nlibrary(rayshader)\n\nggdiamonds = ggplot(diamonds) +\n  stat_density_2d(aes(x = x, y = depth, fill = after_stat(nlevel)), \n                  geom = \"polygon\", n = 200, bins = 50,contour = TRUE) +\n  facet_wrap(clarity~.) +\n  scale_fill_viridis_c(option = \"A\")\n\nplot_gg(ggdiamonds, width = 5, height = 5, raytrace = FALSE, preview = TRUE)\n\n\n\n\n\n\n\nplot_gg(ggdiamonds, width = 5, height = 5, multicore = TRUE, scale = 250, \n        zoom = 0.7, theta = 10, phi = 30, windowsize = c(800, 800))\nSys.sleep(0.2)\nrender_snapshot(clear = TRUE)\n\n\n\n\n\n\n\n\nRayshader will automatically ignore lines and other elements that should not be mapped to 3D. Here’s a contour plot of the volcano dataset.\n\nlibrary(reshape2)\n#Contours and other lines will automatically be ignored. Here is the volcano dataset:\n\nggvolcano = volcano %&gt;% \n  melt() %&gt;%\n  ggplot() +\n  geom_tile(aes(x = Var1, y = Var2, fill = value)) +\n  geom_contour(aes(x = Var1, y = Var2, z = value), color = \"black\") +\n  scale_x_continuous(\"X\", expand = c(0, 0)) +\n  scale_y_continuous(\"Y\", expand = c(0, 0)) +\n  scale_fill_gradientn(\"Z\", colours = terrain.colors(10)) +\n  coord_fixed()\n\npar(mfrow = c(1, 2))\nplot_gg(ggvolcano, width = 7, height = 4, raytrace = FALSE, preview = TRUE)\n\nWarning: Removed 1861 rows containing missing values or values outside the scale range\n(`geom_contour()`).\n\n\n\n\n\n\n\n\nplot_gg(ggvolcano, multicore = TRUE, raytrace = TRUE, width = 7, height = 4, \n        scale = 300, windowsize = c(1400, 866), zoom = 0.6, phi = 30, theta = 30)\n\nWarning: Removed 1861 rows containing missing values or values outside the scale range\n(`geom_contour()`).\n\nSys.sleep(0.2)\nrender_snapshot(clear = TRUE)\n\n\n\n\n\n\n\n\nRayshader also detects when the user passes the color aesthetic, and maps those values to 3D. If both color and fill are passed, however, rayshader will default to fill.\n\nmtplot = ggplot(mtcars) + \n  geom_point(aes(x = mpg, y = disp, color = cyl)) + \n  scale_color_continuous(limits = c(0, 8))\n\npar(mfrow = c(1, 2))\nplot_gg(mtplot, width = 3.5, raytrace = FALSE, preview = TRUE)\n\n\n\n\n\n\n\nplot_gg(mtplot, multicore = TRUE, raytrace = TRUE, width = 7, height = 4, \n        scale = 300, windowsize = c(1400, 866), zoom = 0.6, phi = 30, theta = 30)\nSys.sleep(0.2)\nrender_snapshot(clear = TRUE)\n\n\n\n\n\n\n\n\nUtilize combinations of line color and fill to create different effects. Here is a terraced hexbin plot, created by mapping the line colors of the hexagons to black.\n\na = data.frame(x = rnorm(20000, 10, 1.9), y = rnorm(20000, 10, 1.2))\nb = data.frame(x = rnorm(20000, 14.5, 1.9), y = rnorm(20000, 14.5, 1.9))\nc = data.frame(x = rnorm(20000, 9.5, 1.9), y = rnorm(20000, 15.5, 1.9))\ndata = rbind(a, b, c)\n\n#Lines\nlibrary(hexbin)\npp = ggplot(data, aes(x = x, y = y)) +\n  geom_hex(bins = 20, size = 0.5, color = \"black\") +\n  scale_fill_viridis_c(option = \"C\")\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\npar(mfrow = c(1, 2))\nplot_gg(pp, width = 5, height = 4, scale = 300, raytrace = FALSE, preview = TRUE)\n\n\n\n\n\n\n\nplot_gg(pp, width = 5, height = 4, scale = 300, multicore = TRUE, windowsize = c(1000, 800))\nrender_camera(fov = 70, zoom = 0.5, theta = 130, phi = 35)\nSys.sleep(0.2)\nrender_snapshot(clear = TRUE)\n\n\n\n\n\n\n\n\nPretty cool, right? You can create stunning 3D visualizations using rayshader. You can find more information about rayshader at https://www.rayshader.com/.\nWe can also Use rayshader to create 3D maps. That will be whole another book, we’ll publish that soon. Stay tuned!",
+    "crumbs": [
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>3D Plots Using {rayshader} package</span>"
+    ]
+  },
+  {
+    "objectID": "ch20.html",
+    "href": "ch20.html",
+    "title": "20  Geographical Data Analysis using {sf} and",
+    "section": "",
+    "text": "R has well-supported classes for storing spatial data (sp) and interfacing to the above mentioned environments (rgdal, rgeos), but has so far lacked a complete implementation of simple features, making conversions at times convoluted, inefficient or incomplete. The package sf tries to fill this gap, and aims at succeeding sp in the long term. However This is a Huge topic to cover that we need a separate book for this.\nWe’ll just give you a brief overview of how to plot maps using sf and ggplot2.\n\n# Load necessary libraries\nlibrary(bangladesh)\nlibrary(ggplot2)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ lubridate 1.9.3     ✔ tibble    3.2.1\n✔ purrr     1.0.2     ✔ tidyr     1.3.1\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n# Get map data, join with population data, and plot in a single pipeline\ndata &lt;- get_map(\"district\") %&gt;%\n  left_join(bangladesh::pop_district_2011[, c(\"district\", \"population\")], by = c(\"District\" = \"district\"))\n\npp &lt;- data %&gt;% \n  ggplot() +\n  geom_sf(aes(fill = population)) +\n  theme_void() +\n  viridis::scale_fill_viridis(trans = \"log\", name=\"Population\", labels = scales::unit_format(unit = \"M\", scale = 1e-6)) +\n  labs(\n    title = \"Bangladesh Population Map\",\n    subtitle = \"Population & Housing Census 2011\",\n    caption = \"Data Source: BBS\"\n  )\n\npp\n\n\n\n\n\n\n\n\nHere is another example:\n\ndivision_data &lt;- get_map(\"division\")\ndivision_centroids &lt;- bangladesh::get_coordinates(level = \"division\")\nggplot(data = division_data) +\n  geom_sf() +\n  geom_sf_label(aes(label = Division)) +\n  geom_point(data = division_centroids, x = division_centroids$lon, y = division_centroids$lat, col = \"red\", size = 3) +\n  xlab(\"\")+ ylab(\"\")+\n  theme_minimal()\n\nWarning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not\ngive correct results for longitude/latitude data\n\n\n\n\n\n\n\n\n\nYou can also make 3D map using rayshader sf and ggplot2 package. Here is an example:\n\nlibrary(rayshader)\n\nplot_gg(pp+theme_bw(), multicore = TRUE, width = 4 ,height=6, fov = 70, zoom = 0.5)\nSys.sleep(0.2)\nrender_snapshot(clear = TRUE)\n\n\n\n\n\n\n\n\nIf You Want to make maps Interactive like this 👉 Interactive Maps, here is an example:\n\nlibrary(leaflet)\n\nleaflet() %&gt;%\n  addTiles() %&gt;%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=90.40155705289271, lat=23.725810762885487, popup=\"Shahidullah Hall\")\n\n\n\n\n\nThe field of geographical data analysis is a vast and ever-evolving domain, offering an array of techniques and tools to explore and understand spatial data. In this book, we have provided a glimpse into the fascinating world of Data Visualization using ggplot2 and introducing you to the fundamental concepts and methods that form the foundation of spatial analysis.\nWhile we have covered a range of topics, it is important to recognize that this is merely the tip of the iceberg. Geographical data analysis encompasses a multitude of specialized areas, each with its own unique challenges and solutions. As we continue our journey through this field, we are working on a dedicated book that will delve deeper into the intricacies of geographic data analysis.\nIn this forthcoming work, we will explore in greater depth the realm of shapefiles, a crucial data format for representing geographical features. Additionally, we will dive into the powerful capabilities of the sf package, which provides a comprehensive set of tools for working with spatial vector data in R.\nFurthermore, we will introduce you to leaflet, a cutting-edge library that enables the creation of interactive web maps, allowing you to visualize and analyze spatial data in a dynamic and engaging manner. The rayshader package will also be explored, offering techniques for generating stunning 3D visualizations of geographical data, providing new perspectives and insights.\nAnother exciting area we will cover is the tmap package, a versatile tool for creating thematic maps and visualizing spatial patterns. With its rich set of features and extensive customization options, tmap empowers you to communicate your spatial data in a clear and compelling way.\nBeyond these specific packages and techniques, we are actively engaged in the development of new and innovative tools for geographical data analysis. Our goal is to push the boundaries of what is possible, providing researchers, analysts, and practitioners with cutting-edge solutions to tackle complex spatial problems.\nAs we continue to explore the depths of this fascinating field, we invite you to stay tuned for our upcoming work. Together, we will embark on a journey of discovery, unlocking the full potential of geographical data analysis and shaping the future of spatial research and applications.",
+    "crumbs": [
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Geographical Data Analysis using {sf} and</span>"
     ]
   }
 ]

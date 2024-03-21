@@ -1,0 +1,164 @@
+# Working with Interactive Plots {#interactive}
+
+```{r data-import, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(extrafont)
+chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+```
+
+The following collection lists libraries that can be used in combination with `{ggplot2}` or on their own to create interactive visualizations in R (often making use of existing JavaScript libraries).
+
+## Combination of {ggplot2} and {shiny}
+
+`{shiny}` is a package from [RStudio](https://rstudio.com/) that makes it incredibly easy to build interactive web applications with R. For an introduction and live examples, visit the [Shiny homepage](http://shiny.rstudio.com/).
+
+To look at the potential use, you can check out the Hello Shiny examples. This is the first one:
+
+```{r shiny, eval=FALSE}
+library(shiny)
+runExample("01_hello")
+```
+
+Of course, one can use ggplots in these apps. This example demonstrates the possibility to add some interactive user experience:
+
+```{r shiny-04, eval=FALSE}
+runExample("04_mpg")
+```
+
+## Plot.ly via {plotly} and {ggplot2}
+
+[Plot.ly](https://chart-studio.plotly.com/feed/#/) is a tool for creating online, interactive graphics and web apps. The [`{plotly}` package](https://plot.ly/r/getting-started/) enables you to create those directly from your `{ggplot2}` plots and the workflow is surprisingly easy and [can be done from within R](https://plotly-r.com/). However, some of your theme settings might be changed and need to be modified manually afterwards. Also, and unfortunately, it is not straightforward to create facets or true multi-panel plots that scale nicely.
+
+```{r plotly, message=FALSE}
+g <- ggplot(chic, aes(date, temp)) +
+  geom_line(color = "grey") +
+  geom_point(aes(color = season)) +
+  scale_color_brewer(palette = "Dark2", guide = "none") +
+  labs(x = NULL, y = "Temperature (°F)") +
+  theme_bw()
+
+g
+
+library(plotly)
+
+ggplotly(g)
+```
+
+Here, for example, it keeps the overall theme setting but adds the legend again.
+
+## ggiraph and ggplot2
+
+[`{ggiraph}`](https://davidgohel.github.io/ggiraph/index.html) is an R package that allows you to create dynamic `{ggplot2}` graphs. This allows you to add tooltips, animations and JavaScript actions to the graphics. The package also allows the selection of graphical elements when used in Shiny applications.
+
+```{r ggiraph}
+library(ggiraph)
+
+g <- ggplot(chic, aes(date, temp)) +
+  geom_line(color = "grey") +
+  geom_point_interactive(
+    aes(color = season, tooltip = season, data_id = season)
+  ) +
+  scale_color_brewer(palette = "Dark2", guide = "none") +
+  labs(x = NULL, y = "Temperature (°F)") +
+  theme_bw()
+
+girafe(ggobj = g)
+```
+
+## Highcharts via {highcharter}
+
+[Highcharts](https://www.highcharts.com/), a software library for interactive charting, is another visualization library written in pure JavaScript that has been ported to R. The package [`{highcharter}`](https://jkunst.com/highcharter/) makes it possible to use them---but be aware that Highcharts is only free in case of non-commercial use.
+
+```{r highcharter}
+library(highcharter)
+
+hchart(chic, "scatter", hcaes(x = date, y = temp, group = season))
+```
+
+## Echarts via {echarts4r}
+
+[Apache ECharts](https://echarts.apache.org/en/index.html) is a free, powerful charting and visualization library offering an easy way of building intuitive, interactive, and highly customizable charts. Even though it is written in pure JavaScript, one can use it in R via the [`{echarts4r}` library](https://echarts4r.john-coene.com/) thanks to [John Coene](https://john-coene.com/). Check out the impressive [example gallery](https://echarts4r.john-coene.com/articles/chart_types.html) or [this app](https://johncoene.shinyapps.io/fopi-contest/) made by the package developer John Coene.
+
+```{r echarts4r}
+library(echarts4r)
+
+chic |>
+  e_charts(date) |>
+  e_scatter(temp, symbol_size = 7) |>
+  e_visual_map(temp) |>
+  e_y_axis(name = "Temperature (°F)") |>
+  e_legend(FALSE)
+```
+
+## Chart.js via {charter}
+
+[charter](https://github.com/JohnCoene/charter) is another package developed by John Coene that enables the use of a JavaScript visualization library in R. The package allows you to build interactive plots with the help of the [Charts.js framework](https://www.chartjs.org/).
+
+```{r charter}
+library(charter)
+
+chic$date_num <- as.numeric(chic$date)
+## doesn't work with class date
+
+chart(data = chic, caes(date_num, temp)) |>
+  c_scatter(caes(color = season, group = season)) |>
+  c_colors(RColorBrewer::brewer.pal(4, name = "Dark2"))
+```
+
+## Bokeh via {rbokeh}
+
+[`{rbokeh}`](https://hafen.github.io/rbokeh/) is an R package that allows you to create interactive visualizations using the [Bokeh](https://bokeh.org/) library. It is a powerful tool for creating interactive plots and adding interactivity to your visualizations. The following example demonstrates how to create an interactive scatter plot using `{rbokeh}`. You can find more examples and documentation on the [rbokeh website](https://hafen.github.io/rbokeh/).
+
+```{r rbokeh}
+library(rbokeh)
+p <- figure() %>%
+  ly_points(Sepal.Length, Sepal.Width, data = iris,
+    color = Species, glyph = Species,
+    hover = list(Sepal.Length, Sepal.Width))
+p
+```
+
+## Advanced Interactive plots using CanvasExpress
+
+[CanvasXpress](https://www.canvasxpress.org/) is a JavaScript library that allows you to create interactive visualizations. The package `{canvasXpress}` for R enables the creation of interactive plots directly from R. It is a powerful tool for creating visualizations and adding interactivity to your plots. The following example demonstrates how to create a bar-line graph using CanvasXpress. You can find more examples and documentation on the [CanvasXpress website](https://www.canvasxpress.org/).
+
+```{r canvasXpress}
+library(canvasXpress)
+y=read.table("https://www.canvasxpress.org/data/cX-generic-dat.txt", header=TRUE, sep="\t", quote="", row.names=1, fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE)
+x=read.table("https://www.canvasxpress.org/data/cX-generic-smp.txt", header=TRUE, sep="\t", quote="", row.names=1, fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE)
+z=read.table("https://www.canvasxpress.org/data/cX-generic-var.txt", header=TRUE, sep="\t", quote="", row.names=1, fill=TRUE, check.names=FALSE, stringsAsFactors=FALSE)
+canvasXpress(
+  data=y,
+  smpAnnot=x,
+  varAnnot=z,
+  graphOrientation="vertical",
+  graphType="BarLine",
+  legendColumns=2,
+  legendPosition="bottom",
+  lineThickness=2,
+  lineType="spline",
+  showTransition=FALSE,
+  smpLabelRotate=45,
+  smpTitle="Collection of Samples",
+  subtitle="Random Data",
+  theme="CanvasXpress",
+  title="Bar-Line Graphs",
+  xAxis=list("V1", "V2"),
+  xAxis2=list("V3", "V4"),
+  xAxis2TickFormat="%.0f T",
+  xAxisTickFormat="%.0f M"
+)
+```
+
+## Dygraphs via {dygraphs}
+
+[`{dygraphs}`](https://rstudio.github.io/dygraphs/) is an R package that allows you to create interactive time series plots. It is based on the JavaScript library [Dygraphs](https://dygraphs.com/).
+
+```{r dygraphs}
+library(dygraphs)
+lungDeaths <- cbind(mdeaths, fdeaths)
+dygraph(lungDeaths)
+```
+
+And there are many more options to create interactive plots in R. The choice of the right library depends on the specific requirements of your project and the desired level of interactivity. The examples above should give you a good starting point to explore the possibilities of interactive plots in R. We'll add more examples in the future.

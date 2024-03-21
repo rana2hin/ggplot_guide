@@ -1,0 +1,236 @@
+# Working with Colors {#colors}
+
+```{r data-import, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(extrafont)
+chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+```
+
+For simple applications working with colors is straightforward in `{ggplot2}`. For a more advanced treatment of the topic you should probably get your hands on [Hadley's book](http://www.springer.com/de/book/9780387981413#otherversion=9780387981406) which has nice coverage. Other good sources are the [R Cookbook](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/) and the [\`color section in the R Graph Gallery](https://www.r-graph-gallery.com/ggplot2-color.html) by Yan Holtz.
+
+There are two main differences when it comes to colors in `{ggplot2}`. Both arguments, `color` and `fill`, can be
+
+1.  specified as single color or
+2.  assigned to variables.
+
+As you have already seen in the beginning of this tutorial, variables that are *inside* the `aes`thetics are encoded by variables and those that are *outside* are properties that are unrelated to the variables. This complete nonsense plot showing the number of records per year and season illustrates that fact:
+
+```{r inside-outside-aes}
+ggplot(chic, aes(year)) +
+  geom_bar(aes(fill = season), color = "grey", linewidth = 2) +
+  labs(x = "Year", y = "Observations", fill = "Season:")
+```
+
+## Specify Single Colors
+
+Static, single colors are simple to use. We can specify a single color for a geom:
+
+```{r color-static}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "steelblue", size = 2) +
+  labs(x = "Year", y = "Temperature (°F)")
+```
+
+... and in case it provides both, a `color` (outline color) and a `fill` (filling color):
+
+```{r color-fill-static}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(shape = 21, size = 2, stroke = 1,
+             color = "#3cc08f", fill = "#c08f3c") +
+  labs(x = "Year", y = "Temperature (°F)")
+```
+
+Tian Zheng at Columbia has created a useful [PDF of R colors](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf). Of course, you can also specify hex color codes (simply as strings as in the example above) as well as RGB or RGBA values (via the `rgb()` function: `rgb(red, green, blue, alpha)`).
+
+## Assign Colors to Variables
+
+In `{ggplot2}`, colors that are assigned to variables are modified via the `scale_color_*` and the `scale_fill_*` functions. In order to use color with your data, most importantly you need to know if you are dealing with a categorical or continuous variable. The color palette should be chosen depending on type of the variable, with sequential or diverging color palettes being used for continuous variables and qualitative color palettes for categorical variables:
+
+## Qualitative Variables
+
+Qualitative or categorical variables represent types of data which can be divided into groups (*categories*). The variable can be further specified as nominal, ordinal, and binary (dichotomous). Examples of qualitative/categorical variables are:
+
+The default categorical color palette looks like this:
+
+```{r color-cat-default}
+(ga <- ggplot(chic, aes(x = date, y = temp, color = season)) +
+  geom_point() +
+  labs(x = "Year", y = "Temperature (°F)", color = NULL))
+```
+
+### Manually Select Qualitative Colors
+
+You can pick your own set of colors and assign them to a categorical variables via the function `scale_*_manual()` (the `*` can be either `color`, `colour`, or `fill`). The number of specified colors has to match the number of categories:
+
+```{r color-cat-manual}
+ga + scale_color_manual(values = c("dodgerblue4",
+                                   "darkolivegreen4",
+                                   "darkorchid3",
+                                   "goldenrod1"))
+```
+
+### Use Built-In Qualitative Color Palettes
+
+The [ColorBrewer palettes](http://colorbrewer2.org/) is a popular online tool for selecting color schemes for maps. The different sets of colors have been designed to produce attractive color schemes of similar appearance ranging from three to twelve. Those palettes are available as built-in functions in the `{ggplot2}` package and can be applied by calling `scale_*_brewer()`:
+
+```{r color-brewer}
+ga + scale_color_brewer(palette = "Set1")
+```
+
+💡 **You can explore all schemes available via `RColorBrewer::display.brewer.all()`.**
+
+### Use Qualitative Color Palettes from Extension Packages
+
+There are many extension packages that provide additional color palettes. Their use differs depending on the way the package is designed. For an extensive overview of color palettes available in R, check the [collection provided by Emil Hvitfeldt](https://github.com/EmilHvitfeldt/r-color-palettes/blob/master/README.md#comprehensive-list-of-color-palettes-in-r). One can also use his [`{paletteer}` package](https://github.com/EmilHvitfeldt/paletteer), a comprehensive collection of color palettes in R that uses a consistent syntax.
+
+**Examples:**
+
+The [`{ggthemes}` package](https://jrnold.github.io/ggthemes/) for example lets R users access the Tableau colors. Tableau is a famous visualiztion software with a [well-known color palette](http://www.tableau.com/de-de/about/blog/2016/7/colors-upgrade-tableau-10-56782).
+
+```{r color-tableau}
+library(ggthemes)
+ga + scale_color_tableau()
+```
+
+The [`{ggsci}` package](https://nanx.me/ggsci/articles/ggsci.html) provides scientific journal and sci-fi themed color palettes. Want to have a plot with colors that look like being published in *Science* or *Nature*? Here you go!
+
+```{r color-science-nature, fig.width=10}
+library(ggsci)
+g1 <- ga + scale_color_aaas()
+g2 <- ga + scale_color_npg()
+
+library(patchwork)
+(g1 + g2) * theme(legend.position = "top")
+```
+
+## Quantitative Variables
+
+Quantitative variables represent a measurable quantity and are thus numerical. Quantitative data can be further classified as being either continuous (floating numbers possible) or discrete (integers only):
+
+In our example we will change the variable we want to color to ozone, a continuous variable that is strongly related to temperature (higher temperature = higher ozone). The function `scale_*_gradient()` is a sequential gradient while `scale_*_gradient2()` is diverging.
+
+Here is the default `{ggplot2}` sequential color scheme for continuous variables:
+
+```{r colors-seq}
+gb <- ggplot(chic, aes(x = date, y = temp, color = temp)) +
+  geom_point() +
+  labs(x = "Year", y = "Temperature (°F)", color = "Temperature (°F):")
+
+gb + scale_color_continuous()
+```
+
+This code produces the same plot:
+
+```{r colors-seq-alt, eval=FALSE}
+gb + scale_color_gradient()
+```
+
+And here is the diverging default color scheme:
+
+```{r colors-seq-alt-2}
+mid <- mean(chic$temp)  ## midpoint
+
+gb + scale_color_gradient2(midpoint = mid)
+```
+
+### Manually Set a Sequential Color Scheme
+
+You can manually set gradually changing color palettes for continuous variables via `scale_*_gradient()`:
+
+```{r scale-color-gradient}
+gb + scale_color_gradient(low = "darkkhaki",
+                          high = "darkgreen")
+```
+
+Temperature data is normally distributed so how about a diverging color scheme (rather than sequential)... For diverging color you can use the `scale_*_gradient2()` function:
+
+```{r scale-color-gradient2}
+gb + scale_color_gradient2(midpoint = mid, low = "#dd8a0b",
+                           mid = "grey92", high = "#32a676")
+```
+
+### The Beautiful Viridis Color Palette
+
+The [**viridis** color palettes](https://sjmgarnier.github.io/viridis/articles/intro-to-viridis.html) do not only make your plots look pretty and good to perceive but also easier to read by those with colorblindness and print well in gray scale. You can test how your plots might appear under various form of colorblindness using [`{dichromat}`](https://cran.r-project.org/web/packages/dichromat/index.html) package.
+
+And they also come now shipped with `{ggplot2}`! The following multi-panel plot illustrates three out of the four viridis palettes:
+
+```{r viridis-continuous, fig.width=12, fig.height=7}
+p1 <- gb + scale_color_viridis_c() + ggtitle("'viridis' (default)")
+p2 <- gb + scale_color_viridis_c(option = "inferno") + ggtitle("'inferno'")
+p3 <- gb + scale_color_viridis_c(option = "plasma") + ggtitle("'plasma'")
+p4 <- gb + scale_color_viridis_c(option = "cividis") + ggtitle("'cividis'")
+
+library(patchwork)
+(p1 + p2 + p3 + p4) * theme(legend.position = "bottom")
+```
+
+It is also possible to use the viridis color palettes for discrete variables:
+
+```{r viridis-discrete}
+ga + scale_color_viridis_d(guide = "none")
+```
+
+### Use Quantitative Color Palettes from Extension Packages
+
+The many extension packages provide not only additional categorical color palettes but also sequential, diverging and even cyclical palettes. Again, I point you to the great [collection provided by Emil Hvitfeldt](https://github.com/EmilHvitfeldt/r-color-palettes/blob/master/README.md#comprehensive-list-of-color-palettes-in-r) for an overview.
+
+**Examples:**
+
+The [`{rcartocolors}` packages](https://github.com/Nowosad/rcartocolor) ports the beautiful [CARTOcolors](https://www.google.com/search?client=firefox-b-d&q=carto+oclors) to `{ggplot2}` and contains several of my most-used palettes:
+
+```{r color-carto, fig.width=10}
+library(rcartocolor)
+g1 <- gb + scale_color_carto_c(palette = "BurgYl")
+g2 <- gb + scale_color_carto_c(palette = "Earth")
+
+(g1 + g2) * theme(legend.position = "bottom")
+```
+
+The [`{scico}` package](https://github.com/thomasp85/scico) provides access to the [color palettes developed by Fabio Crameri](http://www.fabiocrameri.ch/colourmaps.php). These color palettes are not only beautiful and often unusual but also a good choice since they have been developed to be perceptually uniform and ordered. In addition, they work for people with color vision deficiency and in grayscale:
+
+```{r color-scico, fig.width=10}
+library(scico)
+g1 <- gb + scale_color_scico(palette = "berlin")
+g2 <- gb + scale_color_scico(palette = "hawaii", direction = -1)
+
+(g1 + g2) * theme(legend.position = "bottom")
+```
+
+#### Modify Color Palettes Afterwards
+
+Since the release of `ggplot2 3.0.0`, one can modify layer aesthetics after they have been mapped to the data. Or as the `{ggplot2}` phrases it: "Use `after_scale()` to flag evaluation of mapping for after data has been scaled."
+
+So why not use the modified colors in the first place? Since `{ggplot2}` can only handle one `color` and one `fill` scale, this is an interesting functionality. Look closer at the following example where we use `clr_negate()` from the [`{prismatic}` package](https://emilhvitfeldt.github.io/prismatic/):
+
+```{r aftercale}
+library(prismatic)
+
+ggplot(chic, aes(date, temp, color = temp)) +
+  geom_point(size = 5) +
+  geom_point(aes(color = temp,
+                 color = after_scale(clr_negate(color))),
+             size = 2) +
+  scale_color_scico(palette = "hawaii", guide = "none") +
+  labs(x = "Year", y = "Temperature (°F)")
+```
+
+Changing the color scheme afterwards is especially fun with functions from the `{prismatic}` packages, namely `clr_negate()`, `clr_lighten()`, `clr_darken()` and `clr_desaturate()`. You can even combine those functions. Here, we plot a box plot that has both arguments, `color` and `fill`:
+
+```{r aftercale-comb}
+library(prismatic)
+
+ggplot(chic, aes(date, temp)) +
+  geom_boxplot(
+    aes(color = season,
+        fill = after_scale(clr_desaturate(clr_lighten(color, .6), .6))),
+    linewidth = 1
+  ) +
+  scale_color_brewer(palette = "Dark2", guide = "none") +
+  labs(x = "Year", y = "Temperature (°F)")
+```
+
+Note that you need to specify the `color` and/or `fill` in the `aes()` of the respective `geom_*()` or `stat_*()` to make `after_scale()` work.
+
+💡 **This seems a bit complicated for now---one could simply use the `color` and `fill` scales for both. Yes, that is true but think about use cases where you need several `color` and/or `fill` scales. In such a case, it would be senseless to occupy the `fill` scale with a slightly darker version of the palette used for `color`.**

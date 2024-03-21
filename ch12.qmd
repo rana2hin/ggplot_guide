@@ -1,0 +1,102 @@
+# Working with Lines {#lines}
+
+```{r data-import, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(extrafont)
+chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+```
+
+## Add Horizonal or Vertical Lines to a Plot
+
+You might want to highlight a given range or threshold, which can be done plotting a line at defined coordinates using `geom_hline()` (for "horizontal lines") or `geom_vline()` (for "vertical lines"):
+
+```{r hline}
+ggplot(chic, aes(x = date, y = temp, color = o3)) +
+  geom_point() +
+  geom_hline(yintercept = c(0, 73)) +
+  labs(x = "Year", y = "Temperature (°F)")
+```
+
+```{r vline}
+g <- ggplot(chic, aes(x = temp, y = dewpoint)) +
+  geom_point(color = "dodgerblue", alpha = .5) +
+  labs(x = "Temperature (°F)", y = "Dewpoint")
+
+g +
+  geom_vline(aes(xintercept = median(temp)), linewidth = 1.5,
+             color = "firebrick", linetype = "dashed") +
+  geom_hline(aes(yintercept = median(dewpoint)), linewidth = 1.5,
+             color = "firebrick", linetype = "dashed")
+```
+
+If you want to add a line with a slope not being 0 or 1, respectively, you need to use `geom_abline()`. This is for example the case if you want to add a regression line using the arguments `intercept` and `slope`:
+
+```{r abline}
+reg <- lm(dewpoint ~ temp, data = chic)
+
+g +
+  geom_abline(intercept = coefficients(reg)[1],
+              slope = coefficients(reg)[2],
+              color = "darkorange2", 
+              linewidth = 1.5) +
+  labs(title = paste0("y = ", round(coefficients(reg)[2], 2),
+                      " * x + ", round(coefficients(reg)[1], 2)))
+```
+
+Later, we will learn how to add a linear fit with one command using `stat_smooth(method = "lm")`. However, there might be other reasons to add a line with a given slope and this is how one does it 🤷
+
+## Add a Line within a Plot
+
+The previous approaches always covered the whole range of the plot panel, but sometimes one wants to highlight only a given area or use lines for annotations. In this case, `geom_linerange()` is here to help:
+
+```{r linerange}
+g +
+  ## vertical line
+  geom_linerange(aes(x = 50, ymin = 20, ymax = 55),
+                 color = "steelblue", linewidth = 2) +
+  ## horizontal line
+  geom_linerange(aes(xmin = -Inf, xmax = 25, y = 0),
+                 color = "red", linewidth = 1)
+```
+
+Or you can use `annotate(geom = "segment")` to draw lines with a slope differing from 0 and 1:
+
+```{r segment}
+g +
+  annotate(geom = "segment", 
+           x = 50, xend = 75,
+                   y = 20, yend = 45,
+               color = "purple", linewidth = 2)
+```
+
+## Add Curved Lines and Arrows to a Plot
+
+`annotate(geom = "curve")` adds curves. Well, and straight lines if you like:
+
+```{r curve}
+g +
+  annotate(geom = "curve",x = 0, y = 60, xend = 75, yend = 0,
+             color = "tan", linewidth = 2) +
+  annotate(geom = "curve", 
+           x = 0, y = 60, xend = 75, yend = 0,
+             curvature = -0.7, angle = 45,
+             color = "darkgoldenrod1", linewidth = 1) +
+  annotate(geom = "curve", x = 0, y = 60, xend = 75, yend = 0,
+             curvature = 0, linewidth = 1.5)
+```
+
+The same geom can be used to draw arrows:
+
+```{r arrows}
+g +
+  annotate(geom = "curve", x = 0, y = 60, xend = 75, yend = 0,
+             color = "tan", linewidth = 2, 
+             arrow = arrow(length = unit(0.07, "npc"))) +
+  annotate(geom = "curve", x = 5, y = 55, xend = 70, yend = 5,
+             curvature = -0.7, angle = 45,
+             color = "darkgoldenrod1", linewidth = 1,
+             arrow = arrow(length = unit(0.03, "npc"),
+                           type = "closed",
+                           ends = "both"))
+```

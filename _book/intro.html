@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ggplot2: Unleash Your Inner Artist - 1&nbsp; Introduction</title>
+<title>ggplot2: Unleash Your Inner Artist - 1&nbsp; Tie Your Seatbelt</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,27 +54,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -135,7 +115,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Tie Your Seatbelt</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -169,7 +149,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Tie Your Seatbelt</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -197,7 +177,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span id="prep" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Tie Your Seatbelt</span></span></h1>
 </div>
 
 
@@ -214,21 +194,57 @@ div.csl-indent {
 </header>
 
 
-<p>This is a book created from markdown and executable code.</p>
-<p>See <span class="citation" data-cites="knuth84">Knuth (<a href="references.html#ref-knuth84" role="doc-biblioref">1984</a>)</span> for additional discussion of literate programming.</p>
+<p>To fully execute the tutorial, you’ll need to install the following packages:</p>
+<ul>
+<li><code>{ggplot2}</code>, a part of the <code>{tidyverse}</code> package collection</li>
+<li><code>{tidyverse}</code> package collection, including:
+<ul>
+<li><code>{dplyr}</code> for data wrangling</li>
+<li><code>{tibble}</code> for modern data frames</li>
+<li><code>{tidyr}</code> for data cleaning</li>
+<li><code>{forcats}</code> for handling factors</li>
+</ul></li>
+<li><code>{corrr}</code> for calculating correlation matrices</li>
+<li><code>{cowplot}</code> for composing ggplots</li>
+<li><code>{ggforce}</code> for creating sina plots and other advanced visualizations</li>
+<li><code>{ggrepel}</code> for enhancing text labeling in plots</li>
+<li><code>{ggridges}</code> for creating ridge plots</li>
+<li><code>{ggsci}</code> for accessing nice color palettes</li>
+<li><code>{ggtext}</code> for advanced text rendering in plots</li>
+<li><code>{ggthemes}</code> for additional plot themes</li>
+<li><code>{grid}</code> for creating graphical objects</li>
+<li><code>{gridExtra}</code> for additional functions for “grid” graphics</li>
+<li><code>{patchwork}</code> for generating multi-panel plots</li>
+<li><code>{prismatic}</code> for manipulating colors</li>
+<li><code>{rcartocolor}</code> for accessing great color palettes</li>
+<li><code>{scico}</code> for perceptional uniform color palettes</li>
+<li><code>{showtext}</code> for utilizing custom fonts</li>
+<li><code>{shiny}</code> for developing interactive apps</li>
+<li>Several packages for interactive visualizations, including:
+<ul>
+<li><code>{charter}</code></li>
+<li><code>{echarts4r}</code></li>
+<li><code>{ggiraph}</code></li>
+<li><code>{highcharter}</code></li>
+<li><code>{plotly}</code></li>
+</ul></li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install CRAN packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"ggplot2"</span>, <span class="st">"tibble"</span>, <span class="st">"tidyr"</span>, <span class="st">"forcats"</span>, <span class="st">"purrr"</span>, <span class="st">"prismatic"</span>, <span class="st">"corrr"</span>, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cowplot"</span>, <span class="st">"ggforce"</span>, <span class="st">"ggrepel"</span>, <span class="st">"ggridges"</span>, <span class="st">"ggsci"</span>, <span class="st">"ggtext"</span>, <span class="st">"ggthemes"</span>, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"grid"</span>, <span class="st">"gridExtra"</span>, <span class="st">"patchwork"</span>, <span class="st">"rcartocolor"</span>, <span class="st">"scico"</span>, <span class="st">"showtext"</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"shiny"</span>, <span class="st">"plotly"</span>, <span class="st">"highcharter"</span>, <span class="st">"echarts4r"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># install from GitHub since not on CRAN</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(devtools)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"JohnCoene/charter"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+<p>For instructional purposes, and to ensure smooth transitions for learners navigating directly to specific plots, I’ll load the necessary package beside <code>{ggplot2}</code> in the corresponding section.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
-</div>
-</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

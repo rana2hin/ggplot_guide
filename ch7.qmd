@@ -1,0 +1,110 @@
+# Working with Backgrounds & Grid Lines {#style}
+
+```{r data-import, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+```
+
+To modify the overall appearance of your plot, you can use various functions. While altering the entire theme of your plot is one option (covered in detail in the ["Working with Themes"](#themes) section below), you can also make specific changes to individual elements such as backgrounds and grid lines.
+
+## Change the Panel Background Color
+
+You can adjust the background color (fill) of the panel area (where the data is plotted) by modifying the theme element `panel.background`:
+
+```{r panel-color}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "#1D8565", size = 2) +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(panel.background = element_rect(
+    fill = "#64D2AA", color = "#64D2AA", linewidth = 2)
+  )
+```
+
+Keep in mind that the true color — the outline of the panel background — didn't change despite our specification. This is because there's a layer on top of `panel.background`, namely `panel.border`. However, it's important to use a transparent fill here; otherwise, your data will be hidden behind this layer. In the following example, I illustrate this by using a semitransparent hex color for the `fill` argument in `element_rect`:
+
+```{r panel-color-2}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "#1D8565", size = 2) +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(panel.border = element_rect(
+    fill = "#64D2AA99", color = "#64D2AA", linewidth = 2)
+  )
+```
+
+## Change Grid Lines
+
+There are two types of grid lines: major grid lines indicating the ticks and minor grid lines between the major ones. You can customize both by overwriting the defaults for `panel.grid` or for each set of gridlines separately, `panel.grid.major` and `panel.grid.minor`.
+
+```{r grid-lines}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(panel.grid.major = element_line(color = "gray10", linewidth = .5),
+        panel.grid.minor = element_line(color = "gray70", linewidth = .25))
+```
+
+You can even specify settings for all four different levels of grid lines: major horizontal, major vertical, minor horizontal, and minor vertical.
+
+```{r grid-lines-x-y}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(panel.grid.major = element_line(linewidth = .5, linetype = "dashed"),
+        panel.grid.minor = element_line(linewidth = .25, linetype = "dotted"),
+        panel.grid.major.x = element_line(color = "red1"),
+        panel.grid.major.y = element_line(color = "blue1"),
+        panel.grid.minor.x = element_line(color = "red4"),
+        panel.grid.minor.y = element_line(color = "blue4"))
+```
+
+And, of course, you can remove some or all grid lines if you like. For instance, to remove all grid lines, you can set `panel.grid = element_blank()`. Alternatively, you can remove only major or minor grid lines by specifying `panel.grid.major` or `panel.grid.minor` accordingly and setting them to `element_blank()`.
+
+```{r grid-remove}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(panel.grid.minor = element_blank())
+```
+
+```{r grid-blank}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(panel.grid = element_blank())
+```
+
+## Change Spacing of Gridlines
+
+Furthermore, you can also define the breaks between both major and minor grid lines by specifying the `breaks` argument.
+
+```{r grid-breaks}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  scale_y_continuous(breaks = seq(0, 100, 10),
+                     minor_breaks = seq(0, 100, 2.5))
+```
+
+## Change the Plot Background Color
+
+Similarly, to change the background color (fill) of the plot area, you can modify the theme element `plot.background` using the `theme()` function. This allows you to customize the appearance of the entire plot area according to your preferences.
+
+```{r background-color}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(plot.background = element_rect(fill = "gray60",
+                                       color = "gray30", linewidth = 2))
+```
+
+You can achieve a unique background color by either setting the same colors in both `panel.background` and `plot.background` or by setting the background filling of the panel to `"transparent"` or `NA`. This customization can help you create visually appealing plots that match your design preferences.
+
+```{r background-color-same}
+ggplot(chic, aes(x = date, y = temp)) +
+  geom_point(color = "firebrick") +
+  labs(x = "Year", y = "Temperature (°F)") +
+  theme(panel.background = element_rect(fill = NA),
+        plot.background = element_rect(fill = "gray60",
+                                       color = "gray30", linewidth = 2))
+```

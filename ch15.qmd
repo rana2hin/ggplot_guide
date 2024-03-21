@@ -1,0 +1,360 @@
+## Working with Chart Types {#charts}
+
+```{r data-import, include=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(extrafont)
+chic <- readr::read_csv("https://storage.googleapis.com/kagglesdsdata/datasets/4618375/7870811/chicago-nmmaps-custom.csv?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20240318%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20240318T002827Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=595ee21a1e6ce1b16e2a01c543159b25869c2e13b2cae4e8476d3e5e304dbcfba11e3127ddafa2245157e0efc4db92125722a8081c4cf5348884ca03d19ec53c68acb626d5ea72582aa73d9ea3499fb89a3ec9c0e880620f5a8b9a0a806b50572baf4eb8f00a1d5059668b48e580b2f3e7ce1915cbe90e32fcb7b145c491bd6614f1e84d45ff777a731edad71dd9a21648e9c650d33d151ca3340ffed500f2515c9f1df4056717be128e7b0cbb886c5c782143931e543ec1d597d247e043d63e33a5b928797f8c91edfb05eabe28d31012420de21c30af8fd1107b2b9ff1e6be8272d80b4cc6ea32a28b78743a45c46cd53d54272aca3d0034fb51c9e6d68aae")
+```
+
+## Alternatives to a Box Plot
+
+Box plots are great, but they can be so incredibly boring. Also, even if you are used to looking at box plots, remember there might be plenty people looking at your plot that have never seen a box and whisker plot before.
+
+<details>
+
+<summary>💁 <i>Expand for a short recap on box and whiskers plots.</i></summary>
+
+A box-and-whisker plot (sometimes called simply a box plot) is a histogram-like method of displaying data, invented by J. Tukey. The thick **middle line** notates the median, also known as quartile <i>Q<sub>2</sub></i>. The limits of the **box** are determined by the lower and upper quartiles, <i>Q<sub>1</sub></i> and <i>Q<sub>3</sub></i>. The box contains thus 50% of the data and is called *"interquartile range"* (IQR). The length of the **whiskers** is determined by the most extreme values that are not considered as outliers (i.e. values that are within 3/2 times the interquartile range).<br> ![](/img/evol-ggplot/boxplot.png) <br>
+
+</details>
+
+There are alternatives, but first we are plotting a common box plot:
+
+```{r boxplot}
+g <-
+  ggplot(chic, aes(x = season, y = o3,
+                   color = season)) +
+    labs(x = "Season", y = "Ozone") +
+    scale_color_brewer(palette = "Dark2", guide = "none")
+
+g + geom_boxplot()
+```
+
+### Alternative: Plot of Points
+
+Let's plot just each data point of the raw data:
+
+```{r point}
+g + geom_point()
+```
+
+Not only boring but uninformative. To improve the plot, one could add transparency to deal with overplotting:
+
+```{r point-alpha}
+g + geom_point(alpha = .1)
+```
+
+However, setting transparency is difficult here since either the overlap is still too high or the extreme values are not visible. Bad, so let's try something else.
+
+### Alternative: Jitter the Points
+
+Try adding a little jitter to the data. I like this for in-house visualization but be careful using jittering because you are purposely adding noise to your data and this can result in misinterpretation of your data.
+
+```{r jitter}
+g + geom_jitter(width = .3, alpha = .5)
+```
+
+### Alternative: Violin Plots
+
+Violin plots, similar to box plots except you are using a kernel density to show where you have the most data, are a useful visualization.
+
+```{r violin}
+g + geom_violin(fill = "gray80", linewidth = 1, alpha = .5)
+```
+
+### Alternative: Combining Violin Plots with Jitter
+
+We can of course combine both, estimated densities and the raw data points:
+
+```{r violin-jitter, fig.height=6}
+g + geom_violin(fill = "gray80", linewidth = 1, alpha = .5) +
+    geom_jitter(alpha = .25, width = .3) +
+    coord_flip()
+```
+
+The [`{ggforce}` package](https://ggforce.data-imaginist.com/) provides so-called sina functions where the width of the jitter is controlled by the density distribution of the data---that makes the jittering a bit more visually appealing:
+
+```{r violin-sina}
+library(ggforce)
+
+g + geom_violin(fill = "gray80", linewidth = 1, alpha = .5) +
+    geom_sina(alpha = .25) +
+    coord_flip()
+```
+
+### Alternative: Combining Violin Plots with Box Plots
+
+To allow for easy estimation of quantiles, we can also add the box of the box plot inside the violins to indicate 25%-quartile, median and 75%-quartile:
+
+```{r violin-jitter-box, fig.height=6}
+g + geom_violin(aes(fill = season), linewidth = 1, alpha = .5) +
+    geom_boxplot(outlier.alpha = 0, coef = 0,
+                 color = "gray40", width = .2) +
+    scale_fill_brewer(palette = "Dark2", guide = "none") +
+    coord_flip()
+```
+
+## Create a Rug Representation to a Plot
+
+A rug represents the data of a single quantitative variable, displayed as marks along an axis. In most cases, it is used in addition to scatter plots or heatmaps to visualize the overall distribution of one or both of the variables:
+
+```{r rug}
+ggplot(chic, aes(x = date, y = temp,
+                 color = season)) +
+  geom_point(show.legend = FALSE) +
+  geom_rug(show.legend = FALSE) +
+  labs(x = "Year", y = "Temperature (°F)")
+```
+
+```{r rug-2}
+ggplot(chic, aes(x = date, y = temp, color = season)) +
+  geom_point(show.legend = FALSE) +
+  geom_rug(sides = "r", alpha = .3, show.legend = FALSE) +
+  labs(x = "Year", y = "Temperature (°F)")
+```
+
+## Create a Correlation Matrix
+
+There are several packages that allow to create correlation matrix plots, some also using the`{ggplot2}` infrastructure and thus returning ggplots. I am going to show you how to do this without extension packages.
+
+First step is to create the correlation matrix. Here, we use the `{corrr}` package that works nicely with pipes but there are also many others out there. We are using Pearson because all the variables are fairly normally distributed (but you may consider Spearman if your variables follow a different pattern). Note that since a correlation matrix has redundant information we are setting half of it to `NA`.
+
+```{r corr-matrix, echo=-5}
+corm <-
+  chic |>
+  dplyr::select(temp, dewpoint, pm10, o3) |>
+  corrr::correlate(diagonal = 1) |>
+  corrr::shave(upper = FALSE)
+library(gt)
+corm %>% gt()
+```
+
+Now we put the resulting matrix in **long** format using the `pivot_longer()` function from the `{tidyr}` package. We also directly format the labels and place empty quotes for the upper triangle. Note that I use `sprintf()` to ensure that the label always display two digits.
+
+```{r melt-corr-matrix, echo=-3}
+corm <- corm |>
+  tidyr::pivot_longer(
+    cols = -term,
+    names_to = "colname",
+    values_to = "corr"
+  ) |>
+  dplyr::mutate(
+    rowname = forcats::fct_inorder(term),
+    colname = forcats::fct_inorder(colname),
+    label = dplyr::if_else(is.na(corr), "", sprintf("%1.2f", corr))
+  )
+
+corm %>% gt()
+```
+
+For the plot we will use `geom_tile()` for the heatmap and `geom_text()` for the labels:
+
+```{r tile-corr-plot}
+ggplot(corm, aes(rowname, fct_rev(colname),
+                 fill = corr)) +
+  geom_tile() +
+  geom_text(aes(label = label)) +
+  coord_fixed() +
+  labs(x = NULL, y = NULL)
+```
+
+I like to have a diverging color palette---it is important that the scale is centered at zero correlation!---with white indicating missing data. Also I like to have no grid lines and padding around the heatmap as well as labels that are colored depending on the underlying fill:
+
+```{r tile-corr-plot-polished}
+ggplot(corm, aes(rowname, fct_rev(colname),
+                 fill = corr)) +
+  geom_tile() +
+  geom_text(aes(
+    label = label,
+    color = abs(corr) < .75
+  )) +
+  coord_fixed(expand = FALSE) +
+  scale_color_manual(
+    values = c("white", "black"),
+    guide = "none"
+  ) +
+  scale_fill_distiller(
+    palette = "PuOr", na.value = "white",
+    direction = 1, limits = c(-1, 1),
+    name = "Pearson\nCorrelation:"
+  ) +
+  labs(x = NULL, y = NULL) +
+  theme(panel.border = element_rect(color = NA, fill = NA),
+        legend.position.inside = c(.85, .8))
+```
+
+<br>
+
+## Create a Contour Plot
+
+Contour plots are nice way to display eatesholds of values. One can use them to bin data, showing the density of observations:
+
+```{r contour-outline}
+ggplot(chic, aes(temp, o3)) +
+  geom_density_2d() +
+  labs(x = "Temperature (°F)", x = "Ozone Level")
+```
+
+```{r contour-filled}
+ggplot(chic, aes(temp, o3)) +
+  geom_density_2d_filled(show.legend = FALSE) +
+  coord_cartesian(expand = FALSE) +
+  labs(x = "Temperature (°F)", x = "Ozone Level")
+```
+
+But now, we are plotting three-dimensional data. We are going to plot the thresholds in dewpoint (i.e. [the temperature at which airborne water vapor will condense to form liquid dew](https://en.wikipedia.org/wiki/Dew_point)) related to temperature and ozone levels:
+
+```{r contour-z}
+## interpolate data
+fld <- with(chic, akima::interp(x = temp, y = o3, z = dewpoint))
+
+## prepare data in long format
+df <- fld$z |>
+  tibble::as_tibble(.name_repair = "universal_quiet") |> 
+  dplyr::mutate(x = dplyr::row_number()) |>
+  tidyr::pivot_longer(
+    cols = -x,
+    names_to = "y",
+    names_transform = as.integer,
+    values_to = "Dewpoint", 
+    names_prefix = "...",
+    values_drop_na = TRUE
+  )
+
+g <- ggplot(data = df, aes(x = x, y = y, z = Dewpoint))  +
+  labs(x = "Temperature (°F)", y = "Ozone Level",
+       color = "Dewpoint")
+
+g + stat_contour(aes(color = after_stat(level)))
+```
+
+Surprise! As it is defined, the drew point is in most cases equal to the measured temperature.
+
+The lines are indicating different levels of drew points, but this is not a pretty plot and also hard to read due to missing borders. Let's try a tile plot using the viridis color palette to encode the dewpoint of each combination of ozone level and temperature:
+
+```{r contour-tile}
+g + geom_tile(aes(fill = Dewpoint)) +
+    scale_fill_viridis_c(option = "inferno")
+```
+
+How does it look if we combine a contour plot and a tile plot to fill the area under the contour lines?
+
+```{r contour-and-tile}
+g + geom_tile(aes(fill = Dewpoint)) +
+    stat_contour(color = "white", linewidth = .7, bins = 5) +
+    scale_fill_viridis_c()
+```
+
+## Create a Heatmap of Counts
+
+Similarly to our first contour maps, one can easily show the counts or densities of points binned to a hexagonal grid via `geom_hex()`:
+
+```{r heatmap-hex}
+library(hexbin)
+ggplot(chic, aes(temp, o3)) +
+  geom_hex() +
+  scale_fill_distiller(palette = "YlOrRd", direction = 1) +
+  labs(x = "Temperature (°F)", y = "Ozone Level")
+```
+
+Often, white lines pop up in the resulting plot. One can fix that by mapping also color to either `after_stat(count)` (the default) or `after_stat(density)`...
+
+```{r heatmap-hex-ouline}
+ggplot(chic, aes(temp, o3)) +
+  geom_hex(aes(color = after_stat(count))) +
+  scale_fill_distiller(palette = "YlOrRd", direction = 1) +
+  scale_color_distiller(palette = "YlOrRd", direction = 1) +
+  labs(x = "Temperature (°F)", y = "Ozone Level")
+```
+
+... or by setting the same color as outline for all hexagonal cells:
+
+```{r heatmap-hex-ouline-grey}
+ggplot(chic, aes(temp, o3)) +
+  geom_hex(color = "grey") +
+  scale_fill_distiller(palette = "YlOrRd", direction = 1) +
+  labs(x = "Temperature (°F)", y = "Ozone Level")
+```
+
+One can also change the default binning to in- or decrease the number of hexagonal cells:
+
+```{r heatmap-hex-bins}
+ggplot(chic, aes(temp, o3, fill = after_stat(density))) +
+  geom_hex(bins = 50, color = "grey") +
+  scale_fill_distiller(palette = "YlOrRd", direction = 1) +
+  labs(x = "Temperature (°F)", y = "Ozone Level")
+```
+
+If you want to have a regular grid, one can also use `geom_bin2d()` which summarizes the data to rectangular grid cells based on `bins`:
+
+```{r heatmap-rect-bins}
+ggplot(chic, aes(temp, o3, fill = after_stat(density))) +
+  geom_bin2d(bins = 15, color = "grey") +
+  scale_fill_distiller(palette = "YlOrRd", direction = 1) +
+  labs(x = "Temperature (°F)", y = "Ozone Level")
+```
+
+## Create a Ridge Plot
+
+*Ridge(line) plots* are a new type of plots which is very popular at the moment.
+
+While you can create those plots with [basic `{ggplot2}` commands](https://github.com/halhen/viz-pub/blob/master/sports-time-of-day/2_gen_chart.R) the popularity lead to a package that make it easier create those plots: [`{ggridges}`](https://wilkelab.org/ggridges/). We are going to use this package here.
+
+```{r ridges}
+library(ggridges)
+ggplot(chic, aes(x = temp, y = factor(year))) +
+   geom_density_ridges(fill = "gray90") +
+   labs(x = "Temperature (°F)", y = "Year")
+```
+
+You can easily specify the overlap and the trailing tails by using the arguments `rel_min_height` and `scale`, respectively. The package also comes with its own theme (but I would prefer to build my own, see chapter ["Create and Use Your Custom Theme"](#themes)). Additionally, we change the colors based on year to make it more appealing.
+
+```{r ridges-spec}
+ggplot(chic, aes(x = temp, y = factor(year), fill = year)) +
+  geom_density_ridges(alpha = .8, color = "white",
+                      scale = 2.5, rel_min_height = .01) +
+  labs(x = "Temperature (°F)", y = "Year") +
+  guides(fill = "none") +
+  theme_ridges()
+```
+
+You can also get rid of the overlap using values below 1 for the scaling argument (but this somehow contradicts the idea of ridge plots...). Here is an example additionally using the viridis color gradient and the in-build theme:
+
+```{r ridges-viridis}
+ggplot(chic, aes(x = temp, y = season, fill = after_stat(x))) +
+  geom_density_ridges_gradient(scale = .9, gradient_lwd = .5,
+                               color = "black") +
+  scale_fill_viridis_c(option = "plasma", name = "") +
+  labs(x = "Temperature (°F)", y = "Season") +
+  theme_ridges(font_family = "Roboto Condensed", grid = FALSE)
+```
+
+We can also compare several groups per ridgeline and coloring them according to their group. This follows the idea of [Marc Belzunces](https://twitter.com/marcbeldata/status/888697140268204032).
+
+```{r ridges-groups}
+library(dplyr)
+
+## only plot extreme season using dplyr from the tidyverse
+ggplot(data = dplyr::filter(chic, season %in% c("Summer", "Winter")),
+         aes(x = temp, y = year, fill = paste(year, season))) +
+  geom_density_ridges(alpha = .7, rel_min_height = .01,
+                      color = "white", from = -5, to = 95) +
+  scale_fill_cyclical(breaks = c("1997 Summer", "1997 Winter"),
+                      labels = c(`1997 Summer` = "Summer",
+                                 `1997 Winter` = "Winter"),
+                      values = c("tomato", "dodgerblue"),
+                      name = "Season:", guide = "legend") +
+  theme_ridges(grid = FALSE) +
+  labs(x = "Temperature (°F)", y = "Year")
+```
+
+The `{ggridges}` package is also helpful to create histograms for different groups using `stat = "binline"` in the `geom_density_ridges()` command:
+
+```{r ridges-histo}
+ggplot(chic, aes(x = temp, y = factor(year), fill = year)) +
+  geom_density_ridges(stat = "binline", bins = 25, scale = .9,
+                      draw_baseline = FALSE, show.legend = FALSE) +
+  theme_minimal() +
+  labs(x = "Temperature (°F)", y = "Season")
+```
