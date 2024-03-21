@@ -57,7 +57,7 @@ If You Want to make maps Interactive like this 👉 [Interactive Maps](https://r
 library(leaflet)
 
 leaflet() %>%
-  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addTiles() %>% 
   addMarkers(lng=90.40155705289271, lat=23.725810762885487, popup="Shahidullah Hall")
 ```
 
