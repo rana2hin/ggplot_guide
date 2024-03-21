@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.17)  21 MAR 2024 09:40
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.12.17)  21 MAR 2024 12:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -394,7 +394,10 @@ Package graphics Info: Driver file: xetex.def on input line 107.
 )
 \Gin@req@height=\dimen176
 \Gin@req@width=\dimen177
-) (c:/Users/rana2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
+)
+\cslhangindent=\skip78
+\csllabelwidth=\skip79
+(c:/Users/rana2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 (c:/Users/rana2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
@@ -422,7 +425,7 @@ Package caption Info: KOMA-Script scrextend package detected.
 ) (c:/Users/rana2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
 \everycr=\toks25
-\minrowclearance=\skip78
+\minrowclearance=\skip80
 \rownum=\count307
 ) (c:/Users/rana2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
@@ -531,7 +534,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip79
+\Hy@SectionHShift=\skip81
 ) (c:/Users/rana2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
 File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
 \BKM@id=\count321
@@ -552,55 +555,55 @@ Package caption Info: New subtype `subfigure' on input line 238.
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count325
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 186.
+Package hyperref Info: Option `colorlinks' set `true' on input line 219.
 No file index.aux.
 \openout1 = `index.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 192.
-LaTeX Font Info:    ... okay on input line 192.
-Package scrbase Info: activating english \abstractname on input line 192.
-Package scrbase Info: activating english \partname on input line 192.
-Package scrbase Info: activating english \chaptername on input line 192.
-Package scrbase Info: activating english \appendixname on input line 192.
-Package scrbase Info: activating english \figurename on input line 192.
-Package scrbase Info: activating english \tablename on input line 192.
-Package scrbase Info: activating english \contentsname on input line 192.
-Package scrbase Info: activating english \listfigurename on input line 192.
-Package scrbase Info: activating english \listtablename on input line 192.
-Package scrbase Info: activating english \bibname on input line 192.
-Package scrbase Info: activating english \indexname on input line 192.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 225.
+LaTeX Font Info:    ... okay on input line 225.
+Package scrbase Info: activating english \abstractname on input line 225.
+Package scrbase Info: activating english \partname on input line 225.
+Package scrbase Info: activating english \chaptername on input line 225.
+Package scrbase Info: activating english \appendixname on input line 225.
+Package scrbase Info: activating english \figurename on input line 225.
+Package scrbase Info: activating english \tablename on input line 225.
+Package scrbase Info: activating english \contentsname on input line 225.
+Package scrbase Info: activating english \listfigurename on input line 225.
+Package scrbase Info: activating english \listtablename on input line 225.
+Package scrbase Info: activating english \bibname on input line 225.
+Package scrbase Info: activating english \indexname on input line 225.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 192.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 225.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 192.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 225.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 192.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 225.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 192.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 225.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 192.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 225.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 192.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 225.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 192.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 225.
 
 Package fontspec Info: latinmodern-math scale = 0.9999967668407183.
 
@@ -626,7 +629,7 @@ Package fontspec Info: Font family 'latinmodern-math.otf(0)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 192.
+(Font)              scaled to size 10.95pt on input line 225.
 
 Package fontspec Info: latinmodern-math scale = 0.9999967668407183.
 
@@ -658,15 +661,15 @@ Package fontspec Info: Font family 'latinmodern-math.otf(1)' created for font
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 192.
+(Font)              scaled to size 10.95pt on input line 225.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 192.
+(Font)              `operators' in the math version `normal' on input line 225.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 192.
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 225.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 192.
+(Font)              `operators' in the math version `bold' on input line 225.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 192.
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 225.
 
 Package fontspec Info: latinmodern-math scale = 0.9999967668407183.
 
@@ -745,13 +748,13 @@ Package fontspec Info: Font family 'latinmodern-math.otf(2)' created for font
 (fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 192.
+(Font)              `symbols' in the math version `normal' on input line 225.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 192.
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 225.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 192.
+(Font)              `symbols' in the math version `bold' on input line 225.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 192.
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 225.
 
 Package fontspec Info: latinmodern-math scale = 0.9999967668407183.
 
@@ -812,48 +815,48 @@ Package fontspec Info: Font family 'latinmodern-math.otf(3)' created for font
 (fontspec)             =6.56999pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 192.
+(Font)              `largesymbols' in the math version `normal' on input line 225.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 192.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 225.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 192.
+(Font)              `largesymbols' in the math version `bold' on input line 225.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 192.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 225.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 192.
+Package hyperref Info: Link coloring ON on input line 225.
 
 Package hyperref Warning: Rerun to get /PageLabels entry.
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 194.
+(Font)              scaled to size 14.4pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 194.
+(Font)              scaled to size 10.0pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 194.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 194.
+(Font)              scaled to size 7.0pt on input line 227.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 227.
 (c:/Users/rana2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.4013pt on input line 194.
+(Font)              scaled to size 14.4013pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 194.
+(Font)              scaled to size 10.00092pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 194.
+(Font)              scaled to size 7.00064pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 194.
+(Font)              scaled to size 14.39845pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 194.
+(Font)              scaled to size 9.99893pt on input line 227.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 194.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 194.
+(Font)              scaled to size 6.99925pt on input line 227.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 227.
 (c:/Users/rana2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 194.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 227.
 (c:/Users/rana2/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -869,67 +872,67 @@ No file index.toc.
 
 ]
 
-LaTeX Warning: Hyper reference `prep' on page 3 undefined on input line 262.
+LaTeX Warning: Hyper reference `prep' on page 3 undefined on input line 295.
 
 
-LaTeX Warning: Hyper reference `data' on page 3 undefined on input line 265.
+LaTeX Warning: Hyper reference `data' on page 3 undefined on input line 298.
 
 
-LaTeX Warning: Hyper reference `ggplot' on page 3 undefined on input line 268.
+LaTeX Warning: Hyper reference `ggplot' on page 3 undefined on input line 301.
 
 
-LaTeX Warning: Hyper reference `default' on page 3 undefined on input line 271.
+LaTeX Warning: Hyper reference `default' on page 3 undefined on input line 304.
 
 
-LaTeX Warning: Hyper reference `axes' on page 3 undefined on input line 274.
+LaTeX Warning: Hyper reference `axes' on page 3 undefined on input line 307.
 
 [3
 
 ]
 
-LaTeX Warning: Hyper reference `titles' on page 4 undefined on input line 277.
+LaTeX Warning: Hyper reference `titles' on page 4 undefined on input line 310.
 
 
-LaTeX Warning: Hyper reference `legends' on page 4 undefined on input line 280.
+LaTeX Warning: Hyper reference `legends' on page 4 undefined on input line 313.
 
 
-LaTeX Warning: Hyper reference `style' on page 4 undefined on input line 283.
+LaTeX Warning: Hyper reference `style' on page 4 undefined on input line 316.
 
 
-LaTeX Warning: Hyper reference `margins' on page 4 undefined on input line 286.
+LaTeX Warning: Hyper reference `margins' on page 4 undefined on input line 319.
 
 
-LaTeX Warning: Hyper reference `panels' on page 4 undefined on input line 289.
+LaTeX Warning: Hyper reference `panels' on page 4 undefined on input line 322.
 
 
-LaTeX Warning: Hyper reference `colors' on page 4 undefined on input line 292.
+LaTeX Warning: Hyper reference `colors' on page 4 undefined on input line 325.
 
 
-LaTeX Warning: Hyper reference `themes' on page 4 undefined on input line 295.
+LaTeX Warning: Hyper reference `themes' on page 4 undefined on input line 328.
 
 
-LaTeX Warning: Hyper reference `lines' on page 4 undefined on input line 298.
+LaTeX Warning: Hyper reference `lines' on page 4 undefined on input line 331.
 
 
-LaTeX Warning: Hyper reference `text' on page 4 undefined on input line 301.
+LaTeX Warning: Hyper reference `text' on page 4 undefined on input line 334.
 
 
-LaTeX Warning: Hyper reference `coords' on page 4 undefined on input line 304.
+LaTeX Warning: Hyper reference `coords' on page 4 undefined on input line 337.
 
 
-LaTeX Warning: Hyper reference `charts' on page 4 undefined on input line 307.
+LaTeX Warning: Hyper reference `charts' on page 4 undefined on input line 340.
 
 
-LaTeX Warning: Hyper reference `ribbons' on page 4 undefined on input line 310.
+LaTeX Warning: Hyper reference `ribbons' on page 4 undefined on input line 343.
 
 
-LaTeX Warning: Hyper reference `smooths' on page 4 undefined on input line 313.
+LaTeX Warning: Hyper reference `smooths' on page 4 undefined on input line 346.
 
 
-LaTeX Warning: Hyper reference `interactive' on page 4 undefined on input line 316.
+LaTeX Warning: Hyper reference `interactive' on page 4 undefined on input line 349.
 
 
-LaTeX Warning: Hyper reference `tipps' on page 4 undefined on input line 319.
+LaTeX Warning: Hyper reference `tipps' on page 4 undefined on input line 352.
 
 [4]
 chapter 1.
@@ -953,89 +956,89 @@ Class scrreprt Warning: \float@addtolists detected!
 ] [6]
 chapter 2.
 
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 454--454
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 487--487
 []\TU/lmtt/m/n/10.95 -- Column specification --------------------------------------------------------[] 
  []
 
 
-Overfull \hbox (18.88861pt too wide) in paragraph at lines 454--454
+Overfull \hbox (18.88861pt too wide) in paragraph at lines 487--487
 []\TU/lmtt/m/n/10.95 i Specify the column types or set `show_col_types = FALSE` to quiet this message.[] 
  []
 
 Missing character: There is no 💡 (U+1F4A1) in font [lmroman10-regular]:mapping=tex-text;!
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 460.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 493.
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 481--481
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 514--514
 []\TU/lmtt/m/n/10.95 $ city     <chr> "chic", "chic", "chic", "chic", "chic", "chic", "chic", "chic~[] 
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 481--481
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 514--514
 []\TU/lmtt/m/n/10.95 $ date     <date> 1997-01-01, 1997-01-02, 1997-01-03, 1997-01-04, 1997-01-05, ~[] 
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 481--481
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 514--514
 []\TU/lmtt/m/n/10.95 $ temp     <dbl> 36.0, 45.0, 40.0, 51.5, 27.0, 17.0, 16.0, 19.0, 26.0, 16.0, 1~[] 
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 481--481
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 514--514
 []\TU/lmtt/m/n/10.95 $ o3       <dbl> 5.659256, 5.525417, 6.288548, 7.537758, 20.760798, 14.940874,~[] 
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 481--481
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 514--514
 []\TU/lmtt/m/n/10.95 $ dewpoint <dbl> 37.500, 47.250, 38.000, 45.500, 11.250, 5.750, 7.000, 17.750,~[] 
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 481--481
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 514--514
 []\TU/lmtt/m/n/10.95 $ pm10     <dbl> 13.052268, 41.948600, 27.041751, 25.072573, 15.343121, 9.3646~[] 
  []
 
 [7
 
 ]
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 481--481
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 514--514
 []\TU/lmtt/m/n/10.95 $ season   <chr> "Winter", "Winter", "Winter", "Winter", "Winter", "Winter", "~[] 
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 481--481
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 514--514
 []\TU/lmtt/m/n/10.95 $ yday     <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18~[] 
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 481--481
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 514--514
 []\TU/lmtt/m/n/10.95 $ month    <chr> "Jan", "Jan", "Jan", "Jan", "Jan", "Jan", "Jan", "Jan", "Jan"~[] 
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 481--481
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 514--514
 []\TU/lmtt/m/n/10.95 $ year     <dbl> 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1~[] 
  []
 
 [8]
 chapter 3.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <20.74> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 510.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 543.
 Missing character: There is no 💡 (U+1F4A1) in font [lmroman10-regular]:mapping=tex-text;!
 
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 581--581
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 614--614
 []\TU/lmtt/m/n/10.95 -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --[] 
  []
 
 [9
 
 ]
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 581--581
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 614--614
 []\TU/lmtt/m/n/10.95 -- Conflicts ------------------------------------------ tidyverse_conflicts() --[] 
  []
 
 
-Overfull \hbox (133.86359pt too wide) in paragraph at lines 581--581
+Overfull \hbox (133.86359pt too wide) in paragraph at lines 614--614
 []\TU/lmtt/m/n/10.95 i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors[] 
  []
 
@@ -1053,7 +1056,7 @@ File: ch3_files/figure-pdf/ggplot-default-line-1.pdf Graphic file (type pdf)
 File: ch3_files/figure-pdf/ggplot-default-line-point-1.pdf Graphic file (type pdf)
 <use ch3_files/figure-pdf/ggplot-default-line-point-1.pdf>
 
-LaTeX Warning: Hyper reference `charts' on page 13 undefined on input line 669.
+LaTeX Warning: Hyper reference `charts' on page 13 undefined on input line 702.
 
 File: ch3_files/figure-pdf/ggplot-default-col-size-shape-1.pdf Graphic file (type pdf)
 <use ch3_files/figure-pdf/ggplot-default-col-size-shape-1.pdf>
@@ -1066,12 +1069,12 @@ File: ch3_files/figure-pdf/ggplot-default-col-size-hex-rgb-plot-1.pdf Graphic fi
 File: ch3_files/figure-pdf/ggplot-default-line_col-size-shape-1.pdf Graphic file (type pdf)
 <use ch3_files/figure-pdf/ggplot-default-line_col-size-shape-1.pdf>
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 718.
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 751.
 [15]
 File: ch3_files/figure-pdf/remove-gray-background-1.pdf Graphic file (type pdf)
 <use ch3_files/figure-pdf/remove-gray-background-1.pdf>
 
-LaTeX Warning: Hyper reference `themes' on page 16 undefined on input line 738.
+LaTeX Warning: Hyper reference `themes' on page 16 undefined on input line 771.
 
 Missing character: There is no 💡 (U+1F4A1) in font [lmroman10-regular]:mapping=tex-text;!
 [16]
@@ -1118,7 +1121,7 @@ File: ch4_files/figure-pdf/axis-no-labs-1.pdf Graphic file (type pdf)
 [27]
 Missing character: There is no 💡 (U+1F4A1) in font [lmroman10-regular]:mapping=tex-text;!
 
-Underfull \hbox (badness 1460) in paragraph at lines 977--979
+Underfull \hbox (badness 1460) in paragraph at lines 1010--1012
 []\TU/lmr/m/n/10.95 💡 \TU/lmr/bx/n/10.95 If you wish to remove a theme element entirely, you can always use
  []
 
@@ -1127,19 +1130,19 @@ File: ch4_files/figure-pdf/axis-no-title-1.pdf Graphic file (type pdf)
 [28]
 Missing character: There is no 💡 (U+1F4A1) in font [lmroman10-regular]:mapping=tex-text;!
 
-Overfull \hbox (41.8836pt too wide) in paragraph at lines 1016--1016
+Overfull \hbox (41.8836pt too wide) in paragraph at lines 1049--1049
 []\TU/lmtt/m/n/10.95 Warning: Removed 777 rows containing missing values or values outside the scale range[] 
  []
 
 File: ch4_files/figure-pdf/axis-limit-1.pdf Graphic file (type pdf)
 <use ch4_files/figure-pdf/axis-limit-1.pdf>
 [29]
-Overfull \hbox (33.01633pt too wide) in paragraph at lines 1020--1027
+Overfull \hbox (33.01633pt too wide) in paragraph at lines 1053--1060
 []\TU/lmr/m/n/10.95 Alternatively, you can utilize \TU/lmtt/m/n/10.95 scale_y_continuous(limits = c(0, 50)) \TU/lmr/m/n/10.95 or \TU/lmtt/m/n/10.95 coord_cartesian(ylim
  []
 
 
-Overfull \hbox (41.8836pt too wide) in paragraph at lines 1031--1031
+Overfull \hbox (41.8836pt too wide) in paragraph at lines 1064--1064
 []\TU/lmtt/m/n/10.95 Warning: Removed 777 rows containing missing values or values outside the scale range[] 
  []
 
@@ -1160,15 +1163,15 @@ File: ch4_files/figure-pdf/origin-force-1.pdf Graphic file (type pdf)
 [33]
 Missing character: There is no 💡 (U+1F4A1) in font [lmroman10-regular]:mapping=tex-text;!
 
-Overfull \hbox (36.13486pt too wide) in paragraph at lines 1141--1141
-[]\TU/lmtt/m/n/10.95 Warning: Removed 53 rows containing missing values or values outside the scale range[] 
+Overfull \hbox (36.13486pt too wide) in paragraph at lines 1174--1174
+[]\TU/lmtt/m/n/10.95 Warning: Removed 56 rows containing missing values or values outside the scale range[] 
  []
 
 File: ch4_files/figure-pdf/axes-equal-1.pdf Graphic file (type pdf)
 <use ch4_files/figure-pdf/axes-equal-1.pdf>
 [34]
-Overfull \hbox (36.13486pt too wide) in paragraph at lines 1162--1162
-[]\TU/lmtt/m/n/10.95 Warning: Removed 49 rows containing missing values or values outside the scale range[] 
+Overfull \hbox (36.13486pt too wide) in paragraph at lines 1195--1195
+[]\TU/lmtt/m/n/10.95 Warning: Removed 46 rows containing missing values or values outside the scale range[] 
  []
 
 File: ch4_files/figure-pdf/axes-fixed-2-1.pdf Graphic file (type pdf)
@@ -1202,130 +1205,90 @@ File: ch5_files/figure-pdf/title-style-1.pdf Graphic file (type pdf)
 <use ch5_files/figure-pdf/title-style-1.pdf>
 [42]
 
-LaTeX Warning: Hyper reference `themes' on page 43 undefined on input line 1356.
+LaTeX Warning: Hyper reference `themes' on page 43 undefined on input line 1389.
 
 [43]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1438--1438
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1471--1471
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1446--1446
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1479--1479
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1446--1446
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1479--1479
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1451--1451
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1484--1484
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1456--1456
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1489--1489
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1464--1464
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1497--1497
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [44]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1464--1464
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1497--1497
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1469--1469
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1502--1502
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1474--1474
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1507--1507
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1485--1485
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1518--1518
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1485--1485
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1518--1518
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1485--1485
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1518--1518
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1490--1490
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1523--1523
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1501--1501
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1534--1534
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1501--1501
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1534--1534
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1501--1501
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1534--1534
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1506--1506
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1514--1514
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1514--1514
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-[45]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1519--1519
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1524--1524
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1529--1529
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1537--1537
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1537--1537
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1542--1542
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1539--1539
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -1335,196 +1298,201 @@ Overfull \hbox (1.64233pt too wide) in paragraph at lines 1547--1547
  []
 
 
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1547--1547
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+[45]
 Overfull \hbox (1.64233pt too wide) in paragraph at lines 1552--1552
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1557--1557
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1562--1562
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1570--1570
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1570--1570
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1575--1575
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1580--1580
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1585--1585
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
 [46]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1627--1627
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1660--1660
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1632--1632
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1665--1665
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1637--1637
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1670--1670
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1642--1642
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1675--1675
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [47]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1647--1647
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1680--1680
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1652--1652
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1685--1685
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1657--1657
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1690--1690
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1662--1662
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1695--1695
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1667--1667
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1700--1700
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1672--1672
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1705--1705
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1677--1677
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1710--1710
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1682--1682
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1715--1715
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1687--1687
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1720--1720
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1692--1692
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1725--1725
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1697--1697
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1730--1730
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1702--1702
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1735--1735
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1707--1707
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1740--1740
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [48]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1712--1712
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1745--1745
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1717--1717
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1750--1750
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1722--1722
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1755--1755
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1727--1727
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1760--1760
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1732--1732
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1765--1765
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1737--1737
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1770--1770
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1742--1742
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1775--1775
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1747--1747
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1780--1780
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1752--1752
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1785--1785
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1757--1757
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1790--1790
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1762--1762
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1795--1795
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1767--1767
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1800--1800
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1772--1772
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1805--1805
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [49]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1777--1777
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1782--1782
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1787--1787
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1792--1792
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1797--1797
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1802--1802
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1810--1810
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
 Overfull \hbox (1.64233pt too wide) in paragraph at lines 1810--1810
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
@@ -1554,13 +1522,13 @@ Overfull \hbox (1.64233pt too wide) in paragraph at lines 1835--1835
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
-[50]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1840--1840
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1843--1843
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1848--1848
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1843--1843
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -1589,18 +1557,53 @@ Overfull \hbox (1.64233pt too wide) in paragraph at lines 1868--1868
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
-
+[50]
 Overfull \hbox (1.64233pt too wide) in paragraph at lines 1873--1873
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1878--1878
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1881--1881
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 1883--1883
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1881--1881
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1886--1886
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1891--1891
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1896--1896
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1901--1901
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1906--1906
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1911--1911
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 1916--1916
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -1611,127 +1614,92 @@ File: ch5_files/figure-pdf/multiline-title-1.pdf Graphic file (type pdf)
 File: ch5_files/figure-pdf/unnamed-chunk-1-1.pdf Graphic file (type pdf)
 <use ch5_files/figure-pdf/unnamed-chunk-1-1.pdf>
 [58] [59]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2331--2331
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2364--2364
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2372--2372
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2372--2372
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2344--2344
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2377--2377
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2349--2349
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2382--2382
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2357--2357
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2390--2390
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2357--2357
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2390--2390
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2362--2362
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2395--2395
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2367--2367
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2400--2400
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2378--2378
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2411--2411
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2378--2378
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2411--2411
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2378--2378
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2411--2411
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2383--2383
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2416--2416
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [60]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2394--2394
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2427--2427
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2394--2394
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2427--2427
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2394--2394
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2427--2427
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2399--2399
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2432--2432
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2407--2407
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2407--2407
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2412--2412
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2417--2417
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2422--2422
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2430--2430
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2430--2430
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2435--2435
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2440--2440
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -1745,183 +1713,188 @@ Overfull \hbox (1.64233pt too wide) in paragraph at lines 2445--2445
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2450--2450
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2455--2455
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2463--2463
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2463--2463
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2468--2468
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2473--2473
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2478--2478
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
 [61] [62]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2520--2520
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2553--2553
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2525--2525
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2558--2558
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2530--2530
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2563--2563
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2535--2535
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2568--2568
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2540--2540
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2573--2573
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2545--2545
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2578--2578
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2550--2550
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2583--2583
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2555--2555
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2588--2588
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2560--2560
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2593--2593
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2565--2565
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2598--2598
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2570--2570
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2603--2603
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2575--2575
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2608--2608
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [63]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2580--2580
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2613--2613
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2585--2585
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2618--2618
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2590--2590
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2623--2623
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2595--2595
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2628--2628
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2600--2600
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2633--2633
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2605--2605
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2638--2638
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2610--2610
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2643--2643
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2615--2615
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2648--2648
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2620--2620
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2653--2653
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2625--2625
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2658--2658
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2630--2630
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2663--2663
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2635--2635
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2668--2668
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2640--2640
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2673--2673
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [64]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2645--2645
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2678--2678
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2650--2650
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2683--2683
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2655--2655
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2688--2688
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2660--2660
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2693--2693
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2665--2665
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2670--2670
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2675--2675
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2680--2680
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2685--2685
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2690--2690
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2695--2695
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2698--2698
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -1931,11 +1904,6 @@ Overfull \hbox (1.64233pt too wide) in paragraph at lines 2703--2703
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2703--2703
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-[65]
 Overfull \hbox (1.64233pt too wide) in paragraph at lines 2708--2708
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
@@ -1961,16 +1929,16 @@ Overfull \hbox (1.64233pt too wide) in paragraph at lines 2728--2728
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2733--2733
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2736--2736
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2741--2741
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2736--2736
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
-
+[65]
 Overfull \hbox (1.64233pt too wide) in paragraph at lines 2741--2741
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
@@ -2000,13 +1968,48 @@ Overfull \hbox (1.64233pt too wide) in paragraph at lines 2766--2766
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
-[66]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2771--2771
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2774--2774
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 2776--2776
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2774--2774
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2779--2779
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2784--2784
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2789--2789
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2794--2794
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2799--2799
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+[66]
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2804--2804
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 2809--2809
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -2038,7 +2041,7 @@ File: ch6_files/figure-pdf/legend-title-labs-null-1.pdf Graphic file (type pdf)
 File: ch6_files/figure-pdf/legend-top-1.pdf Graphic file (type pdf)
 <use ch6_files/figure-pdf/legend-top-1.pdf>
 
-Overfull \hbox (36.13486pt too wide) in paragraph at lines 3305--3305
+Overfull \hbox (36.13486pt too wide) in paragraph at lines 3338--3338
 []\TU/lmtt/m/n/10.95 Warning: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2[] 
  []
 
@@ -2054,7 +2057,7 @@ File: ch6_files/figure-pdf/legend-style-1.pdf Graphic file (type pdf)
 File: ch6_files/figure-pdf/legend-title-labs-1.pdf Graphic file (type pdf)
 <use ch6_files/figure-pdf/legend-title-labs-1.pdf>
 [82]
-Underfull \hbox (badness 1292) in paragraph at lines 3369--3372
+Underfull \hbox (badness 1292) in paragraph at lines 3402--3405
 []\TU/lmr/m/n/10.95 You can adjust the legend details using \TU/lmtt/m/n/10.95 scale_color_discrete(name = "title") \TU/lmr/m/n/10.95 or
  []
 
@@ -2102,7 +2105,7 @@ File: ch6_files/figure-pdf/legend-guide-cont-steps-1.pdf Graphic file (type pdf)
 [96] [97]
 chapter 7.
 
-LaTeX Warning: Hyper reference `themes' on page 98 undefined on input line 3638.
+LaTeX Warning: Hyper reference `themes' on page 98 undefined on input line 3671.
 
 File: ch7_files/figure-pdf/panel-color-1.pdf Graphic file (type pdf)
 <use ch7_files/figure-pdf/panel-color-1.pdf>
@@ -2146,7 +2149,7 @@ chapter 9.
 File: ch9_files/figure-pdf/grid-plots-1.pdf Graphic file (type pdf)
 <use ch9_files/figure-pdf/grid-plots-1.pdf>
 
-Underfull \hbox (badness 1783) in paragraph at lines 3883--3886
+Underfull \hbox (badness 1783) in paragraph at lines 3916--3919
 []\TU/lmr/m/n/10.95 To switch from a row-based arrangement to a column-based one, you can modify
  []
 
@@ -2172,12 +2175,12 @@ File: ch9_files/figure-pdf/grid-plots-two-vars-1.pdf Graphic file (type pdf)
 File: ch9_files/figure-pdf/facet-modify-striptext-1.pdf Graphic file (type pdf)
 <use ch9_files/figure-pdf/facet-modify-striptext-1.pdf>
 [115]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4052--4052
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4085--4085
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4052--4052
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4085--4085
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -2204,7 +2207,7 @@ File: ch9_files/figure-pdf/combine-plots-grid-1.pdf Graphic file (type pdf)
 File: ch9_files/figure-pdf/combine-plots-patchwork-layout-1.pdf Graphic file (type pdf)
 <use ch9_files/figure-pdf/combine-plots-patchwork-layout-1.pdf>
 
-Overfull \hbox (10.94925pt too wide) in paragraph at lines 4229--4230
+Overfull \hbox (10.94925pt too wide) in paragraph at lines 4262--4263
 [][] 
  []
 
@@ -2236,7 +2239,7 @@ File: ch10_files/figure-pdf/color-tableau-1.pdf Graphic file (type pdf)
 File: ch10_files/figure-pdf/color-science-nature-1.pdf Graphic file (type pdf)
 <use ch10_files/figure-pdf/color-science-nature-1.pdf>
 
-Overfull \hbox (10.94926pt too wide) in paragraph at lines 4424--4425
+Overfull \hbox (10.94926pt too wide) in paragraph at lines 4457--4458
 [][] 
  []
 
@@ -2247,7 +2250,7 @@ File: ch10_files/figure-pdf/colors-seq-1.pdf Graphic file (type pdf)
 File: ch10_files/figure-pdf/colors-seq-alt-2-1.pdf Graphic file (type pdf)
 <use ch10_files/figure-pdf/colors-seq-alt-2-1.pdf>
 
-Underfull \hbox (badness 1237) in paragraph at lines 4476--4478
+Underfull \hbox (badness 1237) in paragraph at lines 4509--4511
 \TU/lmr/m/n/10.95 You can manually set gradually changing color palettes for continuous variables via
  []
 
@@ -2260,7 +2263,7 @@ File: ch10_files/figure-pdf/scale-color-gradient2-1.pdf Graphic file (type pdf)
 File: ch10_files/figure-pdf/viridis-continuous-1.pdf Graphic file (type pdf)
 <use ch10_files/figure-pdf/viridis-continuous-1.pdf>
 
-Overfull \hbox (10.94511pt too wide) in paragraph at lines 4528--4529
+Overfull \hbox (10.94511pt too wide) in paragraph at lines 4561--4562
 [][] 
  []
 
@@ -2270,7 +2273,7 @@ File: ch10_files/figure-pdf/viridis-discrete-1.pdf Graphic file (type pdf)
 File: ch10_files/figure-pdf/color-carto-1.pdf Graphic file (type pdf)
 <use ch10_files/figure-pdf/color-carto-1.pdf>
 
-Overfull \hbox (10.94926pt too wide) in paragraph at lines 4568--4569
+Overfull \hbox (10.94926pt too wide) in paragraph at lines 4601--4602
 [][] 
  []
 
@@ -2278,7 +2281,7 @@ Overfull \hbox (10.94926pt too wide) in paragraph at lines 4568--4569
 File: ch10_files/figure-pdf/color-scico-1.pdf Graphic file (type pdf)
 <use ch10_files/figure-pdf/color-scico-1.pdf>
 
-Overfull \hbox (10.94926pt too wide) in paragraph at lines 4588--4589
+Overfull \hbox (10.94926pt too wide) in paragraph at lines 4621--4622
 [][] 
  []
 
@@ -2307,127 +2310,92 @@ File: ch11_files/figure-pdf/hrbrthemes-1.pdf Graphic file (type pdf)
 File: ch11_files/figure-pdf/theme-base-text-family-1.pdf Graphic file (type pdf)
 <use ch11_files/figure-pdf/theme-base-text-family-1.pdf>
 [145] [146]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4832--4832
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4865--4865
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4840--4840
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4873--4873
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4840--4840
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4873--4873
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4845--4845
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4878--4878
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4850--4850
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4883--4883
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4858--4858
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4891--4891
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4858--4858
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4891--4891
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4863--4863
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4896--4896
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4868--4868
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4901--4901
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4879--4879
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4912--4912
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4879--4879
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4912--4912
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4879--4879
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4912--4912
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [147]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4884--4884
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4917--4917
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4895--4895
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4928--4928
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4895--4895
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4928--4928
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4895--4895
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4928--4928
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4900--4900
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4933--4933
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4908--4908
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4908--4908
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4913--4913
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4918--4918
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4923--4923
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4931--4931
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4931--4931
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-[148]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 4936--4936
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4941--4941
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -2441,183 +2409,218 @@ Overfull \hbox (1.64233pt too wide) in paragraph at lines 4946--4946
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4951--4951
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4956--4956
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4964--4964
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4964--4964
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+[148]
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4969--4969
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4974--4974
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 4979--4979
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
 [149]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5021--5021
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5054--5054
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5026--5026
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5059--5059
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5031--5031
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5064--5064
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5036--5036
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5069--5069
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5041--5041
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5074--5074
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5046--5046
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5079--5079
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5051--5051
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5084--5084
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5056--5056
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5089--5089
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5061--5061
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5094--5094
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [150]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5066--5066
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5099--5099
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5071--5071
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5104--5104
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5076--5076
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5109--5109
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5081--5081
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5114--5114
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5086--5086
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5119--5119
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5091--5091
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5124--5124
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5096--5096
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5129--5129
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5101--5101
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5134--5134
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5106--5106
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5139--5139
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5111--5111
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5144--5144
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5116--5116
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5149--5149
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5121--5121
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5154--5154
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5126--5126
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5159--5159
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [151]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5131--5131
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5164--5164
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5136--5136
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5169--5169
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5141--5141
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5174--5174
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5146--5146
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5179--5179
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5151--5151
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5184--5184
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5156--5156
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5189--5189
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5161--5161
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5194--5194
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5166--5166
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5199--5199
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5171--5171
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5204--5204
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5176--5176
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5209--5209
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5181--5181
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5214--5214
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5186--5186
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5219--5219
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5191--5191
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5224--5224
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [152]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5196--5196
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5229--5229
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -2628,265 +2631,230 @@ File: ch11_files/figure-pdf/theme-base-text-size-1.pdf Graphic file (type pdf)
 File: ch11_files/figure-pdf/theme-base-line-size-1.pdf Graphic file (type pdf)
 <use ch11_files/figure-pdf/theme-base-line-size-1.pdf>
 [158]
-Overfull \hbox (13.13986pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (13.13986pt too wide) in paragraph at lines 5624--5624
 []    \TU/lmtt/m/n/10.95 t <- theme(line = element_line(colour = "black", linewidth = base_line_size,[] 
  []
 
 
-Overfull \hbox (36.13486pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (36.13486pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 colour = "grey30"), axis.text.x = element_text(margin = margin(t = 0.8 *[] 
  []
 
 
-Overfull \hbox (93.62234pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (93.62234pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 half_line/2), vjust = 1), axis.text.x.top = element_text(margin = margin(b = 0.8 *[] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 half_line/2), vjust = 0), axis.text.y = element_text(margin = margin(r = 0.8 *[] 
  []
 
 
-Overfull \hbox (105.11984pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (105.11984pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 half_line/2), hjust = 1), axis.text.y.right = element_text(margin = margin(l = 0.8 *[] 
  []
 
 
-Overfull \hbox (70.62735pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (70.62735pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 half_line/2), hjust = 0), axis.text.r = element_text(margin = margin(l = 0.8 *[] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 5624--5624
 []        \TU/lmtt/m/n/10.95 axis.ticks = element_line(colour = "grey20"), axis.ticks.length = unit(half_line/2,[] 
  []
 
 
-Overfull \hbox (1.64236pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (1.64236pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 "pt"), axis.ticks.length.x = NULL, axis.ticks.length.x.top = NULL,[] 
  []
 
 
-Overfull \hbox (162.60733pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (162.60733pt too wide) in paragraph at lines 5624--5624
 []        \TU/lmtt/m/n/10.95 axis.minor.ticks.length = rel(0.75), axis.title.x = element_text(margin = margin(t = half_line/2),[] 
  []
 
 
-Overfull \hbox (64.8786pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (64.8786pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 vjust = 1), axis.title.x.top = element_text(margin = margin(b = half_line/2),[] 
  []
 
 
-Overfull \hbox (151.10983pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (151.10983pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 margin = margin(r = half_line/2), vjust = 1), axis.title.y.right = element_text(angle = -90,[] 
  []
 
 
-Overfull \hbox (151.10983pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (151.10983pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 margin = margin(l = half_line/2), vjust = 1), legend.background = element_rect(colour = NA),[] 
  []
 
 
-Overfull \hbox (7.39111pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (7.39111pt too wide) in paragraph at lines 5624--5624
 []        \TU/lmtt/m/n/10.95 legend.title = element_text(hjust = 0), legend.ticks.length = rel(0.2),[] 
  []
 
 [159]
-Overfull \hbox (82.12485pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (82.12485pt too wide) in paragraph at lines 5624--5624
 []        \TU/lmtt/m/n/10.95 legend.position = "right", legend.direction = NULL, legend.justification = "center",[] 
  []
 
 
-Overfull \hbox (151.10983pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (151.10983pt too wide) in paragraph at lines 5624--5624
 []        \TU/lmtt/m/n/10.95 legend.box.spacing = unit(2 * half_line, "pt"), panel.background = element_rect(fill = "grey92",[] 
  []
 
 
-Overfull \hbox (139.61234pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (139.61234pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 colour = NA), panel.border = element_blank(), panel.grid = element_line(colour = "white"),[] 
  []
 
 
-Overfull \hbox (133.86359pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (133.86359pt too wide) in paragraph at lines 5624--5624
 []        \TU/lmtt/m/n/10.95 panel.spacing.y = NULL, panel.ontop = FALSE, strip.background = element_rect(fill = "grey85",[] 
  []
 
 
-Overfull \hbox (93.62234pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (93.62234pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 colour = NA), strip.clip = "inherit", strip.text = element_text(colour = "grey10",[] 
  []
 
 
-Overfull \hbox (18.88861pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (18.88861pt too wide) in paragraph at lines 5624--5624
 []        \TU/lmtt/m/n/10.95 strip.text.y.left = element_text(angle = 90), strip.placement = "inside",[] 
  []
 
 
-Overfull \hbox (133.86359pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (133.86359pt too wide) in paragraph at lines 5624--5624
 []        \TU/lmtt/m/n/10.95 strip.placement.x = NULL, strip.placement.y = NULL, strip.switch.pad.grid = unit(half_line/2,[] 
  []
 
 
-Overfull \hbox (47.63235pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (47.63235pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 vjust = 1, margin = margin(b = half_line)), plot.title.position = "panel",[] 
  []
 
 
-Overfull \hbox (76.3761pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (76.3761pt too wide) in paragraph at lines 5624--5624
 []        \TU/lmtt/m/n/10.95 plot.subtitle = element_text(hjust = 0, vjust = 1, margin = margin(b = half_line)),[] 
  []
 
 
-Overfull \hbox (59.12985pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (59.12985pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 vjust = 1, margin = margin(t = half_line)), plot.caption.position = "panel",[] 
  []
 
 
-Overfull \hbox (59.12985pt too wide) in paragraph at lines 5591--5591
+Overfull \hbox (59.12985pt too wide) in paragraph at lines 5624--5624
 []            \TU/lmtt/m/n/10.95 vjust = 0.5), plot.tag.position = "topleft", plot.margin = margin(half_line,[] 
  []
 
 [160]
-Underfull \vbox (badness 10000) detected at line 5700
+Underfull \vbox (badness 10000) detected at line 5733
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5700
+Underfull \vbox (badness 10000) detected at line 5733
  []
 
 [161]
-Underfull \vbox (badness 10000) detected at line 5700
+Underfull \vbox (badness 10000) detected at line 5733
  []
 
 
-Underfull \vbox (badness 10000) detected at line 5700
+Underfull \vbox (badness 10000) detected at line 5733
  []
 
 [162]
 Missing character: There is no 💡 (U+1F4A1) in font [lmroman10-regular]:mapping=tex-text;!
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5756--5756
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5789--5789
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5764--5764
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5797--5797
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [163]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5764--5764
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5797--5797
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5769--5769
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5802--5802
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5774--5774
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5807--5807
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5782--5782
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5815--5815
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5782--5782
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5815--5815
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5787--5787
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5820--5820
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5792--5792
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5825--5825
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5803--5803
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5836--5836
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5803--5803
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5836--5836
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5803--5803
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5836--5836
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5808--5808
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5841--5841
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5819--5819
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5852--5852
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5819--5819
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5852--5852
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [164]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5819--5819
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5852--5852
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5824--5824
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5857--5857
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5832--5832
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5832--5832
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5837--5837
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5842--5842
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5847--5847
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5855--5855
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5855--5855
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5860--5860
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5865--5865
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -2900,58 +2868,93 @@ Overfull \hbox (1.64233pt too wide) in paragraph at lines 5870--5870
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5875--5875
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5880--5880
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5888--5888
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5888--5888
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5893--5893
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5898--5898
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5903--5903
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
 [165]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5910--5910
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5943--5943
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5915--5915
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5948--5948
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5920--5920
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5953--5953
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5925--5925
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5958--5958
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5930--5930
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5963--5963
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5935--5935
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5968--5968
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5940--5940
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5973--5973
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [166]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5945--5945
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5978--5978
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5950--5950
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5983--5983
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5955--5955
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5988--5988
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 5960--5960
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 5993--5993
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -2959,47 +2962,7 @@ Overfull \hbox (1.64233pt too wide) in paragraph at lines 5960--5960
 File: ch11_files/figure-pdf/theme-set-1.pdf Graphic file (type pdf)
 <use ch11_files/figure-pdf/theme-set-1.pdf>
 [170]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6165--6165
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6173--6173
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6173--6173
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6178--6178
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6183--6183
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6188--6188
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6196--6196
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6196--6196
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6201--6201
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6198--6198
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -3009,82 +2972,87 @@ Overfull \hbox (1.64233pt too wide) in paragraph at lines 6206--6206
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6217--6217
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6206--6206
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6217--6217
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6211--6211
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6216--6216
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6221--6221
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6229--6229
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6229--6229
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6234--6234
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6239--6239
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6250--6250
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6250--6250
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [171]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6217--6217
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6250--6250
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6222--6222
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6255--6255
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6233--6233
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6266--6266
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6233--6233
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6266--6266
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6233--6233
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6266--6266
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6238--6238
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6271--6271
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6246--6246
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6246--6246
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6251--6251
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6256--6256
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6261--6261
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6269--6269
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6269--6269
-[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
- []
-
-[172]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6274--6274
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6279--6279
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -3109,47 +3077,82 @@ Overfull \hbox (1.64233pt too wide) in paragraph at lines 6294--6294
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6299--6299
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6302--6302
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6304--6304
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6302--6302
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+[172]
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6307--6307
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6309--6309
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6312--6312
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6314--6314
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6317--6317
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6319--6319
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6322--6322
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6324--6324
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6327--6327
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6329--6329
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6332--6332
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6334--6334
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6337--6337
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6342--6342
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6347--6347
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6352--6352
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6357--6357
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6362--6362
+[]\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
+ []
+
+
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6367--6367
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
 [173]
-Overfull \hbox (1.64233pt too wide) in paragraph at lines 6339--6339
+Overfull \hbox (1.64233pt too wide) in paragraph at lines 6372--6372
 []\TU/lmtt/m/n/10.95 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font[] 
  []
 
@@ -3200,14 +3203,14 @@ File: ch13_files/figure-pdf/ggrepel-filled-1.pdf Graphic file (type pdf)
 File: ch13_files/figure-pdf/textbox-label-1.pdf Graphic file (type pdf)
 <use ch13_files/figure-pdf/textbox-label-1.pdf>
 [189]
-Overfull \hbox (358.06479pt too wide) in paragraph at lines 6814--6814
+Overfull \hbox (358.06479pt too wide) in paragraph at lines 6847--6847
 []\TU/lmtt/m/n/10.95 Warning in geom_text(aes(x = 25, y = 60, label = "This is a useful annotation"), : All aesthetics have length 1, but the data has 1461 rows.[] 
  []
 
 File: ch13_files/figure-pdf/textbox-label-unique-1.pdf Graphic file (type pdf)
 <use ch13_files/figure-pdf/textbox-label-unique-1.pdf>
 [190]
-Overfull \hbox (358.06479pt too wide) in paragraph at lines 6834--6834
+Overfull \hbox (358.06479pt too wide) in paragraph at lines 6867--6867
 []\TU/lmtt/m/n/10.95 Warning in geom_text(aes(x = 25, y = 60, label = "This is a useful annotation"), : All aesthetics have length 1, but the data has 1461 rows.[] 
  []
 
@@ -3217,7 +3220,7 @@ File: ch13_files/figure-pdf/textbox-label-custom-1.pdf Graphic file (type pdf)
 File: ch13_files/figure-pdf/label-facet-single-1.pdf Graphic file (type pdf)
 <use ch13_files/figure-pdf/label-facet-single-1.pdf>
 
-Overfull \hbox (381.05978pt too wide) in paragraph at lines 7091--7091
+Overfull \hbox (381.05978pt too wide) in paragraph at lines 7124--7124
 []\TU/lmtt/m/n/10.95 Warning in geom_text(aes(x = 23, y = 97, label = "This is not a useful annotation"), : All aesthetics have length 1, but the data has 1461 rows.[] 
  []
 
@@ -3230,14 +3233,14 @@ File: ch13_files/figure-pdf/label-facet-scales-problem-solved-plot-1.pdf Graphic
 File: ch13_files/figure-pdf/grobTree-1.pdf Graphic file (type pdf)
 <use ch13_files/figure-pdf/grobTree-1.pdf>
 
-Overfull \hbox (335.0698pt too wide) in paragraph at lines 7193--7193
+Overfull \hbox (335.0698pt too wide) in paragraph at lines 7226--7226
 []\TU/lmtt/m/n/10.95 Warning in geom_richtext(aes(x = 35, y = 3, label = lab_md), stat = "unique"): All aesthetics have length 1, but the data has 1461 rows.[] 
  []
 
 File: ch13_files/figure-pdf/ggtext-geom-richtext-md-1.pdf Graphic file (type pdf)
 <use ch13_files/figure-pdf/ggtext-geom-richtext-md-1.pdf>
 [199]
-Overfull \hbox (346.56729pt too wide) in paragraph at lines 7212--7212
+Overfull \hbox (346.56729pt too wide) in paragraph at lines 7245--7245
 []\TU/lmtt/m/n/10.95 Warning in geom_richtext(aes(x = 33, y = 3, label = lab_html), stat = "unique"): All aesthetics have length 1, but the data has 1461 rows.[] 
  []
 
@@ -3257,14 +3260,14 @@ Missing character: There is no ★ (U+2605) in font [lmmono10-regular]:!
 File: ch13_files/figure-pdf/ggtext-geom-richtext-html-1.pdf Graphic file (type pdf)
 <use ch13_files/figure-pdf/ggtext-geom-richtext-html-1.pdf>
 [201]
-Overfull \hbox (346.56729pt too wide) in paragraph at lines 7295--7295
+Overfull \hbox (346.56729pt too wide) in paragraph at lines 7328--7328
 []\TU/lmtt/m/n/10.95 Warning in geom_richtext(aes(x = 10, y = 25, label = lab_md), stat = "unique", : All aesthetics have length 1, but the data has 1461 rows.[] 
  []
 
 File: ch13_files/figure-pdf/ggtext-geom-richtext-modify-1.pdf Graphic file (type pdf)
 <use ch13_files/figure-pdf/ggtext-geom-richtext-modify-1.pdf>
 
-Overfull \hbox (352.31604pt too wide) in paragraph at lines 7317--7317
+Overfull \hbox (352.31604pt too wide) in paragraph at lines 7350--7350
 []\TU/lmtt/m/n/10.95 Warning in geom_textbox(aes(x = 40, y = 10, label = lab_long), width = unit(15, : All aesthetics have length 1, but the data has 1461 rows.[] 
  []
 
@@ -3287,7 +3290,7 @@ File: ch14_files/figure-pdf/fixed-axis-equal-1.pdf Graphic file (type pdf)
 File: ch14_files/figure-pdf/fixed-axis-scaled-1.pdf Graphic file (type pdf)
 <use ch14_files/figure-pdf/fixed-axis-scaled-1.pdf>
 
-Overfull \hbox (10.96758pt too wide) in paragraph at lines 7396--7397
+Overfull \hbox (10.96758pt too wide) in paragraph at lines 7429--7430
 [][] 
  []
 
@@ -3301,7 +3304,7 @@ File: ch14_files/figure-pdf/disc-axes-1.pdf Graphic file (type pdf)
 File: ch14_files/figure-pdf/rev-disc-axes-1.pdf Graphic file (type pdf)
 <use ch14_files/figure-pdf/rev-disc-axes-1.pdf>
 [208]
-Overfull \hbox (30.38611pt too wide) in paragraph at lines 7470--7470
+Overfull \hbox (30.38611pt too wide) in paragraph at lines 7503--7503
 []\TU/lmtt/m/n/10.95 Warning: Removed 3 rows containing missing values or values outside the scale range[] 
  []
 
@@ -3319,18 +3322,18 @@ File: ch14_files/figure-pdf/pie-chart-cartesian-1.pdf Graphic file (type pdf)
 chapter 15.
 Missing character: There is no 💁 (U+1F481) in font [lmroman10-regular]:mapping=tex-text;!
 
-LaTeX Warning: File `img/evol-ggplot/boxplot.png' not found on input line 7557.
+LaTeX Warning: File `img/evol-ggplot/boxplot.png' not found on input line 7590.
 
 ! Unable to load picture or PDF file 'img/evol-ggplot/boxplot.png'.
 <to be read again> 
                    }
-l.7557 ...udegraphics{img/evol-ggplot/boxplot.png}
+l.7590 ...udegraphics{img/evol-ggplot/boxplot.png}
                                                    
 Here is how much of TeX's memory you used:
- 23845 strings out of 476837
- 498640 string characters out of 5803333
+ 23859 strings out of 476837
+ 498811 string characters out of 5803333
  1952109 words of memory out of 5000000
- 45382 multiletter control sequences out of 15000+600000
+ 45396 multiletter control sequences out of 15000+600000
  561705 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,8n,120p,10900b,487s stack positions out of 10000i,1000n,20000p,200000b,200000s

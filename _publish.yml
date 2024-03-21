@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 24d1ab7e-94e9-4942-9fbd-961437ec2115
+      url: 'https://rana2hin.quarto.pub/ggplot2-unleash-your-inner-artist'

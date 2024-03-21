@@ -117,6 +117,39 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \usepackage{booktabs}
 \usepackage{caption}
@@ -1136,7 +1169,7 @@ length as one unit on the y-axis:
 \end{Shaded}
 
 \begin{verbatim}
-Warning: Removed 53 rows containing missing values or values outside the scale range
+Warning: Removed 56 rows containing missing values or values outside the scale range
 (`geom_point()`).
 \end{verbatim}
 
@@ -1157,7 +1190,7 @@ effect:
 \end{Shaded}
 
 \begin{verbatim}
-Warning: Removed 49 rows containing missing values or values outside the scale range
+Warning: Removed 46 rows containing missing values or values outside the scale range
 (`geom_point()`).
 \end{verbatim}
 
@@ -1633,12 +1666,12 @@ width unknown for character 0xab
 
 \begin{verbatim}
 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
-width unknown for character 0xcd
+width unknown for character 0xaf
 \end{verbatim}
 
 \begin{verbatim}
 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
-width unknown for character 0xf4
+width unknown for character 0xe2
 \end{verbatim}
 
 \begin{verbatim}
@@ -2043,12 +2076,12 @@ font width unknown for character 0xab
 
 \begin{verbatim}
 Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
-font width unknown for character 0xcd
+font width unknown for character 0xaf
 \end{verbatim}
 
 \begin{verbatim}
 Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
-font width unknown for character 0xf4
+font width unknown for character 0xe2
 \end{verbatim}
 
 \begin{verbatim}
@@ -2526,12 +2559,12 @@ width unknown for character 0xab
 
 \begin{verbatim}
 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
-width unknown for character 0xcd
+width unknown for character 0xaf
 \end{verbatim}
 
 \begin{verbatim}
 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
-width unknown for character 0xf4
+width unknown for character 0xe2
 \end{verbatim}
 
 \begin{verbatim}
@@ -2936,12 +2969,12 @@ font width unknown for character 0xab
 
 \begin{verbatim}
 Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
-font width unknown for character 0xcd
+font width unknown for character 0xaf
 \end{verbatim}
 
 \begin{verbatim}
 Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
-font width unknown for character 0xf4
+font width unknown for character 0xe2
 \end{verbatim}
 
 \begin{verbatim}
@@ -5027,7 +5060,7 @@ width unknown for character 0xab
 
 \begin{verbatim}
 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
-width unknown for character 0xcd
+width unknown for character 0x35
 \end{verbatim}
 
 \begin{verbatim}
@@ -5356,7 +5389,7 @@ font width unknown for character 0xab
 
 \begin{verbatim}
 Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
-font width unknown for character 0xcd
+font width unknown for character 0x35
 \end{verbatim}
 
 \begin{verbatim}
@@ -5586,7 +5619,7 @@ function (base_size = 11, base_family = "", base_line_size = base_size/22,
             half_line, half_line, half_line), complete = TRUE)
     ggplot_global$theme_all_null %+replace% t
 }
-<bytecode: 0x000001650e3112b0>
+<bytecode: 0x000001debfccb290>
 <environment: namespace:ggplot2>
 \end{verbatim}
 
@@ -5916,7 +5949,7 @@ width unknown for character 0xab
 
 \begin{verbatim}
 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
-width unknown for character 0xcd
+width unknown for character 0x35
 \end{verbatim}
 
 \begin{verbatim}
@@ -6120,7 +6153,7 @@ font width unknown for character 0xab
 
 \begin{verbatim}
 Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
-font width unknown for character 0xcd
+font width unknown for character 0x35
 \end{verbatim}
 
 \begin{verbatim}
@@ -6295,7 +6328,7 @@ width unknown for character 0xab
 
 \begin{verbatim}
 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
-width unknown for character 0xcd
+width unknown for character 0x35
 \end{verbatim}
 
 \begin{verbatim}
@@ -6499,7 +6532,7 @@ font width unknown for character 0xab
 
 \begin{verbatim}
 Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
-font width unknown for character 0xcd
+font width unknown for character 0x35
 \end{verbatim}
 
 \begin{verbatim}
@@ -8410,7 +8443,7 @@ width unknown for character 0xab
 
 \begin{verbatim}
 Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font
-width unknown for character 0xcd
+width unknown for character 0x35
 \end{verbatim}
 
 \begin{verbatim}
@@ -8609,7 +8642,7 @@ font width unknown for character 0xab
 
 \begin{verbatim}
 Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :
-font width unknown for character 0xcd
+font width unknown for character 0x35
 \end{verbatim}
 
 \begin{verbatim}
@@ -9108,6 +9141,14 @@ Registered S3 method overwritten by 'quantmod':
   as.zoo.data.frame zoo 
 \end{verbatim}
 
+\begin{verbatim}
+Highcharts (www.highcharts.com) is a Highsoft software product which is
+\end{verbatim}
+
+\begin{verbatim}
+not free for commercial and Governmental use
+\end{verbatim}
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{hchart}\NormalTok{(chic, }\StringTok{"scatter"}\NormalTok{, }\FunctionTok{hcaes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ date, }\AttributeTok{y =}\NormalTok{ temp, }\AttributeTok{group =}\NormalTok{ season))}
@@ -9443,6 +9484,168 @@ another book, we'll publish that soon. Stay tuned!
 
 \bookmarksetup{startatroot}
 
+\chapter{Geographical Data Analysis using \{sf\}
+and}\label{geographical-data-analysis-using-sf-and}
+
+R has well-supported classes for storing spatial data (sp) and
+interfacing to the above mentioned environments (\texttt{rgdal},
+\texttt{rgeos}), but has so far lacked a complete implementation of
+simple features, making conversions at times convoluted, inefficient or
+incomplete. The package \texttt{sf} tries to fill this gap, and aims at
+succeeding sp in the long term. However This is a Huge topic to cover
+that we need a separate book for this.
+
+We'll just give you a brief overview of how to plot maps using
+\texttt{sf} and \texttt{ggplot2}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load necessary libraries}
+\FunctionTok{library}\NormalTok{(bangladesh)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+-- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+v dplyr     1.1.4     v readr     2.1.5
+v forcats   1.0.0     v stringr   1.5.1
+v lubridate 1.9.3     v tibble    3.2.1
+v purrr     1.0.2     v tidyr     1.3.1
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Get map data, join with population data, and plot in a single pipeline}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{get\_map}\NormalTok{(}\StringTok{"district"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{left\_join}\NormalTok{(bangladesh}\SpecialCharTok{::}\NormalTok{pop\_district\_2011[, }\FunctionTok{c}\NormalTok{(}\StringTok{"district"}\NormalTok{, }\StringTok{"population"}\NormalTok{)], }\AttributeTok{by =} \FunctionTok{c}\NormalTok{(}\StringTok{"District"} \OtherTok{=} \StringTok{"district"}\NormalTok{))}
+
+\NormalTok{pp }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ population), }\AttributeTok{col =} \StringTok{"grey30"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_void}\NormalTok{() }\SpecialCharTok{+}
+\NormalTok{  viridis}\SpecialCharTok{::}\FunctionTok{scale\_fill\_viridis}\NormalTok{(}\AttributeTok{trans =} \StringTok{"log"}\NormalTok{, }\AttributeTok{name=}\StringTok{"Population"}\NormalTok{, }\AttributeTok{labels =}\NormalTok{ scales}\SpecialCharTok{::}\FunctionTok{unit\_format}\NormalTok{(}\AttributeTok{unit =} \StringTok{"M"}\NormalTok{, }\AttributeTok{scale =} \FloatTok{1e{-}6}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Bangladesh Population Map"}\NormalTok{,}
+    \AttributeTok{subtitle =} \StringTok{"Population \& Housing Census 2011"}\NormalTok{,}
+    \AttributeTok{caption =} \StringTok{"Data Source: BBS"}
+\NormalTok{  )}
+
+\NormalTok{pp}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ch20_files/figure-pdf/unnamed-chunk-1-1.pdf}
+
+Here is another example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{division\_data }\OtherTok{\textless{}{-}} \FunctionTok{get\_map}\NormalTok{(}\StringTok{"division"}\NormalTok{)}
+\NormalTok{division\_centroids }\OtherTok{\textless{}{-}}\NormalTok{ bangladesh}\SpecialCharTok{::}\FunctionTok{get\_coordinates}\NormalTok{(}\AttributeTok{level =} \StringTok{"division"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ division\_data) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf\_label}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label =}\NormalTok{ Division)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ division\_centroids, }\AttributeTok{x =}\NormalTok{ division\_centroids}\SpecialCharTok{$}\NormalTok{lon, }\AttributeTok{y =}\NormalTok{ division\_centroids}\SpecialCharTok{$}\NormalTok{lat, }\AttributeTok{col =} \StringTok{"red"}\NormalTok{, }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{""}\NormalTok{)}\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{""}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
+give correct results for longitude/latitude data
+\end{verbatim}
+
+\includegraphics{ch20_files/figure-pdf/unnamed-chunk-2-1.pdf}
+
+You can also make 3D map using \texttt{rayshader} \texttt{sf} and
+\texttt{ggplot2} package. Here is an example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(rayshader)}
+
+\FunctionTok{plot\_gg}\NormalTok{(pp}\SpecialCharTok{+}\FunctionTok{theme\_bw}\NormalTok{(), }\AttributeTok{multicore =} \ConstantTok{TRUE}\NormalTok{, }\AttributeTok{width =} \DecValTok{4}\NormalTok{ ,}\AttributeTok{height=}\DecValTok{6}\NormalTok{, }\AttributeTok{fov =} \DecValTok{70}\NormalTok{, }\AttributeTok{zoom =} \FloatTok{0.5}\NormalTok{)}
+\FunctionTok{Sys.sleep}\NormalTok{(}\FloatTok{0.2}\NormalTok{)}
+\FunctionTok{render\_snapshot}\NormalTok{(}\AttributeTok{clear =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{ch20_files/figure-pdf/unnamed-chunk-3-1.pdf}
+
+If You Want to make maps Interactive like this 👉
+\href{https://rana2hin.quarto.pub/mapsinbooks/}{Interactive Maps}, here
+is an example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(leaflet)}
+
+\FunctionTok{leaflet}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{addTiles}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{addMarkers}\NormalTok{(}\AttributeTok{lng=}\FloatTok{90.40155705289271}\NormalTok{, }\AttributeTok{lat=}\FloatTok{23.725810762885487}\NormalTok{, }\AttributeTok{popup=}\StringTok{"Shahidullah Hall"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+PhantomJS not found. You can install it with webshot::install_phantomjs(). If it is installed, please make sure the phantomjs executable can be found via the PATH variable.
+\end{verbatim}
+
+\includegraphics{ch20_files/figure-pdf/unnamed-chunk-4-1.pdf}
+
+The field of geographical data analysis is a vast and ever-evolving
+domain, offering an array of techniques and tools to explore and
+understand spatial data. In this book, we have provided a glimpse into
+the fascinating world of Data Visualization using \texttt{ggplot2} and
+introducing you to the fundamental concepts and methods that form the
+foundation of spatial analysis.
+
+While we have covered a range of topics, it is important to recognize
+that this is merely the tip of the iceberg. Geographical data analysis
+encompasses a multitude of specialized areas, each with its own unique
+challenges and solutions. As we continue our journey through this field,
+we are working on a dedicated book that will delve deeper into the
+intricacies of geographic data analysis.
+
+In this forthcoming work, we will explore in greater depth the realm of
+shapefiles, a crucial data format for representing geographical
+features. Additionally, we will dive into the powerful capabilities of
+the \texttt{sf} package, which provides a comprehensive set of tools for
+working with spatial vector data in R.
+
+Furthermore, we will introduce you to \texttt{leaflet}, a cutting-edge
+library that enables the creation of interactive web maps, allowing you
+to visualize and analyze spatial data in a dynamic and engaging manner.
+The \texttt{rayshader} package will also be explored, offering
+techniques for generating stunning 3D visualizations of geographical
+data, providing new perspectives and insights.
+
+Another exciting area we will cover is the \texttt{tmap} package, a
+versatile tool for creating thematic maps and visualizing spatial
+patterns. With its rich set of features and extensive customization
+options, \texttt{tmap} empowers you to communicate your spatial data in
+a clear and compelling way.
+
+Beyond these specific packages and techniques, we are actively engaged
+in the development of new and innovative tools for geographical data
+analysis. Our goal is to push the boundaries of what is possible,
+providing researchers, analysts, and practitioners with cutting-edge
+solutions to tackle complex spatial problems.
+
+As we continue to explore the depths of this fascinating field, we
+invite you to stay tuned for our upcoming work. Together, we will embark
+on a journey of discovery, unlocking the full potential of geographical
+data analysis and shaping the future of spatial research and
+applications.
+
+\bookmarksetup{startatroot}
+
 \chapter*{Remarks, Tipps \& Resources}\label{remarks-tipps-resources}
 \addcontentsline{toc}{chapter}{Remarks, Tipps \& Resources}
 
@@ -9509,6 +9712,17 @@ FAQ page}.
   (\href{https://www.youtube.com/watch?v=h29g21z0a68}{Part 1} \textbar{}
   \href{https://www.youtube.com/watch?v=0m4yywqNPVY}{Part 2})
 \end{itemize}
+
+\bookmarksetup{startatroot}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{1}
+\end{CSLReferences}
 
 
 

@@ -16,7 +16,7 @@ data <- get_map("district") %>%
 
 pp <- data %>% 
   ggplot() +
-  geom_sf(aes(fill = population)) +
+  geom_sf(aes(fill = population), col = "grey30") +
   theme_void() +
   viridis::scale_fill_viridis(trans = "log", name="Population", labels = scales::unit_format(unit = "M", scale = 1e-6)) +
   labs(

@@ -6,7 +6,6 @@ book:
   author: "Tuhin rana"
   date: "3/17/2024"
   repo-url: https://github.com/rana2hin/ggplot_guide/
-  downloads: [pdf, epub]
   sharing: [facebook, twitter]
   chapters:
     - index.qmd
@@ -32,13 +31,6 @@ book:
     - ch20.qmd
     - summary.qmd
 
-
-
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
-
-
-
