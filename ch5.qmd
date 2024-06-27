@@ -43,7 +43,10 @@ ggplot(chic, aes(x = date, y = temp)) +
                                   size = 14))
 ```
 
-💡 **A helpful mnemonic for remembering the order of the margin arguments is "_t_\-_r_\-oub-_l_\-_e_", which corresponds to the first letter of each side.**
+::: {.callout-tip}
+## Having trouble with Margins?
+A helpful mnemonic for remembering the order of the margin sides is "_t_\-_r_\-ou-_b_\-_l_\-e".
+:::
 
 ## Adjusting Position of Titles
 

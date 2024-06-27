@@ -8,7 +8,9 @@ To import the data into our R session, we can employ `read_csv()` from the `{rea
 chic <- readr::read_csv("https://raw.githubusercontent.com/rana2hin/ggplot_guide/master/chicago_data.csv")
 ```
 
-💡 **The `::` symbolizes _namespace_ and enables accessing a function without loading the entire package. Alternatively, you could load the `readr` package first using `library(readr)` and then execute `chic <- read_csv(...)` subsequently.**
+::: {.callout-tip title="Using namespace Directly"}
+The `::` symbolizes _namespace_ and enables accessing a function without loading the entire package. Alternatively, you could load the `readr` package first using `library(readr)` and then execute `chic <- read_csv(...)` subsequently.
+:::
 
 ```{r data-inspection}
 tibble::glimpse(chic)

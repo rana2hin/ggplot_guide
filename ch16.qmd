@@ -29,11 +29,9 @@ ggplot(chic, aes(x = date, y = o3run)) +
 
 Nice to indicate the [area under the curve (AUC)](https://en.wikipedia.org/wiki/Area_under_the_curve_(pharmacokinetics)) but this is not the conventional way to use `geom_ribbon()`.
 
-💁 *And actually a nicer way to achieve the same is `geom_area()`.*
-
-<details>
-
-<summary>Expand to see example.</summary>
+::: {.callout-tip collapse="true}
+## Using `geom_area()`
+Actually a nicer way to achieve the same is `geom_area()`.
 
 ```{r geom-area-AUC}
 ggplot(chic, aes(x = date, y = o3run)) +
@@ -42,7 +40,7 @@ ggplot(chic, aes(x = date, y = o3run)) +
    labs(x = "Year", y = "Ozone")
 ```
 
-</details>
+:::
 
 Instead, we draw a ribbon that gives us one standard deviation above and below our data:
 

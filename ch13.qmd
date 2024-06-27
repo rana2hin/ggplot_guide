@@ -32,9 +32,10 @@ ggplot(sample, aes(x = date, y = temp, color = season)) +
 
 Okay, avoiding overlap of labels did not work out. But don't worry, we are going to fix it in a minute!
 
-<details>
+::: {.callout-tip collapse="true}
+## Using `geom_text()`
 
-<summary>💁 <i>You can also use `geom_text()` if you don't like boxes around your labels. Expand to see example.</i></summary>
+<i>You can also use `geom_text()` if you don't like boxes around your labels. Expand to see example.</i>
 
 ```{r data-label}
 ggplot(sample, aes(x = date, y = temp, color = season)) +
@@ -47,7 +48,7 @@ ggplot(sample, aes(x = date, y = temp, color = season)) +
   theme(legend.position = "none")
 ```
 
-</details>
+:::
 
 The `{ggrepel}` package offers some great utilities by providing geoms for `{ggplot2}` to repel overlapping text as in our examples above. We simply replace `geom_text()` by `geom_text_repel()` and `geom_label()` by `geom_label_repel()`:
 

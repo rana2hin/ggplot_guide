@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ggplot2: Unleash Your Inner Artist - 17&nbsp; Working with Smoothings</title>
+<title>Mastering ggplot2: From Novice to Data Viz Pro - 17&nbsp; Working with Smoothings</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">ggplot2: Unleash Your Inner Artist</a> 
+      <a href="./">Mastering ggplot2: From Novice to Data Viz Pro</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/rana2hin/ggplot_guide/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -350,7 +350,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>💡 <strong>In most cases one wants the points to be on top of the ribbon so make sure you always call the smoothing before you add the points.</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In most cases one wants the points to be on top of the ribbon so make sure you always call the smoothing before you add the points.</p>
+</div>
+</div>
 </section>
 <section id="adding-a-linear-fit" class="level2" data-number="17.2">
 <h2 data-number="17.2" class="anchored" data-anchor-id="adding-a-linear-fit"><span class="header-section-number">17.2</span> Adding a Linear Fit</h2>
@@ -394,10 +406,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<details>
-<summary>
-💁 <i>Huh, <code>geom_smooth()</code>? There is an important difference between <code>geom</code> and <code>stat</code> but here it really doesn’t matter which one you use. Expand to compare both.</i>
-</summary>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Difference between <code>geom</code> and <code>stat</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><i>Huh, <code>geom_smooth()</code>? There is an important difference between <code>geom</code> and <code>stat</code> but here it really doesn’t matter which one you use. Expand to compare both.</i></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chic, <span class="fu">aes</span>(<span class="at">x =</span> o3, <span class="at">y =</span> temp)) <span class="sc">+</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"gray40"</span>, <span class="at">alpha =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
@@ -430,7 +451,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</details>
+</div>
+</div>
+</div>
 <p>Or lets say you want to increase the GAM dimension (add some additional wiggles to the smooth):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"darkorange2"</span>, <span class="st">"firebrick"</span>, <span class="st">"dodgerblue3"</span>)</span>

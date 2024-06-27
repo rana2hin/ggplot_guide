@@ -1,6 +1,6 @@
 # The `ggplot2` Package {#ggplot}
 
-> `ggplot2` is a graphics system that facilitates the declarative creation of visualizations, founded on principles outlined in [The Grammar of Graphics](https://link.springer.com/chapter/10.1007/978-3-642-21551-3_13). With `ggplot2`, you furnish the data, specify how variables should be mapped to aesthetics, define graphical parameters to employ, and the system handles the rest.
+`ggplot2` is a graphics system that facilitates the declarative creation of visualizations, founded on principles outlined in [The Grammar of Graphics](https://link.springer.com/chapter/10.1007/978-3-642-21551-3_13). With `ggplot2`, you furnish the data, specify how variables should be mapped to aesthetics, define graphical parameters to employ, and the system handles the rest.
 
 A ggplot is made up several key elements:
 
@@ -13,7 +13,9 @@ A ggplot is made up several key elements:
 7.  **Facets** `facet_`: This organizes your data into a grid of plots based on specified variables.
 8.  **Visual themes** `theme()`: These set the overall appearance of your plot, covering things like background, grids, axes, default fonts, sizes, and colors.
 
-💡 **The number of elements may vary depending on the situation you're working on.**
+::: {.callout-note appearance="simple"}
+**The number of elements may vary depending on the situation you're working on.**
+:::
 
 ## A Default ggplot {#default}
 
@@ -31,7 +33,10 @@ chic <- readr::read_csv("https://raw.githubusercontent.com/rana2hin/ggplot_guide
 
 The syntax of `{ggplot2}` differs from base R. Following the basic elements, a default ggplot requires specifying three things: the _data_, _aesthetics_, and a _geometry_. To begin defining a plotting object, we call `ggplot(data = df)`, indicating that we'll work with that dataset. Typically, we aim to plot two variables---one on the x-axis and one on the y-axis. These are _positional aesthetics_, so we add `aes(x = var1, y = var2)` to the `ggplot()` call (where `aes()` denotes aesthetics). However, there are cases where one may need to specify one, three, or more variables, which we'll address later.
 
-💡 **We indicate the data _outside_ of `aes()` and include the variables that ggplot maps to the aesthetics _inside_ of `aes()`.**
+::: {.callout-important}
+## Pay Attention!
+We indicate the data _outside_ of `aes()` and include the variables that ggplot maps to the aesthetics _inside_ of `aes()`.
+:::
 
 In this instance, we assign the variable `date` to the x-position and the variable `temp` to the y-position. Subsequently, we'll also map variables to various other aesthetics such as color, size, and shape.
 
@@ -43,7 +48,9 @@ Ah, the reason only a panel is generated when executing this code is because `{g
 
 In `{ggplot2}`, you can store the current `ggobject` in a variable of your choosing, such as `g`. This allows you to extend the `ggobject` later by adding additional layers, either all at once or by assigning it to the same or another variable.
 
-💡 **By using parentheses when assigning an object, the object will be printed immediately. Instead of writing `g <- ggplot(...)` followed by `g`, we can simply write `(g <- ggplot(...))`.**
+::: {.callout-tip title="A Quick Tip!"}
+By using parentheses when assigning an object, the object will be printed immediately. Instead of writing `g <- ggplot(...)` followed by `g`, we can simply write `(g <- ggplot(...))`.
+:::
 
 There's a wide array of geometries in `{ggplot2}`, often referred to as _geoms_ because their function names typically start with `geom_`. You can find the full list of default geoms [here](https://ggplot2.tidyverse.org/reference/), and there are even more options available through extension packages, which you can explore [here](https://exts.ggplot2.tidyverse.org/). To instruct `{ggplot2}` on the style we want to use, we can, for example, add `geom_point()` to create a scatter plot:
 
@@ -73,11 +80,15 @@ Within the `geom_*` command, you can already manipulate visual aesthetics such a
 g + geom_point(color = "firebrick", shape = "diamond", size = 2)
 ```
 
-💡 **`{ggplot2}` understands both `color` and `colour` as well as the short version `col`.**
+::: {.callout-note}
+## Color or Colour?
+`{ggplot2}` understands both `color` and `colour` as well as the short version `col`.
+:::
 
-<details>
+::: {.callout-tip collapse="true"}
+## Color Presets 🎨
 
-<summary>💁 <i>You can utilize preset colors (a full list can be found [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)) or [hex color codes](https://www.techopedia.com/definition/29788/color-hex-code), both enclosed in quotes. Additionally, you can specify RGB/RGBA colors using the `rgb()` function. Click to expand:</i></summary>
+<i>You can utilize preset colors (a full list can be found [here](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)) or [hex color codes](https://www.techopedia.com/definition/29788/color-hex-code), both enclosed in quotes. Additionally, you can specify RGB/RGBA colors using the `rgb()` function. Click to expand:</i>
 
 ```{r ggplot-default-col-size-hex-rgb, eval=FALSE}
 g + geom_point(color = "#b22222", shape = "diamond", size = 2)
@@ -91,7 +102,7 @@ b <- g + geom_point(color = rgb(178, 34, 34, maxColorValue = 255), shape = "diam
 a + b
 ```
 
-</details>
+:::
 
 Each geom has its unique properties, referred to as _arguments_, and the same argument might produce different effects depending on the geom you're employing.
 
@@ -112,6 +123,9 @@ g + geom_point(color = "firebrick")
 
 For further details on using built-in themes and customizing themes, refer to the section ["Working with Themes"](#themes). Starting from the next chapter, we'll also utilize the `theme()` function to customize specific elements of the theme.
 
-💡 **`theme()` is a crucial command for manually adjusting various theme elements such as texts, rectangles, and lines.**
+::: {.callout-important}
+## Remember!
+`theme()` is a crucial command for manually adjusting various theme elements such as texts, rectangles, and lines.
+:::
 
 To explore the numerous details of a ggplot theme that can be modified, refer to the extensive list available [here](https://ggplot2.tidyverse.org/reference/theme.html). Take your time, as it's a comprehensive list!

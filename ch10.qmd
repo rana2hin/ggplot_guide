@@ -78,7 +78,9 @@ The [ColorBrewer palettes](http://colorbrewer2.org/) is a popular online tool fo
 ga + scale_color_brewer(palette = "Set1")
 ```
 
-💡 **You can explore all schemes available via `RColorBrewer::display.brewer.all()`.**
+::: {.callout-note}
+You can explore all schemes available via `RColorBrewer::display.brewer.all()`.
+:::
 
 ### Use Qualitative Color Palettes from Extension Packages
 
@@ -233,4 +235,6 @@ ggplot(chic, aes(date, temp)) +
 
 Note that you need to specify the `color` and/or `fill` in the `aes()` of the respective `geom_*()` or `stat_*()` to make `after_scale()` work.
 
-💡 **This seems a bit complicated for now---one could simply use the `color` and `fill` scales for both. Yes, that is true but think about use cases where you need several `color` and/or `fill` scales. In such a case, it would be senseless to occupy the `fill` scale with a slightly darker version of the palette used for `color`.**
+::: {.callout-important}
+This seems a bit complicated for now---one could simply use the `color` and `fill` scales for both. Yes, that is true but think about use cases where you need several `color` and/or `fill` scales. In such a case, it would be senseless to occupy the `fill` scale with a slightly darker version of the palette used for `color`.
+:::

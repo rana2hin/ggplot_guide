@@ -16,9 +16,10 @@ ggplot(chic, aes(x = date, y = temp)) +
   labs(x = "Year", y = "Temperature (°F)")
 ```
 
-<details>
+::: {.callout-tip collapse="true"}
+## `xlab()` and `ylab()`
 
-<summary>💁 <i>You also can add axis titles by using `xlab()` and `ylab()`. Click to see example.</i></summary>
+<i>You also can add axis titles by using `xlab()` and `ylab()`. Click to see example.</i>
 
 ```{r axis-labs-2}
 ggplot(chic, aes(x = date, y = temp)) +
@@ -27,7 +28,7 @@ ggplot(chic, aes(x = date, y = temp)) +
   ylab("Temperature (°F)")
 ```
 
-</details>
+:::
 
 Typically, you can specify symbols by directly adding the symbol itself (e.g., "°"). However, the code below also enables the addition of not only symbols but also features like superscripts:
 
@@ -61,7 +62,10 @@ ggplot(chic, aes(x = date, y = temp)) +
 
 The labels `t` and `r` within the `margin()` object correspond to _top_ and _right_, respectively. Alternatively, you can specify all four margins using `margin(t, r, b, l)`. It's important to note that we need to adjust the right margin to modify the space on the y-axis, not the bottom margin.
 
-💡 **A helpful mnemonic for remembering the order of the margin sides is "_t_\-_r_\-ou-_b_\-_l_\-e".**
+::: {.callout-tip}
+## Having trouble with Margins?
+A helpful mnemonic for remembering the order of the margin sides is "_t_\-_r_\-ou-_b_\-_l_\-e".
+:::
 
 ## Change Aesthetics of Axis Titles
 
@@ -85,9 +89,10 @@ ggplot(chic, aes(x = date, y = temp)) +
         axis.title.y = element_text(color = "orangered", size = 15))
 ```
 
-<details>
+::: {.callout-tip collapse="true"}
+## Customising Invidual Axis
 
-<summary>💁 <i>You could also employ a combination of `axis.title` and `axis.title.y`, as `axis.title.x` inherits values from `axis.title`. Expand to See the example below:</i></summary>
+<i>You could also employ a combination of `axis.title` and `axis.title.y`, as `axis.title.x` inherits values from `axis.title`. Expand to See the example below:</i>
 
 ```{r labs-color-axes-3}
 ggplot(chic, aes(x = date, y = temp)) +
@@ -97,7 +102,7 @@ ggplot(chic, aes(x = date, y = temp)) +
         axis.title.y = element_text(color = "orangered", size = 15))
 ```
 
-</details>
+:::
 
 You can adjust some properties for both axis titles simultaneously, while modifying others exclusively for one axis or individual properties for each axis title:
 
@@ -146,7 +151,10 @@ ggplot(chic, aes(x = date, y = temp)) +
 
 I've introduced three theme elements—text, lines, and rectangles—but there's actually one more: `element_blank()`, which removes the element entirely. However, it's not considered an official element like the others.
 
-💡 **If you wish to remove a theme element entirely, you can always use `element_blank()`.**
+::: {.callout-tip}
+## Removing Theme Element
+If you wish to remove a theme element entirely, you can always use `element_blank()`.
+:::
 
 ## Removing Axis Titles
 
@@ -158,7 +166,10 @@ ggplot(chic, aes(x = date, y = temp)) +
   labs(x = NULL, y = "")
 ```
 
-💡 **Note that `NULL` removes the element (similarly to `element_blank()`), while empty quotes `""` will keep the spacing for the axis title but print nothing.**
+::: {.callout-tip}
+## RAnother Tip!
+Note that `NULL` removes the element (similarly to `element_blank()`), while empty quotes `""` will keep the spacing for the axis title but print nothing.
+:::
 
 ## Limiting Axis Range
 
@@ -224,9 +235,9 @@ ggplot(chic_high, aes(x = temp, y = o3)) +
   expand_limits(x = 0, y = 0)
 ```
 
-<details>
-
-<summary>💁 <i>Using `coord_cartesian(xlim = c(0, NA), ylim = c(0, NA))` will produce the same result. CLICK to See the example below:</i></summary>
+::: {.callout-tip collapse="true}
+## Another Way using `coord_cartesian(xlim = c(0, NA), ylim = c(0, NA))`
+<i>Using `coord_cartesian(xlim = c(0, NA), ylim = c(0, NA))` will produce the same result. CLICK to See the example below:</i>
 
 ```{r origin-coord}
 chic_high <- dplyr::filter(chic, temp > 25, o3 > 20)
@@ -238,7 +249,7 @@ ggplot(chic_high, aes(x = temp, y = o3)) +
   coord_cartesian(xlim = c(0, NA), ylim = c(0, NA))
 ```
 
-</details>
+:::
 
 But we can also ensure that it _truly_ starts at the origin!
 
@@ -251,7 +262,9 @@ ggplot(chic_high, aes(x = temp, y = o3)) +
   coord_cartesian(expand = FALSE, clip = "off")
 ```
 
-💡 **The `clip = "off"` argument in any coordinate system, always starting with `coord_*`, enables drawing outside of the panel area.**
+::: {.callout-tip}
+The `clip = "off"` argument in any coordinate system, always starting with `coord_*`, enables drawing outside of the panel area.
+:::
 
 Here, I invoke it to ensure that the tick marks at `c(0, 0)` remain intact and are not truncated. For further insights, refer to the [Twitter thread by Claus Wilke](https://twitter.com/clauswilke/status/991542952802619392?lang=en).
 

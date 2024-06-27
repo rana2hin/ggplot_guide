@@ -11,13 +11,11 @@ chic <- readr::read_csv("https://raw.githubusercontent.com/rana2hin/ggplot_guide
 
 Box plots are great, but they can be so incredibly boring. Also, even if you are used to looking at box plots, remember there might be plenty people looking at your plot that have never seen a box and whisker plot before.
 
-<details>
+::: {.callout-tip collapse="\"true"}
+## Recall: Box and Whiskers Plot
 
-<summary>💁 <i>Expand for a short recap on box and whiskers plots.</i></summary>
-
-A box-and-whisker plot (sometimes called simply a box plot) is a histogram-like method of displaying data, invented by J. Tukey. The thick **middle line** notates the median, also known as quartile <i>Q<sub>2</sub></i>. The limits of the **box** are determined by the lower and upper quartiles, <i>Q<sub>1</sub></i> and <i>Q<sub>3</sub></i>. The box contains thus 50% of the data and is called *"interquartile range"* (IQR). The length of the **whiskers** is determined by the most extreme values that are not considered as outliers (i.e. values that are within 3/2 times the interquartile range).<br> ![](/img/evol-ggplot/boxplot.png) <br>
-
-</details>
+A box-and-whisker plot (sometimes called simply a box plot) is a histogram-like method of displaying data, invented by J. Tukey. The thick **middle line** notates the median, also known as quartile <i>Q<sub>2</sub></i>. The limits of the **box** are determined by the lower and upper quartiles, <i>Q<sub>1</sub></i> and <i>Q<sub>3</sub></i>. The box contains thus 50% of the data and is called *"interquartile range"* (IQR). The length of the **whiskers** is determined by the most extreme values that are not considered as outliers (i.e. values that are within 3/2 times the interquartile range).<br> ![Fig: Structure of a Boxplot](extra_pics/boxplot.png) <br>
+:::
 
 There are alternatives, but first we are plotting a common box plot:
 

@@ -20,7 +20,9 @@ ggplot(chic, aes(x = date, y = temp)) +
   labs(x = "Year", y = "Temperature (°F)") 
 ```
 
-💡 **In most cases one wants the points to be on top of the ribbon so make sure you always call the smoothing before you add the points.**
+::: {.callout-note}
+In most cases one wants the points to be on top of the ribbon so make sure you always call the smoothing before you add the points.
+:::
 
 ## Adding a Linear Fit
 
@@ -50,9 +52,9 @@ ggplot(chic, aes(x = o3, y = temp)) +
   labs(x = "Ozone Level", y = "Temperature (°F)")
 ```
 
-<details>
-
-<summary>💁 <i>Huh, `geom_smooth()`? There is an important difference between `geom` and `stat` but here it really doesn't matter which one you use. Expand to compare both.</i></summary>
+::: {.callout-tip collapse="true}
+## Difference between `geom` and `stat`
+<i>Huh, `geom_smooth()`? There is an important difference between `geom` and `stat` but here it really doesn't matter which one you use. Expand to compare both.</i>
 
 ```{r geom-stat-smooth-a}
 ggplot(chic, aes(x = o3, y = temp)) +
@@ -68,7 +70,7 @@ ggplot(chic, aes(x = o3, y = temp)) +
   labs(x = "Ozone Level", y = "Temperature (°F)")
 ```
 
-</details>
+:::
 
 Or lets say you want to increase the GAM dimension (add some additional wiggles to the smooth):
 

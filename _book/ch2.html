@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ggplot2: Unleash Your Inner Artist - 2&nbsp; The Dataset</title>
+<title>Mastering ggplot2: From Novice to Data Viz Pro - 2&nbsp; The Dataset</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">ggplot2: Unleash Your Inner Artist</a> 
+      <a href="./">Mastering ggplot2: From Novice to Data Viz Pro</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/rana2hin/ggplot_guide/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -338,7 +338,19 @@ date (1): date
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
-<p>💡 <strong>The <code>::</code> symbolizes <em>namespace</em> and enables accessing a function without loading the entire package. Alternatively, you could load the <code>readr</code> package first using <code>library(readr)</code> and then execute <code>chic &lt;- read_csv(...)</code> subsequently.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Using namespace Directly">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Using namespace Directly
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>::</code> symbolizes <em>namespace</em> and enables accessing a function without loading the entire package. Alternatively, you could load the <code>readr</code> package first using <code>library(readr)</code> and then execute <code>chic &lt;- read_csv(...)</code> subsequently.</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tibble<span class="sc">::</span><span class="fu">glimpse</span>(chic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -361,23 +373,23 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(chic, <span class="dv">10</span>) <span class="sc">%&gt;%</span> <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<div id="psczkclvea" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#psczkclvea table {
+<div id="irwzsyqxor" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#irwzsyqxor table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#psczkclvea thead, #psczkclvea tbody, #psczkclvea tfoot, #psczkclvea tr, #psczkclvea td, #psczkclvea th {
+#irwzsyqxor thead, #irwzsyqxor tbody, #irwzsyqxor tfoot, #irwzsyqxor tr, #irwzsyqxor td, #irwzsyqxor th {
   border-style: none;
 }
 
-#psczkclvea p {
+#irwzsyqxor p {
   margin: 0;
   padding: 0;
 }
 
-#psczkclvea .gt_table {
+#irwzsyqxor .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -403,12 +415,12 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   border-left-color: #D3D3D3;
 }
 
-#psczkclvea .gt_caption {
+#irwzsyqxor .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#psczkclvea .gt_title {
+#irwzsyqxor .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -420,7 +432,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   border-bottom-width: 0;
 }
 
-#psczkclvea .gt_subtitle {
+#irwzsyqxor .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -432,7 +444,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   border-top-width: 0;
 }
 
-#psczkclvea .gt_heading {
+#irwzsyqxor .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -444,13 +456,13 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   border-right-color: #D3D3D3;
 }
 
-#psczkclvea .gt_bottom_border {
+#irwzsyqxor .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#psczkclvea .gt_col_headings {
+#irwzsyqxor .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -465,7 +477,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   border-right-color: #D3D3D3;
 }
 
-#psczkclvea .gt_col_heading {
+#irwzsyqxor .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -485,7 +497,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   overflow-x: hidden;
 }
 
-#psczkclvea .gt_column_spanner_outer {
+#irwzsyqxor .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -497,15 +509,15 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   padding-right: 4px;
 }
 
-#psczkclvea .gt_column_spanner_outer:first-child {
+#irwzsyqxor .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#psczkclvea .gt_column_spanner_outer:last-child {
+#irwzsyqxor .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#psczkclvea .gt_column_spanner {
+#irwzsyqxor .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -517,11 +529,11 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   width: 100%;
 }
 
-#psczkclvea .gt_spanner_row {
+#irwzsyqxor .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#psczkclvea .gt_group_heading {
+#irwzsyqxor .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -547,7 +559,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   text-align: left;
 }
 
-#psczkclvea .gt_empty_group_heading {
+#irwzsyqxor .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -562,15 +574,15 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   vertical-align: middle;
 }
 
-#psczkclvea .gt_from_md > :first-child {
+#irwzsyqxor .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#psczkclvea .gt_from_md > :last-child {
+#irwzsyqxor .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#psczkclvea .gt_row {
+#irwzsyqxor .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -589,7 +601,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   overflow-x: hidden;
 }
 
-#psczkclvea .gt_stub {
+#irwzsyqxor .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -602,7 +614,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   padding-right: 5px;
 }
 
-#psczkclvea .gt_stub_row_group {
+#irwzsyqxor .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -616,15 +628,15 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   vertical-align: top;
 }
 
-#psczkclvea .gt_row_group_first td {
+#irwzsyqxor .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#psczkclvea .gt_row_group_first th {
+#irwzsyqxor .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#psczkclvea .gt_summary_row {
+#irwzsyqxor .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -634,16 +646,16 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   padding-right: 5px;
 }
 
-#psczkclvea .gt_first_summary_row {
+#irwzsyqxor .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#psczkclvea .gt_first_summary_row.thick {
+#irwzsyqxor .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#psczkclvea .gt_last_summary_row {
+#irwzsyqxor .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -653,7 +665,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   border-bottom-color: #D3D3D3;
 }
 
-#psczkclvea .gt_grand_summary_row {
+#irwzsyqxor .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -663,7 +675,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   padding-right: 5px;
 }
 
-#psczkclvea .gt_first_grand_summary_row {
+#irwzsyqxor .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -673,7 +685,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   border-top-color: #D3D3D3;
 }
 
-#psczkclvea .gt_last_grand_summary_row_top {
+#irwzsyqxor .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -683,11 +695,11 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   border-bottom-color: #D3D3D3;
 }
 
-#psczkclvea .gt_striped {
+#irwzsyqxor .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#psczkclvea .gt_table_body {
+#irwzsyqxor .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -696,7 +708,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   border-bottom-color: #D3D3D3;
 }
 
-#psczkclvea .gt_footnotes {
+#irwzsyqxor .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -710,7 +722,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   border-right-color: #D3D3D3;
 }
 
-#psczkclvea .gt_footnote {
+#irwzsyqxor .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -719,7 +731,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   padding-right: 5px;
 }
 
-#psczkclvea .gt_sourcenotes {
+#irwzsyqxor .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -733,7 +745,7 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   border-right-color: #D3D3D3;
 }
 
-#psczkclvea .gt_sourcenote {
+#irwzsyqxor .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -741,63 +753,63 @@ $ year     &lt;dbl&gt; 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 1997, 199
   padding-right: 5px;
 }
 
-#psczkclvea .gt_left {
+#irwzsyqxor .gt_left {
   text-align: left;
 }
 
-#psczkclvea .gt_center {
+#irwzsyqxor .gt_center {
   text-align: center;
 }
 
-#psczkclvea .gt_right {
+#irwzsyqxor .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#psczkclvea .gt_font_normal {
+#irwzsyqxor .gt_font_normal {
   font-weight: normal;
 }
 
-#psczkclvea .gt_font_bold {
+#irwzsyqxor .gt_font_bold {
   font-weight: bold;
 }
 
-#psczkclvea .gt_font_italic {
+#irwzsyqxor .gt_font_italic {
   font-style: italic;
 }
 
-#psczkclvea .gt_super {
+#irwzsyqxor .gt_super {
   font-size: 65%;
 }
 
-#psczkclvea .gt_footnote_marks {
+#irwzsyqxor .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#psczkclvea .gt_asterisk {
+#irwzsyqxor .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#psczkclvea .gt_indent_1 {
+#irwzsyqxor .gt_indent_1 {
   text-indent: 5px;
 }
 
-#psczkclvea .gt_indent_2 {
+#irwzsyqxor .gt_indent_2 {
   text-indent: 10px;
 }
 
-#psczkclvea .gt_indent_3 {
+#irwzsyqxor .gt_indent_3 {
   text-indent: 15px;
 }
 
-#psczkclvea .gt_indent_4 {
+#irwzsyqxor .gt_indent_4 {
   text-indent: 20px;
 }
 
-#psczkclvea .gt_indent_5 {
+#irwzsyqxor .gt_indent_5 {
   text-indent: 25px;
 }
 </style>

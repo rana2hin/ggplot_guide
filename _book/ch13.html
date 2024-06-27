@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ggplot2: Unleash Your Inner Artist - 13&nbsp; Working with Text</title>
+<title>Mastering ggplot2: From Novice to Data Viz Pro - 13&nbsp; Working with Text</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">ggplot2: Unleash Your Inner Artist</a> 
+      <a href="./">Mastering ggplot2: From Novice to Data Viz Pro</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/rana2hin/ggplot_guide/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -359,10 +359,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Okay, avoiding overlap of labels did not work out. But don’t worry, we are going to fix it in a minute!</p>
-<details>
-<summary>
-💁 <i>You can also use <code>geom_text()</code> if you don’t like boxes around your labels. Expand to see example.</i>
-</summary>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Using <code>geom_text()</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><i>You can also use <code>geom_text()</code> if you don’t like boxes around your labels. Expand to see example.</i></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sample, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> temp, <span class="at">color =</span> season)) <span class="sc">+</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
@@ -380,7 +389,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</details>
+</div>
+</div>
+</div>
 <p>The <code>{ggrepel}</code> package offers some great utilities by providing geoms for <code>{ggplot2}</code> to repel overlapping text as in our examples above. We simply replace <code>geom_text()</code> by <code>geom_text_repel()</code> and <code>geom_label()</code> by <code>geom_label_repel()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
@@ -446,7 +457,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">stat =</span> <span class="st">"unique"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_text(aes(x = 25, y = 60, label = "This is a useful annotation"), : All aesthetics have length 1, but the data has 1461 rows.
-ℹ Did you mean to use `annotate()`?</code></pre>
+ℹ Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -465,7 +477,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">7</span>, <span class="at">color =</span> <span class="st">"darkcyan"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_text(aes(x = 25, y = 60, label = "This is a useful annotation"), : All aesthetics have length 1, but the data has 1461 rows.
-ℹ Did you mean to use `annotate()`?</code></pre>
+ℹ Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -512,7 +525,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>season, <span class="at">scales =</span> <span class="st">"free_x"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_text(aes(x = 23, y = 97, label = "This is not a useful annotation"), : All aesthetics have length 1, but the data has 1461 rows.
-ℹ Did you mean to use `annotate()`?</code></pre>
+ℹ Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -595,7 +609,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">stat =</span> <span class="st">"unique"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_richtext(aes(x = 35, y = 3, label = lab_md), stat = "unique"): All aesthetics have length 1, but the data has 1461 rows.
-ℹ Did you mean to use `annotate()`?</code></pre>
+ℹ Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -614,7 +629,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">stat =</span> <span class="st">"unique"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_richtext(aes(x = 33, y = 3, label = lab_html), stat = "unique"): All aesthetics have length 1, but the data has 1461 rows.
-ℹ Did you mean to use `annotate()`?</code></pre>
+ℹ Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -634,7 +650,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">family =</span> <span class="st">"Playfair Display"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_richtext(aes(x = 10, y = 25, label = lab_md), stat = "unique", : All aesthetics have length 1, but the data has 1461 rows.
-ℹ Did you mean to use `annotate()`?</code></pre>
+ℹ Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -653,7 +670,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">width =</span> <span class="fu">unit</span>(<span class="dv">15</span>, <span class="st">"lines"</span>), <span class="at">stat =</span> <span class="st">"unique"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in geom_textbox(aes(x = 40, y = 10, label = lab_long), width = unit(15, : All aesthetics have length 1, but the data has 1461 rows.
-ℹ Did you mean to use `annotate()`?</code></pre>
+ℹ Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>

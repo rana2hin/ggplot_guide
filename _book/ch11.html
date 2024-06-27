@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ggplot2: Unleash Your Inner Artist - 11&nbsp; Working with Themes</title>
+<title>Mastering ggplot2: From Novice to Data Viz Pro - 11&nbsp; Working with Themes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">ggplot2: Unleash Your Inner Artist</a> 
+      <a href="./">Mastering ggplot2: From Novice to Data Viz Pro</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/rana2hin/ggplot_guide/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -522,7 +522,7 @@ Attaching package: 'gridExtra'</code></pre>
             half_line, half_line, half_line), complete = TRUE)
     ggplot_global$theme_all_null %+replace% t
 }
-&lt;bytecode: 0x0000025b7c667820&gt;
+&lt;bytecode: 0x0000021883a8a1f0&gt;
 &lt;environment: namespace:ggplot2&gt;</code></pre>
 </div>
 </div>
@@ -630,7 +630,19 @@ Attaching package: 'gridExtra'</code></pre>
 <span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>💡 <strong>You can only overwrite the defaults for all elements you want to change. Here I listed all so you can see that you can change <em>literally</em> change everything!</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can only overwrite the defaults for all elements you want to change. Here I listed all. so you can see that you can change <em>literally</em> everything!</p>
+</div>
+</div>
 <p>Have a look on the modified aesthetics with its new look of panel and gridlines as well as axes ticks, texts and titles:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_2hin</span>())</span>

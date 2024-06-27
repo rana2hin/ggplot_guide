@@ -218,7 +218,9 @@ theme_2hin <- function (base_size = 12, base_family = "Roboto Condensed") {
 }
 ```
 
-💡 **You can only overwrite the defaults for all elements you want to change. Here I listed all so you can see that you can change *literally* change everything!**
+::: {.callout-note}
+You can only overwrite the defaults for all elements you want to change. Here I listed all. so you can see that you can change *literally* everything!
+:::
 
 Have a look on the modified aesthetics with its new look of panel and gridlines as well as axes ticks, texts and titles:
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ggplot2: Unleash Your Inner Artist - 10&nbsp; Working with Colors</title>
+<title>Mastering ggplot2: From Novice to Data Viz Pro - 10&nbsp; Working with Colors</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">ggplot2: Unleash Your Inner Artist</a> 
+      <a href="./">Mastering ggplot2: From Novice to Data Viz Pro</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/rana2hin/ggplot_guide/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -441,7 +441,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>💡 <strong>You can explore all schemes available via <code>RColorBrewer::display.brewer.all()</code>.</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can explore all schemes available via <code>RColorBrewer::display.brewer.all()</code>.</p>
+</div>
+</div>
 </section>
 <section id="use-qualitative-color-palettes-from-extension-packages" class="level3" data-number="10.3.3">
 <h3 data-number="10.3.3" class="anchored" data-anchor-id="use-qualitative-color-palettes-from-extension-packages"><span class="header-section-number">10.3.3</span> Use Qualitative Color Palettes from Extension Packages</h3>
@@ -652,7 +664,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Note that you need to specify the <code>color</code> and/or <code>fill</code> in the <code>aes()</code> of the respective <code>geom_*()</code> or <code>stat_*()</code> to make <code>after_scale()</code> work.</p>
-<p>💡 <strong>This seems a bit complicated for now—one could simply use the <code>color</code> and <code>fill</code> scales for both. Yes, that is true but think about use cases where you need several <code>color</code> and/or <code>fill</code> scales. In such a case, it would be senseless to occupy the <code>fill</code> scale with a slightly darker version of the palette used for <code>color</code>.</strong></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This seems a bit complicated for now—one could simply use the <code>color</code> and <code>fill</code> scales for both. Yes, that is true but think about use cases where you need several <code>color</code> and/or <code>fill</code> scales. In such a case, it would be senseless to occupy the <code>fill</code> scale with a slightly darker version of the palette used for <code>color</code>.</p>
+</div>
+</div>
 
 
 </section>

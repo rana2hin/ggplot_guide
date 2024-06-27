@@ -31,6 +31,10 @@ To fully execute the tutorial, you'll need to install the following packages:
     * `{highcharter}`
     * `{plotly}`
 
+## Installing  Packages
+
+To install the necessary packages, run the following code:
+
 ```{r install-packages, eval=FALSE}
 # install CRAN packages
 install.packages(

@@ -55,9 +55,10 @@ ggplot(chic, aes(x = date, y = temp, color = season)) +
   theme(legend.title = element_blank())
 ```
 
-<details>
+::: {.callout-tip collapse="true}
+## Other Ways to remove Legend Titles
 
-<summary>💁 <i>You can achieve the same outcome by setting the legend name to `NULL`, either through `scale_color_discrete(name = NULL)` or `labs(color = NULL)`. Expand to see examples.</i></summary>
+<i>You can achieve the same outcome by setting the legend name to `NULL`, either through `scale_color_discrete(name = NULL)` or `labs(color = NULL)`. Expand to see examples.</i>
 
 ```{r legend-title-null}
 ggplot(chic, aes(x = date, y = temp, color = season)) +
@@ -73,7 +74,7 @@ ggplot(chic, aes(x = date, y = temp, color = season)) +
   labs(color = NULL)
 ```
 
-</details>
+:::
 
 ## Adjusting Legend Position
 

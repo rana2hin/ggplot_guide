@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ggplot2: Unleash Your Inner Artist - 14&nbsp; Working with Coordinates</title>
+<title>Mastering ggplot2: From Novice to Data Viz Pro - 14&nbsp; Working with Coordinates</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">ggplot2: Unleash Your Inner Artist</a> 
+      <a href="./">Mastering ggplot2: From Novice to Data Viz Pro</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/rana2hin/ggplot_guide/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -348,10 +348,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<details>
-<summary>
-💁 <i>Since <code>{ggplot2}</code> version 3.0.0 it is also possible to draw geom’s horizontally via the argument <code>orientation = "y"</code>. Expand to see example.</i>
-</summary>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Using <code>orientation = "y"</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><i>Since <code>{ggplot2}</code> version 3.0.0 it is also possible to draw geom’s horizontally via the argument <code>orientation = "y"</code>. Expand to see example.</i></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chic, <span class="fu">aes</span>(<span class="at">x =</span> o3, <span class="at">y =</span> season)) <span class="sc">+</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"indianred"</span>, <span class="at">orientation =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
@@ -364,7 +371,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</details>
+</div>
+</div>
 </section>
 <section id="fix-an-axis" class="level2" data-number="14.2">
 <h2 data-number="14.2" class="anchored" data-anchor-id="fix-an-axis"><span class="header-section-number">14.2</span> Fix an Axis</h2>
@@ -416,10 +424,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<details>
-<summary>
-💁 <i>Note that this will only work for continuous data. If you want to reverse discrete data, use the <code>fct_rev()</code> function from the <a href="https://forcats.tidyverse.org/"><code>{forcats}</code> package</a>. Expand to see example.</i>
-</summary>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that this will only work for continuous data. If you want to reverse discrete data, use the <code>fct_rev()</code> function from the <a href="https://forcats.tidyverse.org/"><code>{forcats}</code> package</a>. Expand to see example.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## the default</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chic, <span class="fu">aes</span>(<span class="at">x =</span> temp, <span class="at">y =</span> season)) <span class="sc">+</span></span>
@@ -447,7 +462,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</details>
+</div>
+</div>
 </section>
 <section id="transform-an-axis" class="level2" data-number="14.4">
 <h2 data-number="14.4" class="anchored" data-anchor-id="transform-an-axis"><span class="header-section-number">14.4</span> Transform an Axis</h2>

@@ -18,7 +18,15 @@ ggplot(chic, aes(x = date, y = temp)) +
         plot.margin = margin(t = 1, r = 3, b = 1, l = 8, unit = "cm"))
 ```
 
-💁 <i>You can also use `unit()` instead of `margin()`. Expand to see example.</i>
+::: {.callout-important}
+## Having trouble with Margins?
+A helpful mnemonic for remembering the order of the margin sides is "_t_\-_r_\-ou-_b_\-_l_\-e".
+:::
+
+::: {.callout-tip collapse="true}
+## `unit()` instead of `margin()`
+
+<i>You can also use `unit()` instead of `margin()`.</i>
 
 ```{r margin-2}
 ggplot(chic, aes(x = date, y = temp)) +
@@ -27,3 +35,5 @@ ggplot(chic, aes(x = date, y = temp)) +
   theme(plot.background = element_rect(fill = "gray60"),
         plot.margin = unit(c(1, 3, 1, 8), "cm"))
 ```
+
+:::

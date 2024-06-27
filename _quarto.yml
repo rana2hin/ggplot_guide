@@ -2,9 +2,10 @@ project:
   type: book
 
 book:
-  title: "ggplot2: Unleash Your Inner Artist"
-  author: "Tuhin rana"
-  date: "3/17/2024"
+  title: "Mastering ggplot2: From Novice to Data Viz Pro"
+  subtitle: "Unleash Your Inner Data Scientist"
+  author: "Tuhin Rana"
+  date: "3/17/2023"
   repo-url: https://github.com/rana2hin/ggplot_guide/
   sharing: [facebook, twitter]
   chapters:
@@ -33,4 +34,24 @@ book:
 
 format:
   html:
-    theme: cosmo
+    theme: journal
+  pdf: 
+    documentclass: scrbook
+    keep-tex: true
+    papersize: letter
+    toc: true
+    toc-depth: 2
+    toc-title: Table of Contents
+    lof: true
+    lot: true
+    geometry:
+      - top=30mm
+      - left=20mm
+      - heightrounded
+    fontfamily: libertinus
+    colorlinks: true
+  docx:
+    toc: true
+    toc-depth: 2
+    toc-title: Table of Contents
+    number-sections: true

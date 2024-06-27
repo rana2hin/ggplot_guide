@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ggplot2: Unleash Your Inner Artist - 4&nbsp; Working with Axes</title>
+<title>Mastering ggplot2: From Novice to Data Viz Pro - 4&nbsp; Working with Axes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">ggplot2: Unleash Your Inner Artist</a> 
+      <a href="./">Mastering ggplot2: From Novice to Data Viz Pro</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/rana2hin/ggplot_guide/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -353,10 +353,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<details>
-<summary>
-💁 <i>You also can add axis titles by using <code>xlab()</code> and <code>ylab()</code>. Click to see example.</i>
-</summary>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>xlab()</code> and <code>ylab()</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><i>You also can add axis titles by using <code>xlab()</code> and <code>ylab()</code>. Click to see example.</i></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chic, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> temp)) <span class="sc">+</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>) <span class="sc">+</span></span>
@@ -370,7 +379,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</details>
+</div>
+</div>
+</div>
 <p>Typically, you can specify symbols by directly adding the symbol itself (e.g., “°”). However, the code below also enables the addition of not only symbols but also features like superscripts:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chic, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> temp)) <span class="sc">+</span></span>
@@ -418,7 +429,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The labels <code>t</code> and <code>r</code> within the <code>margin()</code> object correspond to <em>top</em> and <em>right</em>, respectively. Alternatively, you can specify all four margins using <code>margin(t, r, b, l)</code>. It’s important to note that we need to adjust the right margin to modify the space on the y-axis, not the bottom margin.</p>
-<p>💡 <strong>A helpful mnemonic for remembering the order of the margin sides is “<em>t</em>-<em>r</em>-ou-<em>b</em>-<em>l</em>-e”.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Having trouble with Margins?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A helpful mnemonic for remembering the order of the margin sides is “<em>t</em>-<em>r</em>-ou-<em>b</em>-<em>l</em>-e”.</p>
+</div>
+</div>
 </section>
 <section id="change-aesthetics-of-axis-titles" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="change-aesthetics-of-axis-titles"><span class="header-section-number">4.3</span> Change Aesthetics of Axis Titles</h2>
@@ -452,10 +475,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<details>
-<summary>
-💁 <i>You could also employ a combination of <code>axis.title</code> and <code>axis.title.y</code>, as <code>axis.title.x</code> inherits values from <code>axis.title</code>. Expand to See the example below:</i>
-</summary>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Customising Invidual Axis
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><i>You could also employ a combination of <code>axis.title</code> and <code>axis.title.y</code>, as <code>axis.title.x</code> inherits values from <code>axis.title</code>. Expand to See the example below:</i></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chic, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> temp)) <span class="sc">+</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>) <span class="sc">+</span></span>
@@ -470,7 +502,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</details>
+</div>
+</div>
+</div>
 <p>You can adjust some properties for both axis titles simultaneously, while modifying others exclusively for one axis or individual properties for each axis title:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chic, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> temp)) <span class="sc">+</span></span>
@@ -540,7 +574,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>I’ve introduced three theme elements—text, lines, and rectangles—but there’s actually one more: <code>element_blank()</code>, which removes the element entirely. However, it’s not considered an official element like the others.</p>
-<p>💡 <strong>If you wish to remove a theme element entirely, you can always use <code>element_blank()</code>.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Removing Theme Element
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you wish to remove a theme element entirely, you can always use <code>element_blank()</code>.</p>
+</div>
+</div>
 </section>
 <section id="removing-axis-titles" class="level2" data-number="4.7">
 <h2 data-number="4.7" class="anchored" data-anchor-id="removing-axis-titles"><span class="header-section-number">4.7</span> Removing Axis Titles</h2>
@@ -557,7 +603,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>💡 <strong>Note that <code>NULL</code> removes the element (similarly to <code>element_blank()</code>), while empty quotes <code>""</code> will keep the spacing for the axis title but print nothing.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+RAnother Tip!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that <code>NULL</code> removes the element (similarly to <code>element_blank()</code>), while empty quotes <code>""</code> will keep the spacing for the axis title but print nothing.</p>
+</div>
+</div>
 </section>
 <section id="limiting-axis-range" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="limiting-axis-range"><span class="header-section-number">4.8</span> Limiting Axis Range</h2>
@@ -628,10 +686,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<details>
-<summary>
-💁 <i>Using <code>coord_cartesian(xlim = c(0, NA), ylim = c(0, NA))</code> will produce the same result. CLICK to See the example below:</i>
-</summary>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Another Way using <code>coord_cartesian(xlim = c(0, NA), ylim = c(0, NA))</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><i>Using <code>coord_cartesian(xlim = c(0, NA), ylim = c(0, NA))</code> will produce the same result. CLICK to See the example below:</i></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>chic_high <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(chic, temp <span class="sc">&gt;</span> <span class="dv">25</span>, o3 <span class="sc">&gt;</span> <span class="dv">20</span>)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -648,7 +715,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</details>
+</div>
+</div>
+</div>
 <p>But we can also ensure that it <em>truly</em> starts at the origin!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(chic_high, <span class="fu">aes</span>(<span class="at">x =</span> temp, <span class="at">y =</span> o3)) <span class="sc">+</span></span>
@@ -665,7 +734,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>💡 <strong>The <code>clip = "off"</code> argument in any coordinate system, always starting with <code>coord_*</code>, enables drawing outside of the panel area.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>clip = "off"</code> argument in any coordinate system, always starting with <code>coord_*</code>, enables drawing outside of the panel area.</p>
+</div>
+</div>
 <p>Here, I invoke it to ensure that the tick marks at <code>c(0, 0)</code> remain intact and are not truncated. For further insights, refer to the <a href="https://twitter.com/clauswilke/status/991542952802619392?lang=en">Twitter thread by Claus Wilke</a>.</p>
 </section>
 <section id="axes-with-same-scaling" class="level2" data-number="4.10">
@@ -678,7 +759,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">150</span>)) <span class="sc">+</span></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 46 rows containing missing values or values outside the scale range
+<pre><code>Warning: Removed 38 rows containing missing values or values outside the scale range
 (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">
@@ -697,7 +778,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">150</span>)) <span class="sc">+</span></span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_fixed</span>(<span class="at">ratio =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 60 rows containing missing values or values outside the scale range
+<pre><code>Warning: Removed 59 rows containing missing values or values outside the scale range
 (`geom_point()`).</code></pre>
 </div>
 <div class="cell-output-display">

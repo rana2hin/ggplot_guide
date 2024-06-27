@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ggplot2: Unleash Your Inner Artist - 3&nbsp; The ggplot2 Package</title>
+<title>Mastering ggplot2: From Novice to Data Viz Pro - 3&nbsp; The ggplot2 Package</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">ggplot2: Unleash Your Inner Artist</a> 
+      <a href="./">Mastering ggplot2: From Novice to Data Viz Pro</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/rana2hin/ggplot_guide/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
@@ -332,9 +332,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<blockquote class="blockquote">
 <p><code>ggplot2</code> is a graphics system that facilitates the declarative creation of visualizations, founded on principles outlined in <a href="https://link.springer.com/chapter/10.1007/978-3-642-21551-3_13">The Grammar of Graphics</a>. With <code>ggplot2</code>, you furnish the data, specify how variables should be mapped to aesthetics, define graphical parameters to employ, and the system handles the rest.</p>
-</blockquote>
 <p>A ggplot is made up several key elements:</p>
 <ol type="1">
 <li><strong>Data</strong>: Your raw dataset that you want to visualize.</li>
@@ -346,7 +344,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Facets</strong> <code>facet_</code>: This organizes your data into a grid of plots based on specified variables.</li>
 <li><strong>Visual themes</strong> <code>theme()</code>: These set the overall appearance of your plot, covering things like background, grids, axes, default fonts, sizes, and colors.</li>
 </ol>
-<p>💡 <strong>The number of elements may vary depending on the situation you’re working on.</strong></p>
+<div class="callout callout-style-simple callout-note">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>The number of elements may vary depending on the situation you’re working on.</strong></p>
+</div>
+</div>
+</div>
 <section id="default" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="default"><span class="header-section-number">3.1</span> A Default ggplot</h2>
 <p>Before diving into the capabilities of <code>{ggplot2}</code>, we need to load the package. Alternatively, we can load it through the <a href="https://www.tidyverse.org/">tidyverse package collection</a>:</p>
@@ -367,7 +374,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The syntax of <code>{ggplot2}</code> differs from base R. Following the basic elements, a default ggplot requires specifying three things: the <em>data</em>, <em>aesthetics</em>, and a <em>geometry</em>. To begin defining a plotting object, we call <code>ggplot(data = df)</code>, indicating that we’ll work with that dataset. Typically, we aim to plot two variables—one on the x-axis and one on the y-axis. These are <em>positional aesthetics</em>, so we add <code>aes(x = var1, y = var2)</code> to the <code>ggplot()</code> call (where <code>aes()</code> denotes aesthetics). However, there are cases where one may need to specify one, three, or more variables, which we’ll address later.</p>
-<p>💡 <strong>We indicate the data <em>outside</em> of <code>aes()</code> and include the variables that ggplot maps to the aesthetics <em>inside</em> of <code>aes()</code>.</strong></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pay Attention!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We indicate the data <em>outside</em> of <code>aes()</code> and include the variables that ggplot maps to the aesthetics <em>inside</em> of <code>aes()</code>.</p>
+</div>
+</div>
 <p>In this instance, we assign the variable <code>date</code> to the x-position and the variable <code>temp</code> to the y-position. Subsequently, we’ll also map variables to various other aesthetics such as color, size, and shape.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(chic, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> temp)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -381,7 +400,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Ah, the reason only a panel is generated when executing this code is because <code>{ggplot2}</code> lacks information on how we want to visualize the data. We still need to specify a geometry!</p>
 <p>In <code>{ggplot2}</code>, you can store the current <code>ggobject</code> in a variable of your choosing, such as <code>g</code>. This allows you to extend the <code>ggobject</code> later by adding additional layers, either all at once or by assigning it to the same or another variable.</p>
-<p>💡 <strong>By using parentheses when assigning an object, the object will be printed immediately. Instead of writing <code>g &lt;- ggplot(...)</code> followed by <code>g</code>, we can simply write <code>(g &lt;- ggplot(...))</code>.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="A Quick Tip!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A Quick Tip!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By using parentheses when assigning an object, the object will be printed immediately. Instead of writing <code>g &lt;- ggplot(...)</code> followed by <code>g</code>, we can simply write <code>(g &lt;- ggplot(...))</code>.</p>
+</div>
+</div>
 <p>There’s a wide array of geometries in <code>{ggplot2}</code>, often referred to as <em>geoms</em> because their function names typically start with <code>geom_</code>. You can find the full list of default geoms <a href="https://ggplot2.tidyverse.org/reference/">here</a>, and there are even more options available through extension packages, which you can explore <a href="https://exts.ggplot2.tidyverse.org/">here</a>. To instruct <code>{ggplot2}</code> on the style we want to use, we can, for example, add <code>geom_point()</code> to create a scatter plot:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -429,11 +460,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>💡 <strong><code>{ggplot2}</code> understands both <code>color</code> and <code>colour</code> as well as the short version <code>col</code>.</strong></p>
-<details>
-<summary>
-💁 <i>You can utilize preset colors (a full list can be found <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">here</a>) or <a href="https://www.techopedia.com/definition/29788/color-hex-code">hex color codes</a>, both enclosed in quotes. Additionally, you can specify RGB/RGBA colors using the <code>rgb()</code> function. Click to expand:</i>
-</summary>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Color or Colour?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>{ggplot2}</code> understands both <code>color</code> and <code>colour</code> as well as the short version <code>col</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Color Presets 🎨
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><i>You can utilize preset colors (a full list can be found <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf">here</a>) or <a href="https://www.techopedia.com/definition/29788/color-hex-code">hex color codes</a>, both enclosed in quotes. Additionally, you can specify RGB/RGBA colors using the <code>rgb()</code> function. Click to expand:</i></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#b22222"</span>, <span class="at">shape =</span> <span class="st">"diamond"</span>, <span class="at">size =</span> <span class="dv">2</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="fu">rgb</span>(<span class="dv">178</span>, <span class="dv">34</span>, <span class="dv">34</span>, <span class="at">maxColorValue =</span> <span class="dv">255</span>), <span class="at">shape =</span> <span class="st">"diamond"</span>, <span class="at">size =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -447,7 +499,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</details>
+</div>
+</div>
+</div>
 <p>Each geom has its unique properties, referred to as <em>arguments</em>, and the same argument might produce different effects depending on the geom you’re employing.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"firebrick"</span>, <span class="at">shape =</span> <span class="st">"diamond"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
@@ -477,7 +531,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>For further details on using built-in themes and customizing themes, refer to the section <a href="ch11.html">“Working with Themes”</a>. Starting from the next chapter, we’ll also utilize the <code>theme()</code> function to customize specific elements of the theme.</p>
-<p>💡 <strong><code>theme()</code> is a crucial command for manually adjusting various theme elements such as texts, rectangles, and lines.</strong></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remember!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>theme()</code> is a crucial command for manually adjusting various theme elements such as texts, rectangles, and lines.</p>
+</div>
+</div>
 <p>To explore the numerous details of a ggplot theme that can be modified, refer to the extensive list available <a href="https://ggplot2.tidyverse.org/reference/theme.html">here</a>. Take your time, as it’s a comprehensive list!</p>
 
 
