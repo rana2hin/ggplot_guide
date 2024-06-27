@@ -113,7 +113,7 @@ g +
 
 In case you use one of the facet functions to visualize your data you might run into trouble. One thing is that you may want to include the annotation only once:
 
-```{r label-facet-single}
+```{r label-facet-single, warning=FALSE, message=FALSE}
 ann <- data.frame(
   o3 = 30,
   temp = 20,
@@ -202,7 +202,7 @@ g +
 
 ... or html:
 
-```{r ggtext-geom-richtext-html}
+```{r ggtext-geom-richtext-html, warning=FALSE, message=FALSE}
 lab_html <- "&#9733; This plot shows <b style='color:red;'>temperature</b> in <i>°F</i> versus <b style='color:blue;'>ozone level</b>in <i>ppm</i> &#9733;"
 
 g +

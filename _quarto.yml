@@ -8,6 +8,7 @@ book:
   date: "3/17/2023"
   repo-url: https://github.com/rana2hin/ggplot_guide/
   sharing: [facebook, twitter]
+  downloads: [pdf, epub]
   chapters:
     - index.qmd
     - intro.qmd
@@ -42,14 +43,14 @@ format:
     toc: true
     toc-depth: 2
     toc-title: Table of Contents
-    lof: true
-    lot: true
     geometry:
       - top=30mm
       - left=20mm
       - heightrounded
     fontfamily: libertinus
     colorlinks: true
+  epub:
+    fig-format: png
   docx:
     toc: true
     toc-depth: 2

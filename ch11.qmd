@@ -92,7 +92,7 @@ g + theme_bw(base_family = "Playfair Display")
 
 The `theme_*()` functions also come with several other `base_*` arguments. If you have a closer look at the default theme (see chapter "Create and Use Your Custom Theme" below) you will notice that the sizes of all the elements are relative `(rel())` to the `base_size`. As a result, you can simply change the `base_size` if you want to increase readability of your plots:
 
-```{r theme-base-text-size}
+```{r theme-base-text-size, warning=FALSE, message=FALSE}
 g + theme_bw(base_size = 30, base_family = "Roboto Condensed")
 ```
 
@@ -224,7 +224,7 @@ You can only overwrite the defaults for all elements you want to change. Here I 
 
 Have a look on the modified aesthetics with its new look of panel and gridlines as well as axes ticks, texts and titles:
 
-```{r theme-set}
+```{r theme-set, warning=FALSE, message=FALSE}
 theme_set(theme_2hin())
 
 ggplot(chic, aes(x = date, y = temp, color = season)) +
@@ -237,7 +237,7 @@ ggplot(chic, aes(x = date, y = temp, color = season)) +
 
 You can also set quick changes using `theme_update()`:
 
-```{r theme-update}
+```{r theme-update, warning=FALSE, message=FALSE}
 theme_2hin <- theme_update(panel.background = element_rect(fill = "gray60"))
 
 ggplot(chic, aes(x = date, y = temp, color = season)) +

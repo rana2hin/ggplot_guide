@@ -123,7 +123,7 @@ theme_set(theme_bw(base_size = 12, base_family = "Roboto Condensed"))
 
 To modify the spacing between lines, you can utilize the `lineheight` argument. In the following example, I've compressed the lines together (lineheight < 1).
 
-```{r multiline-title}
+```{r multiline-title, warning=FALSE, message=FALSE}
 ggplot(chic, aes(x = date, y = temp)) +
   geom_point(color = "firebrick") +
   labs(x = "Year", y = "Temperature (°F)") +
@@ -143,7 +143,7 @@ ggplot(chic, aes(x = date, y = temp)) +
 
 Or, Change it to Traditional `Times New Roman`:
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 ggplot(chic, aes(x = date, y = temp)) +
     geom_point(color = "firebrick") +
     labs(x = "Year", y = "Temperature (°F)") +
